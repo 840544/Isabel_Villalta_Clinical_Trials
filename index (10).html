@@ -1,0 +1,2187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Isabel Villalta — Clinical Research &amp; Study Coordination</title>
+<meta name="description" content="Isabel Villalta — Biotechnology graduate, MSc in Clinical Trial Monitoring, and Study Coordinator and Clinical Research Trainee in Hematology &amp; Rare Diseases. Portfolio of clinical research projects, scientific writing, and career journey.">
+<meta name="theme-color" content="#0A1F3D">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Isabel Villalta — Clinical Research &amp; Study Coordination">
+<meta property="og:description" content="Biotechnology graduate building a career in Clinical Operations and Study Coordination, specializing in Hematology &amp; Rare Diseases.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&amp;family=Inter:wght@400;500;600;700&amp;family=IBM+Plex+Mono:wght@500&amp;display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   1. RESET
+============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+body {
+  font-family: var(--font-body);
+  color: var(--gray-900);
+  background: var(--white);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; }
+button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+input, textarea { font: inherit; }
+svg { display: block; }
+
+/* ============================================================
+   2. DESIGN TOKENS
+============================================================ */
+:root {
+  /* Color */
+  --navy: #0A1F3D;
+  --navy-2: #123054;
+  --blue: #2F5D8A;
+  --blue-light: #EAF1F8;
+  --gray-900: #1C2430;
+  --gray-600: #5B6472;
+  --gray-400: #94A0AE;
+  --gray-200: #E4E8EE;
+  --paper: #F7F8FA;
+  --white: #FFFFFF;
+  --accent-line: #C8D6E5;
+
+  /* Type */
+  --font-display: 'Manrope', 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+
+  /* Radius */
+  --r-sm: 8px;
+  --r-md: 14px;
+  --r-lg: 22px;
+  --r-full: 999px;
+
+  /* Shadow */
+  --shadow-sm: 0 1px 2px rgba(10,31,61,0.05), 0 1px 1px rgba(10,31,61,0.03);
+  --shadow-md: 0 10px 26px rgba(10,31,61,0.07), 0 2px 6px rgba(10,31,61,0.04);
+  --shadow-lg: 0 24px 56px rgba(10,31,61,0.12), 0 6px 16px rgba(10,31,61,0.05);
+
+  /* Layout */
+  --container: 1200px;
+  --pad: clamp(24px, 5vw, 32px);
+  --section-pad: clamp(64px, 9vw, 128px);
+}
+
+/* ============================================================
+   3. TYPOGRAPHY
+============================================================ */
+h1, h2, h3, h4 { font-family: var(--font-display); color: var(--navy); font-weight: 800; line-height: 1.12; letter-spacing: -0.02em; }
+h1 { font-size: clamp(2.6rem, 5.4vw, 4.4rem); }
+h2 { font-size: clamp(1.9rem, 3.4vw, 2.7rem); }
+h3 { font-size: 1.25rem; font-weight: 700; }
+h4 { font-size: 1.05rem; font-weight: 700; }
+p { color: var(--gray-600); }
+.lede { font-size: 1.15rem; line-height: 1.7; color: var(--gray-600); }
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--blue);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.eyebrow::before { content: ''; width: 22px; height: 1px; background: var(--blue); flex-shrink: 0; }
+
+.section-head { max-width: 640px; margin-bottom: 56px; }
+.section-head p { margin-top: 14px; font-size: 1.05rem; }
+.section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+.section-head.center .eyebrow { justify-content: center; }
+.section-head.center .eyebrow::before { display: none; }
+
+/* ============================================================
+   4. LAYOUT
+============================================================ */
+.container { max-width: var(--container); margin: 0 auto; padding: 0 var(--pad); }
+.section { padding: var(--section-pad) 0; }
+.section--alt { background: var(--paper); }
+.section--navy { background: var(--navy); }
+.skip-link {
+  position: absolute; left: -999px; top: 0; background: var(--navy); color: #fff;
+  padding: 12px 20px; z-index: 1000; border-radius: 0 0 8px 0;
+}
+.skip-link:focus { left: 0; }
+main section[id], footer[id] { scroll-margin-top: 88px; }
+
+/* Focus visibility (accessibility) */
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
+  outline: 2px solid var(--blue); outline-offset: 3px; border-radius: 4px;
+}
+
+/* ============================================================
+   5. BUTTONS
+============================================================ */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 14px 26px; border-radius: var(--r-full); font-weight: 600; font-size: 0.92rem;
+  transition: transform .25s ease, box-shadow .25s ease, background-color .25s ease, border-color .25s ease, opacity .25s ease;
+  white-space: nowrap;
+}
+.btn-primary { background: var(--navy); color: #fff; box-shadow: var(--shadow-sm); }
+.btn-primary:hover { background: var(--blue); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.btn-secondary { background: #fff; color: var(--navy); border: 1px solid var(--gray-200); }
+.btn-secondary:hover { border-color: var(--navy); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+.btn-ghost { color: var(--blue); padding: 8px 2px; font-weight: 600; }
+.btn-ghost:hover { color: var(--navy); }
+.btn-sm { padding: 9px 18px; font-size: 0.82rem; }
+.btn-block-disabled { background: var(--paper); color: var(--gray-400); border: 1px solid var(--gray-200); cursor: not-allowed; }
+.btn svg { width: 15px; height: 15px; }
+
+/* Featured / high-visibility CTA buttons (video, tools, external docs) */
+.btn-featured { padding: 18px 30px; font-size: 1rem; }
+.btn-featured .btn-icon { width: 27px; height: 27px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.btn-featured .btn-icon svg { width: 13px; height: 13px; }
+.btn-primary.btn-featured .btn-icon { background: rgba(255,255,255,0.2); }
+.btn-secondary.btn-featured .btn-icon { background: var(--blue-light); color: var(--navy); }
+@media (max-width: 560px) { .btn-featured { width: 100%; } }
+
+/* ============================================================
+   6. NAV
+============================================================ */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  background: rgba(255,255,255,0.72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid transparent;
+  transition: border-color .3s ease, box-shadow .3s ease;
+}
+.nav.is-scrolled { border-color: var(--gray-200); box-shadow: 0 1px 0 rgba(10,31,61,0.02); }
+.nav-inner { max-width: var(--container); margin: 0 auto; padding: 18px var(--pad); display: flex; align-items: center; justify-content: space-between; }
+.nav-logo { font-family: var(--font-display); font-weight: 800; font-size: 1.05rem; color: var(--navy); letter-spacing: -0.01em; }
+.nav-logo span { color: var(--blue); }
+.nav-links { display: flex; align-items: center; gap: 30px; }
+.nav-links a {
+  font-size: 0.86rem; font-weight: 500; color: var(--gray-600);
+  transition: color .2s ease; position: relative; padding: 4px 0;
+}
+.nav-links a.active, .nav-links a:hover { color: var(--navy); }
+.nav-links a.active::after {
+  content: ''; position: absolute; bottom: -6px; left: 0; right: 0; height: 2px;
+  background: var(--blue); border-radius: 2px;
+}
+.nav-cta { display: flex; align-items: center; gap: 14px; }
+.nav-toggle { display: none; width: 40px; height: 40px; align-items: center; justify-content: center; }
+.nav-toggle span, .nav-toggle::before, .nav-toggle::after { content:''; display:block; width:20px; height:2px; background:var(--navy); transition: all .25s ease; }
+.nav-toggle::before { transform: translateY(-6px); }
+.nav-toggle::after { transform: translateY(4px); }
+.nav-toggle span { display:none; }
+.nav-toggle.is-open::before { transform: rotate(45deg); }
+.nav-toggle.is-open::after { transform: rotate(-45deg) translate(3px,-3px); }
+
+@media (max-width: 860px) {
+  .nav-links { position: fixed; top: 64px; left: 0; right: 0; background: #fff; flex-direction: column;
+    align-items: flex-start; padding: 24px var(--pad) 32px; gap: 18px; border-bottom: 1px solid var(--gray-200);
+    transform: translateY(-8px); opacity: 0; pointer-events: none; transition: all .25s ease; }
+  .nav-links.is-open { transform: translateY(0); opacity: 1; pointer-events: auto; }
+  .nav-cta .btn-secondary { display: none; }
+  .nav-toggle { display: flex; }
+}
+
+/* ============================================================
+   7. CARD BASE
+============================================================ */
+.card {
+  background: #fff; border: 1px solid var(--gray-200); border-radius: var(--r-lg);
+  box-shadow: var(--shadow-sm); transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+.card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: #D7DEE7; }
+
+/* Image fallback: onerror swaps in a soft gradient block instead of a broken icon */
+.media { position: relative; overflow: hidden; background: linear-gradient(135deg, var(--blue-light), #DCE7F2); }
+.media img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+.card:hover .media img { transform: scale(1.045); }
+.media.img-fallback img { display: none; }
+.media.img-fallback::after {
+  content: attr(data-fallback-icon); position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+  font-family: var(--font-mono); font-size: 0.7rem; letter-spacing:.1em; text-transform:uppercase; color: var(--blue); opacity:.6;
+}
+
+/* ============================================================
+   8. HERO
+============================================================ */
+.hero { padding: calc(var(--section-pad) + 56px) 0 var(--section-pad); position: relative; }
+.hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 64px; align-items: center; }
+.hero-content h1 { margin-bottom: 10px; }
+.hero-role { font-size: clamp(1.05rem, 1.6vw, 1.3rem); color: var(--blue); font-weight: 600; margin-bottom: 22px; }
+.hero-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px; }
+.badge {
+  font-size: 0.78rem; font-weight: 500; color: var(--navy); background: var(--blue-light);
+  padding: 7px 14px; border-radius: var(--r-full); white-space: nowrap;
+}
+.hero-content .lede { max-width: 540px; margin-bottom: 32px; }
+.hero-ctas { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; margin-bottom: 36px; }
+.hero-status {
+  display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-mono); font-size: 0.74rem;
+  color: var(--gray-600); background: var(--paper); border: 1px solid var(--gray-200);
+  padding: 10px 16px; border-radius: var(--r-sm);
+}
+.hero-status .dot { width: 7px; height: 7px; border-radius: 50%; background: #2E9E6B; flex-shrink: 0; box-shadow: 0 0 0 3px rgba(46,158,107,0.18); }
+
+.hero-visual { position: relative; display: flex; justify-content: center; }
+.hero-photo {
+  width: min(340px, 100%); aspect-ratio: 4/5; border-radius: var(--r-lg);
+  background: linear-gradient(155deg, var(--navy), var(--blue) 130%);
+  box-shadow: var(--shadow-lg); position: relative; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+.hero-photo img { width:100%; height:100%; object-fit:cover; position:absolute; inset:0; }
+.hero-photo .initials { font-family: var(--font-display); font-size: 4.5rem; font-weight: 800; color: rgba(255,255,255,0.92); letter-spacing: -0.02em; }
+.hero-photo .photo-note {
+  position:absolute; bottom:16px; left:16px; right:16px; font-family: var(--font-mono); font-size:.65rem;
+  letter-spacing:.08em; text-transform:uppercase; color:rgba(255,255,255,0.75); text-align:center;
+}
+.hero-frame-tag {
+  position: absolute; bottom: -18px; left: -18px; background: #fff; border: 1px solid var(--gray-200);
+  border-radius: var(--r-md); box-shadow: var(--shadow-md); padding: 14px 18px; max-width: 220px;
+}
+.hero-frame-tag .eyebrow { margin-bottom: 4px; font-size: .62rem; }
+.hero-frame-tag strong { font-size: .85rem; color: var(--navy); display:block; }
+
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+  .hero-visual { order: -1; }
+  .hero-photo { width: min(260px, 60vw); }
+}
+
+/* ============================================================
+   9. CURRENT FOCUS
+============================================================ */
+.focus-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.focus-card { padding: 30px 26px; }
+.focus-media { aspect-ratio: 16 / 10; border-radius: var(--r-sm); margin-bottom: 20px; }
+.focus-icon {
+  width: 42px; height: 42px; border-radius: var(--r-sm); background: var(--blue-light);
+  display: flex; align-items: center; justify-content: center; margin-bottom: 20px; color: var(--navy);
+}
+.focus-icon svg { width: 20px; height: 20px; }
+.focus-card .label { font-family: var(--font-mono); font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--gray-400); margin-bottom: 8px; }
+.focus-card h4 { margin-bottom: 8px; }
+.focus-card p { font-size: 0.88rem; line-height: 1.55; }
+.focus-card a.card-link { font-size: 0.82rem; font-weight: 600; color: var(--blue); margin-top: 12px; display: inline-block; }
+
+@media (max-width: 980px) { .focus-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .focus-grid { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   10. ABOUT
+============================================================ */
+.about-grid { display: grid; grid-template-columns: 1fr 300px; gap: 64px; align-items: start; }
+.about-text p { color: #3E4759; font-size: 1.02rem; line-height: 1.8; margin-bottom: 20px; }
+.about-text p:last-child { margin-bottom: 0; }
+.about-stats { display: flex; flex-direction: column; border-left: 2px solid var(--gray-200); padding-left: 28px; position: sticky; top: 110px; }
+.about-stats .stat { padding: 18px 0; border-bottom: 1px solid var(--gray-200); }
+.about-stats .stat:last-child { border-bottom: none; }
+.about-stats .num { font-family: var(--font-display); font-size: 1.7rem; font-weight: 800; color: var(--navy); display: block; letter-spacing: -0.01em; }
+.about-stats .cap { font-size: 0.8rem; color: var(--gray-600); margin-top: 3px; }
+
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; gap: 32px; }
+  .about-stats { flex-direction: row; flex-wrap: wrap; border-left: none; padding-left: 0; border-top: 1px solid var(--gray-200); padding-top: 24px; position: static; gap: 8px 32px; }
+  .about-stats .stat { border-bottom: none; padding: 0; flex: 1 1 140px; }
+}
+
+/* ------------------------------------------------------------
+   10b. ABOUT — FILM STRIP (visual journey)
+------------------------------------------------------------ */
+.about-journey { margin-top: 64px; padding-top: 48px; border-top: 1px solid var(--gray-200); }
+.about-journey .eyebrow { margin-bottom: 22px; }
+
+.filmstrip { position: relative; }
+.filmstrip-viewport { overflow: hidden; padding: 14px 0 6px; margin: 0 -4px; }
+.filmstrip-track {
+  display: flex; align-items: center; gap: 18px; list-style: none;
+  transition: transform .6s cubic-bezier(.22, .61, .36, 1);
+  will-change: transform; touch-action: pan-y; cursor: grab; padding: 0 4px;
+}
+.filmstrip-track:active { cursor: grabbing; }
+
+.filmstrip-frame {
+  position: relative; flex: 0 0 auto; width: 216px; aspect-ratio: 3 / 4;
+  border-radius: var(--r-md); overflow: hidden; padding: 0;
+  opacity: .5; transform: scale(.86);
+  transition: transform .55s cubic-bezier(.22, .61, .36, 1), opacity .55s ease, box-shadow .35s ease;
+  box-shadow: var(--shadow-sm);
+}
+.filmstrip-frame .media { width: 100%; height: 100%; border-radius: inherit; }
+.filmstrip-frame img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s ease; }
+.filmstrip-frame:hover img { transform: scale(1.06); }
+.filmstrip-frame::after {
+  content: ''; position: absolute; inset: 0; border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgba(10,31,61,0.06); pointer-events: none;
+}
+.filmstrip-frame.is-active { opacity: 1; transform: scale(1.06); box-shadow: var(--shadow-lg); z-index: 2; }
+.filmstrip-frame:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
+
+.filmstrip-controls { display: flex; align-items: center; justify-content: center; gap: 26px; margin-top: 26px; }
+.filmstrip-arrow {
+  flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--gray-200);
+  background: #fff; color: var(--navy); font-size: 1.15rem; line-height: 1;
+  display: flex; align-items: center; justify-content: center;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.filmstrip-arrow:hover { border-color: var(--navy); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+
+.filmstrip-info { text-align: center; min-width: 200px; }
+.filmstrip-count { display: block; font-family: var(--font-mono); font-size: .7rem; letter-spacing: .1em; color: var(--gray-400); margin-bottom: 5px; }
+.filmstrip-title { margin-bottom: 3px; font-size: 1.05rem; }
+.filmstrip-caption { display: block; font-family: var(--font-mono); font-size: .78rem; letter-spacing: .02em; color: var(--blue); }
+
+.filmstrip-dots { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 20px; }
+.filmstrip-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gray-200); padding: 0; transition: all .3s ease; }
+.filmstrip-dot:hover { background: var(--gray-400); }
+.filmstrip-dot.is-active { width: 20px; border-radius: 3px; background: var(--blue); }
+
+@media (max-width: 900px) {
+  .about-journey { margin-top: 48px; padding-top: 40px; }
+  .filmstrip-frame { width: 176px; }
+}
+@media (max-width: 560px) {
+  .filmstrip-frame { width: min(76vw, 300px); }
+  .filmstrip-track { gap: 12px; }
+  .filmstrip-controls { gap: 16px; }
+  .filmstrip-info { min-width: 0; }
+}
+
+/* Lightbox for the film strip */
+.filmstrip-lightbox {
+  position: fixed; inset: 0; z-index: 999; display: flex; align-items: center; justify-content: center;
+  padding: 24px; background: rgba(10,31,61,0.8);
+  opacity: 0; pointer-events: none; transition: opacity .3s ease;
+}
+.filmstrip-lightbox.is-open { opacity: 1; pointer-events: auto; }
+.filmstrip-lightbox-inner {
+  position: relative; width: 100%; max-width: 620px; background: #fff; border-radius: var(--r-lg);
+  overflow: hidden; box-shadow: var(--shadow-lg); transform: scale(.94); transition: transform .3s ease;
+}
+.filmstrip-lightbox.is-open .filmstrip-lightbox-inner { transform: scale(1); }
+.filmstrip-lightbox-media { width: 100%; aspect-ratio: 4 / 3; }
+.filmstrip-lightbox-media img { width: 100%; height: 100%; object-fit: cover; }
+.filmstrip-lightbox-body { padding: 22px 28px 26px; }
+.filmstrip-lightbox-count { font-family: var(--font-mono); font-size: .7rem; letter-spacing: .1em; color: var(--gray-400); }
+.filmstrip-lightbox-body h4 { margin: 5px 0 4px; }
+.filmstrip-lightbox-body .filmstrip-caption { color: var(--blue); }
+.filmstrip-lightbox-close {
+  position: absolute; top: 14px; right: 14px; z-index: 2; width: 36px; height: 36px; border-radius: 50%;
+  background: rgba(10,31,61,0.55); color: #fff; font-size: 1.2rem; line-height: 1;
+  display: flex; align-items: center; justify-content: center; transition: background .2s ease;
+}
+.filmstrip-lightbox-close:hover { background: rgba(10,31,61,0.85); }
+
+/* ============================================================
+   11. CLINICAL EXPERIENCE
+============================================================ */
+.exp-group { margin-bottom: 48px; }
+.exp-group:last-of-type { margin-bottom: 0; }
+.exp-group-label { display: flex; align-items: baseline; gap: 12px; margin-bottom: 24px; }
+.exp-group-tag { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray-400); }
+.exp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+.exp-card { overflow: hidden; }
+.exp-card .media { height: 140px; }
+.exp-card-body { padding: 22px 22px 24px; }
+.exp-card-body h4 { margin-bottom: 8px; }
+.exp-card-body p { font-size: 0.86rem; line-height: 1.55; }
+.exp-note { margin-top: 36px; padding: 22px 26px; background: var(--blue-light); border-radius: var(--r-md); font-size: 0.9rem; color: var(--navy); line-height: 1.6; }
+.exp-note strong { display: block; font-family: var(--font-mono); font-size: 0.64rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue); margin-bottom: 8px; }
+
+/* ============================================================
+   12. PROJECTS
+============================================================ */
+.projects-grid { display: grid; grid-template-columns: 1fr; gap: 32px; margin-bottom: 8px; }
+.project-card { display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; }
+.project-card .media { min-height: 340px; }
+.project-card.reverse .media { order: 2; }
+.project-card.reverse .project-body { order: 1; }
+.project-body { padding: 44px; display: flex; flex-direction: column; }
+.project-top { margin-bottom: 14px; }
+.status-badge { font-family: var(--font-mono); font-size: 0.64rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 12px; border-radius: var(--r-full); }
+.status-badge.done { background: #E7F5EE; color: #227A52; }
+.status-badge.progress { background: #FFF3E0; color: #B4690E; }
+.project-body h3 { font-size: 1.55rem; margin-bottom: 14px; }
+.project-body .desc { font-size: 0.95rem; line-height: 1.65; margin-bottom: 8px; }
+.project-block-label { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.09em; text-transform: uppercase; color: var(--gray-400); margin: 20px 0 10px; }
+.chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { font-size: 0.76rem; font-weight: 500; color: var(--navy); background: var(--paper); border: 1px solid var(--gray-200); padding: 6px 12px; border-radius: var(--r-full); }
+.feature-list { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px; }
+.feature-list li { font-size: 0.85rem; color: var(--gray-600); display: flex; align-items: flex-start; gap: 8px; line-height: 1.5; }
+.feature-list li::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--blue); margin-top: 7px; flex-shrink: 0; }
+.project-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: auto; padding-top: 28px; }
+
+.section-head.sub { margin-top: 64px; margin-bottom: 32px; }
+.section-head.sub h3 { font-size: 1.3rem; color: var(--navy); }
+
+.soon-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.soon-card { position: relative; padding: 30px 26px; overflow: hidden; box-shadow: none; background: linear-gradient(165deg, var(--paper), #EEF1F5); border: 1px dashed var(--gray-200); }
+.soon-card:hover { transform: none; box-shadow: none; border-color: var(--gray-200); }
+.soon-orb { position: absolute; width: 130px; height: 130px; border-radius: 50%; background: var(--blue); opacity: 0.10; filter: blur(32px); top: -34px; right: -34px; pointer-events: none; }
+.soon-tag { position: relative; display: inline-flex; align-items: center; gap: 7px; font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray-400); background: #fff; border: 1px solid var(--gray-200); padding: 5px 11px; border-radius: var(--r-full); margin-bottom: 16px; }
+.soon-tag .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gray-400); }
+.soon-card h4 { position: relative; color: var(--gray-600); margin-bottom: 8px; }
+.soon-card p { position: relative; font-size: 0.82rem; color: var(--gray-400); line-height: 1.5; }
+
+@media (max-width: 900px) {
+  .project-card { grid-template-columns: 1fr; }
+  .project-card .media { min-height: 220px; order: 0 !important; }
+  .project-card.reverse .project-body { order: 1 !important; }
+  .project-body { padding: 32px 28px; }
+  .feature-list { grid-template-columns: 1fr; }
+  .soon-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) { .soon-grid { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   13. SCIENTIFIC COMMUNICATION
+============================================================ */
+.pub-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.pub-card { padding: 28px 24px; display: flex; flex-direction: column; }
+.pub-icon { width: 38px; height: 38px; border-radius: var(--r-sm); background: var(--blue-light); display: flex; align-items: center; justify-content: center; margin-bottom: 20px; color: var(--navy); }
+.pub-icon svg { width: 18px; height: 18px; }
+.pub-card h4 { font-size: 0.98rem; margin-bottom: 8px; }
+.pub-card p { font-size: 0.83rem; line-height: 1.5; margin-bottom: 18px; flex-grow: 1; }
+.pub-card .btn-ghost { font-size: 0.8rem; }
+
+.pub-carousel { position: relative; width: 100%; aspect-ratio: 1 / 1; border-radius: var(--r-sm); overflow: hidden; background: var(--blue-light); margin-bottom: 18px; }
+.pub-carousel-slide { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .25s ease; pointer-events: none; }
+.pub-carousel-slide.active { opacity: 1; pointer-events: auto; }
+.carousel-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 30px; height: 30px; border: none; border-radius: 50%; background: rgba(255,255,255,0.9); color: var(--navy); font-size: 1.1rem; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 2; }
+.carousel-btn.prev { left: 8px; }
+.carousel-btn.next { right: 8px; }
+.carousel-btn:hover { background: #fff; }
+.carousel-dots { position: absolute; bottom: 8px; left: 0; right: 0; display: flex; justify-content: center; gap: 6px; z-index: 2; }
+.carousel-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.6); cursor: pointer; }
+.carousel-dot.active { background: #fff; }
+
+@media (max-width: 980px) { .pub-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .pub-grid { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   14. SCIENTIFIC WRITING
+============================================================ */
+.writing-card { display: grid; grid-template-columns: 220px 1fr; overflow: hidden; }
+.writing-visual { background: linear-gradient(155deg, var(--navy), var(--blue) 140%); display: flex; align-items: center; justify-content: center; padding: 32px; }
+.writing-visual.img-fallback::after { color: rgba(255,255,255,0.88); font-size: 0.7rem; letter-spacing: 0.1em; padding: 0 12px; text-align: center; }
+.writing-visual .journal-mark { font-family: var(--font-mono); color: rgba(255,255,255,0.88); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; text-align: center; line-height: 1.7; }
+.writing-body { padding: 44px; }
+.writing-meta { margin-bottom: 18px; }
+.writing-body h3 { font-size: 1.4rem; margin-bottom: 14px; line-height: 1.3; }
+.writing-body .abstract { font-size: 0.92rem; line-height: 1.7; margin-bottom: 24px; }
+.writing-fields { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px 24px; }
+.writing-field .k { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray-400); margin-bottom: 4px; }
+.writing-field .v { font-size: 0.88rem; color: var(--navy); font-weight: 600; }
+.writing-more { margin-top: 28px; padding: 22px 26px; border: 1px dashed var(--gray-200); border-radius: var(--r-md); display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.writing-more p { font-size: 0.86rem; margin: 0; color: var(--gray-600); }
+.writing-more .label { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gray-400); margin-bottom: 4px; }
+
+@media (max-width: 760px) {
+  .writing-card { grid-template-columns: 1fr; }
+  .writing-visual { padding: 26px; }
+  .writing-body { padding: 32px 26px; }
+  .writing-fields { grid-template-columns: 1fr 1fr; }
+}
+
+/* ============================================================
+   15. LEARNING JOURNEY
+============================================================ */
+.timeline { position: relative; max-width: 780px; margin: 0 auto; }
+.timeline::before { content: ''; position: absolute; left: 20px; top: 6px; bottom: 6px; width: 2px; background: var(--gray-200); }
+.timeline-item { position: relative; padding-left: 64px; padding-bottom: 40px; }
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-marker { position: absolute; left: 0; top: 0; width: 42px; height: 42px; border-radius: 50%; background: var(--navy); border: 2px solid var(--navy); display: flex; align-items: center; justify-content: center; color: #fff; z-index: 1; }
+.timeline-marker svg { width: 17px; height: 17px; }
+.timeline-item.future .timeline-marker { background: #fff; border-style: dashed; border-color: var(--blue); color: var(--blue); }
+.timeline-content { background: #fff; border: 1px solid var(--gray-200); border-radius: var(--r-md); padding: 20px 26px; box-shadow: var(--shadow-sm); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.timeline-content:hover { transform: translateX(4px); box-shadow: var(--shadow-md); }
+.timeline-date { font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); margin-bottom: 6px; display: block; }
+.timeline-content h4 { margin-bottom: 6px; font-size: 1rem; }
+.timeline-content p { font-size: 0.86rem; line-height: 1.55; margin: 0; }
+
+@media (max-width: 600px) {
+  .timeline::before { left: 16px; }
+  .timeline-item { padding-left: 52px; }
+  .timeline-marker { width: 34px; height: 34px; }
+  .timeline-marker svg { width: 14px; height: 14px; }
+  .timeline-content { padding: 16px 20px; }
+}
+
+/* ============================================================
+   16. TOOLKIT
+============================================================ */
+.toolkit-groups { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.toolkit-group { padding: 30px 30px 28px; }
+.toolkit-group-head { display: flex; align-items: center; gap: 14px; margin-bottom: 22px; }
+.toolkit-icon { width: 40px; height: 40px; border-radius: var(--r-sm); background: var(--navy); display: flex; align-items: center; justify-content: center; color: #fff; flex-shrink: 0; }
+.toolkit-icon svg { width: 19px; height: 19px; }
+.tag-row { display: flex; flex-wrap: wrap; gap: 9px; }
+.tag { font-size: 0.8rem; font-weight: 500; color: var(--gray-600); background: var(--paper); border: 1px solid var(--gray-200); padding: 7px 14px; border-radius: var(--r-full); transition: color 0.2s ease, border-color 0.2s ease; }
+.tag:hover { color: var(--navy); border-color: var(--blue); }
+
+@media (max-width: 760px) { .toolkit-groups { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   17. RESOURCES
+============================================================ */
+.res-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.res-card { padding: 24px 22px; display: flex; flex-direction: column; gap: 14px; }
+.res-logo { width: 40px; height: 40px; border-radius: var(--r-sm); background: var(--paper); border: 1px solid var(--gray-200); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-weight: 800; font-size: 0.8rem; color: var(--navy); }
+.res-card h4 { font-size: 0.95rem; }
+.res-card p { font-size: 0.82rem; line-height: 1.5; flex-grow: 1; }
+.res-card .btn-ghost { font-size: 0.8rem; align-self: flex-start; }
+
+@media (max-width: 900px) { .res-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .res-grid { grid-template-columns: 1fr; } }
+
+/* ============================================================
+   18. FOOTER / CONTACT
+============================================================ */
+.footer { background: var(--navy); color: #fff; padding: 76px 0 32px; }
+.footer-top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; margin-bottom: 52px; padding-bottom: 52px; border-bottom: 1px solid rgba(255,255,255,0.14); }
+.footer-brand h3 { color: #fff; font-size: 1.6rem; margin-bottom: 14px; }
+.footer-brand p { color: rgba(255,255,255,0.65); max-width: 380px; font-size: 0.94rem; line-height: 1.65; }
+.footer-links-row { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+.footer .btn-primary { background: #fff; color: var(--navy); }
+.footer .btn-primary:hover { background: var(--blue-light); color: var(--navy); }
+.footer .btn-secondary { background: transparent; color: #fff; border-color: rgba(255,255,255,0.25); }
+.footer .btn-secondary:hover { border-color: #fff; }
+.footer-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-size: 0.8rem; color: rgba(255,255,255,0.5); }
+
+@media (max-width: 700px) { .footer-top { flex-direction: column; } }
+
+/* ============================================================
+   19. PLAYGROUND
+============================================================ */
+.pg-note { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.04em; color: var(--gray-400); margin-bottom: 28px; }
+
+.pg-tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 18px; }
+.pg-tab {
+  display: inline-flex; align-items: center; gap: 9px; padding: 11px 20px 11px 14px;
+  border-radius: var(--r-full); font-size: 0.86rem; font-weight: 600; color: var(--navy);
+  background: #fff; border: 1px solid var(--gray-200); transition: all .2s ease;
+}
+.pg-tab:hover { border-color: var(--blue); }
+.pg-tab.active { background: var(--navy); border-color: var(--navy); color: #fff; }
+.pg-tab-icon { width: 22px; height: 22px; border-radius: 50%; background: var(--blue-light); color: var(--navy); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.pg-tab.active .pg-tab-icon { background: rgba(255,255,255,0.16); color: #fff; }
+.pg-tab-icon svg { width: 12px; height: 12px; }
+
+.pg-panel { padding: 40px; display: none; }
+.pg-panel.active { display: block; animation: pgFade .35s ease; }
+@keyframes pgFade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+.pg-panel-head { margin-bottom: 28px; max-width: 620px; }
+.pg-panel-head h3 { margin-bottom: 8px; }
+.pg-panel-head p { font-size: 0.9rem; line-height: 1.6; }
+
+/* Trial Simulator */
+.pg-controls { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 32px; margin-bottom: 36px; }
+.pg-control label { display: flex; justify-content: space-between; align-items: baseline; font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gray-600); margin-bottom: 10px; }
+.pg-control label .val { font-family: var(--font-display); font-size: 0.95rem; font-weight: 800; color: var(--navy); text-transform: none; letter-spacing: normal; }
+.pg-control input[type="range"] { width: 100%; accent-color: var(--blue); height: 4px; }
+
+.pg-kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px 16px; padding-top: 28px; border-top: 1px solid var(--gray-200); margin-bottom: 28px; }
+.pg-kpi .num { font-family: var(--font-display); font-size: 1.7rem; font-weight: 800; color: var(--navy); letter-spacing: -0.01em; display: block; }
+.pg-kpi .cap { font-family: var(--font-mono); font-size: 0.64rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--gray-400); margin-top: 4px; }
+.pg-kpi .bar-track { height: 5px; border-radius: var(--r-full); background: var(--gray-200); margin-top: 10px; overflow: hidden; }
+.pg-kpi .bar-fill { height: 100%; border-radius: var(--r-full); background: var(--blue); transition: width .4s ease; }
+.pg-kpi.warn .bar-fill { background: #C77A1F; }
+
+.pg-sites { display: flex; flex-direction: column; gap: 10px; }
+.pg-site-row { display: grid; grid-template-columns: 90px 1fr auto; align-items: center; gap: 14px; font-size: 0.82rem; }
+.pg-site-row .site-name { font-weight: 600; color: var(--navy); }
+.pg-site-row .bar-track { height: 6px; border-radius: var(--r-full); background: var(--gray-200); overflow: hidden; }
+.pg-site-row .bar-fill { height: 100%; border-radius: var(--r-full); background: var(--blue); }
+.pg-site-row.at-risk .bar-fill { background: #C0392B; }
+.pg-site-flag { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gray-400); white-space: nowrap; }
+.pg-site-row.at-risk .pg-site-flag { color: #C0392B; font-weight: 600; }
+
+/* eCRF Validator */
+.pg-form { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 24px; margin-bottom: 24px; }
+.pg-field { display: flex; flex-direction: column; gap: 8px; }
+.pg-field.full { grid-column: 1 / -1; }
+.pg-field label { font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gray-600); }
+.pg-field input[type="text"], .pg-field input[type="date"], .pg-field input[type="number"], .pg-field textarea {
+  padding: 12px 14px; border: 1px solid var(--gray-200); border-radius: var(--r-sm); font-size: 0.9rem; color: var(--gray-900); background: #fff; width: 100%;
+}
+.pg-field textarea { resize: vertical; min-height: 70px; }
+.pg-radio-row { display: flex; gap: 20px; align-items: center; height: 100%; padding-top: 4px; }
+.pg-radio-row label { display: flex; align-items: center; gap: 7px; font-family: var(--font-body); font-size: 0.88rem; text-transform: none; letter-spacing: normal; color: var(--gray-900); font-weight: 500; }
+.pg-radio-row input { accent-color: var(--blue); width: 16px; height: 16px; }
+.pg-ae-detail { display: none; margin-top: 10px; }
+.pg-ae-detail.show { display: block; }
+
+.pg-results { margin-top: 8px; border-top: 1px solid var(--gray-200); padding-top: 24px; }
+.pg-results-summary { font-weight: 700; color: var(--navy); margin-bottom: 16px; font-size: 0.98rem; }
+.pg-result-row { display: flex; justify-content: space-between; align-items: center; padding: 11px 0; border-bottom: 1px solid var(--gray-200); font-size: 0.86rem; }
+.pg-result-row:last-child { border-bottom: none; }
+.status-badge.error { background: #FDEBEA; color: #B3261E; }
+.status-badge.warn { background: #FFF3E0; color: #B4690E; }
+
+/* Monitoring Simulator */
+.pg-mon-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 24px; }
+.pg-mon-card { border: 1px solid var(--gray-200); border-radius: var(--r-md); padding: 20px; cursor: pointer; transition: all .2s ease; }
+.pg-mon-card:hover { border-color: var(--blue); }
+.pg-mon-card.selected { border-color: var(--navy); background: var(--blue-light); box-shadow: var(--shadow-sm); }
+.pg-mon-card-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.pg-mon-card-head h4 { font-size: 0.92rem; }
+.pg-mon-radio { width: 16px; height: 16px; border-radius: 50%; border: 2px solid var(--gray-400); flex-shrink: 0; }
+.pg-mon-card.selected .pg-mon-radio { border-color: var(--navy); background: var(--navy); box-shadow: inset 0 0 0 3px #fff; }
+.pg-mon-kpi { display: flex; justify-content: space-between; font-size: 0.8rem; padding: 6px 0; color: var(--gray-600); border-bottom: 1px dashed var(--gray-200); }
+.pg-mon-kpi:last-child { border-bottom: none; }
+.pg-mon-kpi .v { font-weight: 700; color: var(--navy); font-family: var(--font-mono); }
+.pg-mon-prompt { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; padding: 18px 22px; background: var(--paper); border-radius: var(--r-md); margin-bottom: 20px; }
+.pg-mon-prompt p { margin: 0; font-size: 0.88rem; color: var(--navy); font-weight: 600; }
+.pg-verdict { padding: 22px 26px; border-radius: var(--r-md); background: var(--blue-light); }
+.pg-verdict.correct { background: #E7F5EE; }
+.pg-verdict-head { font-family: var(--font-mono); font-size: 0.64rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); margin-bottom: 10px; }
+.pg-verdict.correct .pg-verdict-head { color: #227A52; }
+.pg-verdict h4 { margin-bottom: 10px; }
+.pg-verdict .feature-list { margin-bottom: 14px; }
+.pg-verdict-note { font-size: 0.86rem; line-height: 1.6; color: var(--gray-600); }
+
+/* Biomarker Explorer */
+.pg-bio-selects { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 28px; }
+.pg-field select { padding: 12px 14px; border: 1px solid var(--gray-200); border-radius: var(--r-sm); font-size: 0.9rem; color: var(--gray-900); background: #fff; width: 100%; }
+.pg-bio-card { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px 28px; padding: 26px; background: var(--paper); border-radius: var(--r-md); }
+.pg-bio-field .k { font-family: var(--font-mono); font-size: 0.64rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); margin-bottom: 6px; }
+.pg-bio-field .v { font-size: 0.88rem; line-height: 1.6; color: var(--gray-900); }
+
+@media (max-width: 900px) {
+  .pg-kpis { grid-template-columns: repeat(2, 1fr); }
+  .pg-mon-cards { grid-template-columns: 1fr; }
+  .pg-bio-card { grid-template-columns: 1fr; }
+}
+@media (max-width: 760px) {
+  .pg-panel { padding: 28px 22px; }
+  .pg-controls { grid-template-columns: 1fr; }
+  .pg-form { grid-template-columns: 1fr; }
+  .pg-bio-selects { grid-template-columns: 1fr; }
+  .pg-site-row { grid-template-columns: 66px 1fr auto; gap: 10px; }
+}
+
+/* ============================================================
+   20. HOW I THINK
+============================================================ */
+.think-tabs { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 28px; }
+.think-tab { padding: 10px 18px; border-radius: var(--r-full); font-size: 0.82rem; font-weight: 600; color: var(--navy); background: #fff; border: 1px solid var(--gray-200); transition: all .2s ease; cursor: pointer; }
+.think-tab:hover { border-color: var(--blue); }
+.think-tab.active { background: var(--navy); border-color: var(--navy); color: #fff; }
+
+.think-card { padding: 40px; }
+.think-situation { padding: 22px 24px; background: var(--paper); border-left: 3px solid var(--navy); border-radius: 0 var(--r-sm) var(--r-sm) 0; margin-bottom: 28px; }
+.think-situation .think-label { font-family: var(--font-mono); font-size: 0.64rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); margin-bottom: 8px; display: block; }
+.think-situation p { font-size: 1.02rem; color: var(--navy); font-weight: 600; line-height: 1.5; margin: 0; }
+
+.think-question { font-weight: 700; color: var(--navy); margin-bottom: 18px; font-size: 0.98rem; }
+.think-options { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.think-option { padding: 14px 16px; border: 1px solid var(--gray-200); border-radius: var(--r-sm); font-size: 0.86rem; font-weight: 600; color: var(--navy); background: #fff; text-align: left; transition: all .2s ease; cursor: pointer; }
+.think-option:hover { border-color: var(--blue); }
+.think-option.selected { border-color: var(--navy); background: var(--navy); color: #fff; }
+
+.think-reasoning { margin-top: 24px; padding: 24px 26px; border-radius: var(--r-md); background: var(--blue-light); animation: pgFade .3s ease; }
+.think-reasoning-label { font-family: var(--font-mono); font-size: 0.64rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue); margin-bottom: 10px; }
+.think-reasoning p { font-size: 0.9rem; line-height: 1.65; color: var(--gray-900); }
+.think-closing { margin-top: 14px; padding-top: 14px; border-top: 1px dashed rgba(10,31,61,0.15); font-size: 0.84rem; color: var(--gray-600); font-style: italic; }
+
+@media (max-width: 900px) { .think-options { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) {
+  .think-card { padding: 26px 22px; }
+  .think-options { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+
+<!-- ============================================================
+     NAV
+============================================================ -->
+<nav class="nav" id="siteNav" aria-label="Primary">
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo">Isabel Villalta<span>.</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" data-nav="home">Home</a></li>
+      <li><a href="#about" data-nav="about">About</a></li>
+      <li><a href="#thinking" data-nav="thinking">Thinking</a></li>
+      <li><a href="#experience" data-nav="experience">Experience</a></li>
+      <li><a href="#projects" data-nav="projects">Projects</a></li>
+      <li><a href="#playground" data-nav="playground">Playground</a></li>
+      <li><a href="#communication" data-nav="journey">Journey</a></li>
+      <li><a href="#toolkit" data-nav="toolkit">Toolkit</a></li>
+      <li><a href="#contact" data-nav="contact">Contact</a></li>
+    </ul>
+    <div class="nav-cta">
+      <a href="assets/Isabel-Villalta-CV.pdf" class="btn btn-secondary btn-sm" id="cvBtnNav">Download CV</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span></button>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div class="hero-content" data-reveal>
+      <p class="eyebrow">Clinical Research Portfolio</p>
+      <h1>Isabel Villalta</h1>
+      <p class="hero-role">Study Coordinator and Clinical Research Trainee — Hematology &amp; Rare Diseases</p>
+      <div class="hero-badges">
+        <span class="badge">Biotechnology Graduate</span>
+        <span class="badge">MSc Clinical Trial Monitoring</span>
+        <span class="badge">ICH-GCP E6(R3) Certified</span>
+      </div>
+      <p class="lede">Biotechnology graduate holding an MSc in Clinical Trial Monitoring, with hands-on experience supporting Phase I–III clinical trials in haematology and rare diseases. Experienced in clinical trial documentation, clinical data management, CRA query resolution, monitoring support, scheduling patient visits within protocol-defined windows, maintaining Investigator Site Files, and shipping UN 3373 Category B biological samples.
+      Currently seeking my first full-time opportunity in Clinical Operations or Study Coordination, where I can combine my scientific background, attention to detail and growing clinical research experience.</p>
+      <div class="hero-ctas">
+        <a href="assets/Isabel-Villalta-CV.pdf" class="btn btn-primary" id="cvBtnHero">Download CV</a>
+        <a href="#projects" class="btn btn-secondary">View Projects</a>
+        <a href="https://www.linkedin.com/in/isabel-villalta" class="btn btn-ghost" id="linkedinBtnHero" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="#contact" class="btn btn-ghost">Contact</a>
+      </div>
+      <div class="hero-status">
+        <span class="dot"></span>
+        Actively coordinating Phase I–III trials · Hematology &amp; Rare Diseases · Zaragoza, Spain
+      </div>
+    </div>
+    <div class="hero-visual" data-reveal>
+      <div class="hero-photo">
+        <!-- Replace with a real professional photo: <img src="your-photo.jpg" alt="Isabel Villalta"> -->
+        <img src="foto.jpg" alt="Isabel Villalta">
+      </div>
+      <div class="hero-frame-tag">
+        <p class="eyebrow">Currently</p>
+        <strong>Quirónsalud Zaragoza · Study Coordinator and Clinical Research Trainee</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CURRENT FOCUS
+============================================================ -->
+<section class="section section--alt" id="focus">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Right now</p>
+      <h2>Current focus</h2>
+    </div>
+    <div class="focus-grid">
+      <div class="card focus-card" data-reveal>
+        <div class="media focus-media"><img src="img/current-position.jpg" alt="Study Coordinator role at Hospital Quirónsalud Zaragoza" loading="lazy" onerror="imgFallback(this)"></div>
+        <div class="focus-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 12l2 2 4-4M12 3l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7l8-4z"/></svg></div>
+        <p class="label">Current Position</p>
+        <h4>Study Coordinator and Clinical Research Trainee</h4>
+        <p>Hospital Quirónsalud Zaragoza — Jun–Dec 2026</p>
+        <a href="#about" class="card-link">See "About me" section →</a>
+        <a href="#thinking" class="card-link">How I approach a problem→</a>
+      </div>
+      <div class="card focus-card" data-reveal>
+        <div class="media focus-media"><img src="img/therapeutic-areas.jpg" alt="Hematology and rare disease research" loading="lazy" onerror="imgFallback(this)"></div>
+        <div class="focus-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <p class="label">Therapeutic Areas</p>
+        <h4>Hematology &amp; Rare Diseases</h4>
+        <p>Myelofibrosis, CML/CLL, Mastocytosis, Polycythemia Vera, Fabry, Gaucher &amp; related disorders</p>
+        <a href="#experience" class="card-link">See experience →</a>
+        <a href="#playground-biomarker" class="card-link">See biomarkers →</a>
+      </div>
+      <div class="card focus-card" data-reveal>
+        <div class="media focus-media"><img src="img/gba1-parkinsons.jpg" alt="GBA1 variants and Parkinson's disease systematic review" loading="lazy" onerror="imgFallback(this)"></div>
+        <div class="focus-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5V6a2 2 0 012-2h13v16H6a2 2 0 00-2 2z"/><path d="M6 17h13"/></svg></div>
+        <p class="label">Current Scientific Project</p>
+        <h4>GBA1 Variants &amp; Parkinson's Disease</h4>
+        <p>A systematic review of current scientific literature exploring the link between GBA1 variants and Parkinson’s disease, conducted in strict accordance with PRISMA guidelines.</p>
+        <a href="#writing" class="card-link">See review →</a>
+      </div>
+      <div class="card focus-card" data-reveal>
+        <div class="media focus-media"><img src="img/portfolio-projects.jpg" alt="Excel-based clinical operations tools" loading="lazy" onerror="imgFallback(this)"></div>
+        <div class="focus-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 2v4M16 2v4M3 10h18"/></svg></div>
+        <p class="label">Portfolio Projects</p>
+        <h4>Dashboard &amp; eCRF Simulation</h4>
+        <p>Independent Excel-based clinical operations tools</p>
+        <a href="#projects" class="card-link">See projects →</a>
+        <a href="#playground" class="card-link">Try interactive CRA simulator →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">About</p>
+      <h2>From the bench to the trial file</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-text" data-reveal>
+        <p> If you are here, you are probably interested in the person behind the experience. So, let me briefly tell you how I got here.
+        <p> My journey into clinical research began with Biotechnology, where I developed a strong scientific foundation and discovered how much I enjoyed connecting laboratory science with real clinical questions. During my degree, I had the opportunity to spend a month in the Clinical Genetics Department at Hospital Universitario Miguel Servet, gaining my first exposure to clinical diagnostics and molecular and cytogenetic techniques.
+        <p>That experience sparked my interest in the clinical side of science. Building on it, I later completed a rotation at the FEETEG specialised laboratory as part of my clinical research training, where I was introduced to the diagnosis and follow-up of rare lysosomal disorders. These experiences helped me understand how laboratory data can ultimately contribute to patient care.
+        <p>I then took the next step by completing the academic component of my MSc in Clinical Trial Monitoring at UNIR. My Master’s thesis, in particular, allowed me to put this knowledge into practice by designing a complete Phase IIb clinical trial protocol, from study design and endpoints to monitoring, statistics, and translational biomarkers.
+        <p>Today, I am bringing that training into the clinical research environment as a Clinical Research and Study Coordination Intern at Hospital Quirónsalud Zaragoza, supporting Phase I–III trials in haematology and rare diseases. Here, I am gaining hands-on experience with clinical documentation, data management, query resolution, patient visit coordination, safety documentation, biological sample logistics, and Investigator Site File maintenance, always working within GCP and protocol requirements.
+        <p>Along the way, I have developed the qualities I believe are essential in clinical operations: attention to detail, organisation, adaptability, and clear communication. Most importantly, I have developed a genuine interest in the people behind the data and in the processes that make high-quality clinical research possible.
+        <p>And this is only the beginning.
+        <p>I am now looking for my first full-time opportunity in Clinical Operations or Study Coordination, where I can keep learning, contribute to meaningful clinical research, and grow alongside an experienced multidisciplinary team within a CRO or pharmaceutical environment.
+        <p>Thanks for stopping by — I hope you enjoy exploring the rest of my journey.</p>
+      </div>
+      <div class="about-stats" data-reveal>
+        <div class="stat"><span class="num">8.3/10</span><span class="cap">Biotechnology degree GPA · University of Zaragoza</span></div>
+        <div class="stat"><span class="num">I – III</span><span class="cap">Clinical trial phases supported</span></div>
+        <div class="stat"><span class="num">3</span><span class="cap">Clinical data systems — Veeva Vault, Medidata Rave &amp; Viedoc</span></div>
+        <div class="stat"><span class="num">7</span><span class="cap">Disease areas across Hematology &amp; Rare Diseases</span></div>
+        <div class="stat"><span class="num">E6(R3)</span><span class="cap">ICH-GCP certification</span></div>
+        <div class="stat"><span class="num">IATA DGR</span><span class="cap">Biological specimen shipping certification</span></div>
+      </div>
+    </div>
+
+    <div class="about-journey" data-reveal>
+      <p class="eyebrow">A Visual Journey</p>
+      <div class="filmstrip" id="aboutFilmstrip">
+        <div class="filmstrip-viewport">
+          <div class="filmstrip-track" id="filmstripTrack" role="listbox" aria-label="Photos from my academic and professional journey"></div>
+        </div>
+        <div class="filmstrip-controls">
+          <button type="button" class="filmstrip-arrow" id="filmstripPrev" aria-label="Previous photo">‹</button>
+          <div class="filmstrip-info">
+            <span class="filmstrip-count" id="filmstripCount">01 / 07</span>
+            <h4 class="filmstrip-title" id="filmstripTitle">—</h4>
+            <span class="filmstrip-caption" id="filmstripCaption">—</span>
+          </div>
+          <button type="button" class="filmstrip-arrow" id="filmstripNext" aria-label="Next photo">›</button>
+        </div>
+        <div class="filmstrip-dots" id="filmstripDots"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="filmstrip-lightbox" id="filmstripLightbox" aria-hidden="true">
+  <div class="filmstrip-lightbox-inner" role="dialog" aria-modal="true" aria-labelledby="filmstripLightboxTitle">
+    <button type="button" class="filmstrip-lightbox-close" id="filmstripLightboxClose" aria-label="Close">×</button>
+    <div class="filmstrip-lightbox-media">
+      <img id="filmstripLightboxImg" src="" alt="" loading="lazy">
+    </div>
+    <div class="filmstrip-lightbox-body">
+      <span class="filmstrip-lightbox-count" id="filmstripLightboxCount">01 / 07</span>
+      <h4 id="filmstripLightboxTitle">—</h4>
+      <span class="filmstrip-caption" id="filmstripLightboxCaption">—</span>
+    </div>
+  </div>
+</div>
+
+<section class="section" id="thinking">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">How I Think</p>
+      <h2>How I approach a problem</h2>
+      <p>A CV lists what I've done. This shows how I think through it. Pick an answer to each scenario and see the reasoning behind it — drawn from situations I've actually navigated as a Study Coordinator.</p>
+    </div>
+
+    <div class="think-tabs" id="thinkTabs" role="tablist" aria-label="Scenarios"></div>
+
+    <div class="card think-card">
+      <div class="think-situation">
+        <span class="think-label">The situation</span>
+        <p id="thinkSituation">—</p>
+      </div>
+      <p class="think-question" id="thinkQuestion">—</p>
+      <div class="think-options" id="thinkOptions"></div>
+      <div class="think-reasoning" id="thinkReasoning" hidden>
+        <p class="think-reasoning-label" id="thinkReasoningLabel">—</p>
+        <p id="thinkReasoningText">—</p>
+        <p class="think-closing" id="thinkClosing"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="experience">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Clinical Experience</p>
+      <h2>Hematology and rare diseases, in practice</h2>
+    </div>
+
+    <div class="exp-group" data-reveal>
+      <div class="exp-group-label"><h3>Hematology</h3><span class="exp-group-tag">4 conditions</span></div>
+      <div class="exp-grid">
+        <div class="card exp-card">
+          <div class="media" data-fallback-icon="Myelofibrosis"><img src="img/myelofibrosis.jpg" alt="Myelofibrosis" loading="lazy" onerror="imgFallback(this)"></div>
+          <div class="exp-card-body"><h4>Myelofibrosis</h4><p>A chronic myeloproliferative neoplasm driven by JAK-STAT dysregulation, causing progressive bone marrow fibrosis, cytopenias, and splenomegaly. The most protocol-intensive area of my internship: I support Phase I–III studies spanning a telomerase inhibitor in JAK-inhibitor-refractory disease, an XPO1 inhibitor combined with ruxolitinib, an oral MDM2 inhibitor restoring p53-mediated apoptosis, a subcutaneous TGF-&beta; ligand trap for anemia-dominant profiles, and a BTK inhibitor for patients ineligible for standard JAK inhibition.</p></div>
+        </div>
+        <div class="card exp-card">
+          <div class="media" data-fallback-icon="Polycythemia Vera"><img src="img/polycythemia-vera.jpg" alt="Polycythemia Vera" loading="lazy" onerror="imgFallback(this)"></div>
+          <div class="exp-card-body"><h4>Polycythemia Vera</h4><p>A clonal myeloproliferative disorder caused by JAK2 mutations driving excess red blood cell production and a heightened risk of thrombotic events. Trial protocols in this area focus on long-term disease control and event prevention, with close haematological monitoring at every scheduled visit.</p></div>
+        </div>
+        <div class="card exp-card">
+          <div class="media" data-fallback-icon="Chronic Myeloid Leukemia"><img src="img/chronic-myeloid-leukemia.jpg" alt="Chronic Myeloid Leukemia" loading="lazy" onerror="imgFallback(this)"></div>
+          <div class="exp-card-body"><h4>Chronic Myeloid Leukemia</h4><p>A clonal myeloid malignancy defined by the BCR-ABL1 fusion oncogene and its constitutively active tyrosine kinase. I support a Phase 1/2 study evaluating a next-generation allosteric BCR-ABL1 inhibitor — designed to overcome resistance mutations that limit earlier-generation TKIs — in previously treated patients in chronic phase.</p></div>
+        </div>
+        <div class="card exp-card">
+          <div class="media" data-fallback-icon="Mastocytosis"><img src="img/mastocytosis.jpg" alt="Mastocytosis" loading="lazy" onerror="imgFallback(this)"></div>
+          <div class="exp-card-body"><h4>Mastocytosis</h4><p>A clonal disorder of pathological mast cell accumulation, most often driven by KIT D816V mutations. I support a Phase 2 trial evaluating an oral BTK inhibitor in patients with indolent systemic mastocytosis — a population with significant unmet need and limited approved therapeutic options.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-group" data-reveal>
+      <div class="exp-group-label"><h3>Rare Diseases</h3><span class="exp-group-tag">3 conditions</span></div>
+      <div class="exp-grid">
+        <div class="card exp-card">
+          <div class="media" data-fallback-icon="Gaucher Disease"><img src="img/gaucher-disease.jpg" alt="Gaucher Disease" loading="lazy" onerror="imgFallback(this)"></div>
+          <div class="exp-card-body"><h4>Gaucher Disease</h4><p>The most prevalent lysosomal storage disorder, caused by glucocerebrosidase deficiency and leading to lipid accumulation in the liver, spleen, and bone marrow. My exposure spans three therapeutic paradigms: a long-term observational registry following patients on established therapy; a Phase 1/2 first-in-human rAAV9-based gene therapy trial; and an early-phase adenoviral vector gene therapy study targeting hepatic glucocerebrosidase expression.</p></div>
+        </div>
+        <div class="card exp-card">
+          <div class="media" data-fallback-icon="Fabry Disease"><img src="img/fabry-disease.jpg" alt="Fabry Disease" loading="lazy" onerror="imgFallback(this)"></div>
+          <div class="exp-card-body"><h4>Fabry Disease</h4><p>An X-linked lysosomal storage disorder caused by alpha-galactosidase A deficiency, with systemic involvement affecting the kidneys, heart, and nervous system. I support the Phase 3 MODIFY trial evaluating lucerastat — an oral substrate reduction therapy — in a randomized, double-blind, placebo-controlled design with a long-term open-label extension.</p></div>
+        </div>
+        <div class="card exp-card">
+          <div class="media" data-fallback-icon="Lysosomal Disorders"><img src="img/lysosomal-disorders.jpg" alt="Lysosomal Disorders" loading="lazy" onerror="imgFallback(this)"></div>
+          <div class="exp-card-body"><h4>Lysosomal Disorders — FEETEG Lab</h4><p>During a rotation at the FEETEG specialist diagnostic laboratory, I assisted with enzyme activity testing and biochemical follow-up across four rare lysosomal conditions: ASMD (formerly Niemann-Pick A/B), Niemann-Pick type C, Lysosomal Acid Lipase Deficiency (LAL-D), and Fabry Disease — a setting where biochemical precision at diagnosis directly shapes long-term treatment decisions.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-note" data-reveal>
+      <strong>On my role</strong>
+      As a Clinical Research &amp; Study Coordination and Clinical Research trainee, I support these trials under supervision — resolving data queries, assisting with source data verification, coordinating visits and shipments, and maintaining eCRFs. I don't run these trials; I help keep them on track.
+    </div>
+  </div>
+</section>
+
+<section class="section" id="projects">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Projects</p>
+      <h2>Built to practice the job before I have it</h2>
+      <p>Independent projects, not claims of professional experience I don't yet have — a way to show how I think about clinical operations.</p>
+    </div>
+
+    <div class="projects-grid">
+      <div class="card project-card" data-reveal>
+        <div class="media" data-fallback-icon="Clinical Trial Dashboard">
+          <img src="dashboard.png" alt="Clinical Trial Dashboard" loading="lazy" onerror="imgFallback(this)">
+        </div>
+        <div class="project-body">
+          <div class="project-top"><span class="status-badge done">Completed</span></div>
+          <h3>Clinical Trial Dashboard</h3>
+          <p class="desc">An interactive Excel dashboard simulating operational oversight of a Phase III multicenter clinical trial — built to practice translating raw trial data into the metrics a Study Coordinator or CRA actually watches day to day.</p>
+
+          <p class="project-block-label">Key metrics tracked</p>
+          <ul class="feature-list">
+            <li>Recruitment &amp; enrollment</li>
+            <li>Screen failures</li>
+            <li>Randomization overview</li>
+            <li>Patient dropouts</li>
+            <li>Serious adverse events</li>
+            <li>Open query ageing</li>
+            <li>Site performance</li>
+            <li>Dynamic filtering</li>
+          </ul>
+
+          <p class="project-block-label">Skills</p>
+          <div class="chip-row">
+            <span class="chip">Excel (Advanced)</span>
+            <span class="chip">Pivot Tables</span>
+            <span class="chip">Data Visualization</span>
+            <span class="chip">Clinical KPIs</span>
+            <span class="chip">Clinical Operations</span>
+          </div>
+
+          <div class="project-actions">
+            <a href="https://youtu.be/p49PTJI8juM?si=fUeejnC5i6aPWSmG" target="_blank" rel="noopener" class="btn btn-primary btn-featured">
+              <span class="btn-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></span>
+              Watch walkthrough ↗
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card project-card reverse" data-reveal>
+        <div class="media" data-fallback-icon="eCRF Simulation">
+          <img src="img/ecrf-simulation.jpg" alt="eCRF Simulation dashboard" loading="lazy" onerror="imgFallback(this)">
+        </div>
+        <div class="project-body">
+          <div class="project-top"><span class="status-badge progress">In Development</span></div>
+          <h3>eCRF Simulation</h3>
+          <p class="desc">A from-scratch simulation of an Electronic Case Report Form, built in Excel with automatic query management — structured with the logic of industry-standard EDC systems (e.g. Medidata Rave, Oracle InForm), as an independent simulation not affiliated with either platform.</p>
+
+          <p class="project-block-label">Modules</p>
+          <div class="chip-row">
+            <span class="chip">Demographics</span>
+            <span class="chip">Eligibility</span>
+            <span class="chip">Visit Schedule</span>
+            <span class="chip">Vital Signs</span>
+            <span class="chip">Laboratory</span>
+            <span class="chip">Concomitant Medication</span>
+            <span class="chip">Adverse Events</span>
+            <span class="chip">Drug Accountability</span>
+            <span class="chip">Query Management</span>
+            <span class="chip">Dashboard</span>
+            <span class="chip">Audit Trail (Simulation)</span>
+          </div>
+
+          <p class="project-block-label">Key features</p>
+          <ul class="feature-list">
+            <li>Automatic query flagging</li>
+            <li>Dropdown-based validation</li>
+            <li>Conditional formatting for out-of-range values</li>
+            <li>Simulated audit trail</li>
+          </ul>
+
+          <div class="project-actions">
+            <a href="#playground-ecrf" class="btn btn-primary btn-featured">
+              <span class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3a1 1 0 011-1h4a1 1 0 011 1v1"/><path d="M8.5 13l2.3 2.3L16 10.5"/></svg></span>
+              Try the eCRF Validator ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-head sub" data-reveal>
+      <p class="eyebrow">What's next</p>
+      <h3>Coming soon</h3>
+    </div>
+    <div class="soon-grid">
+      <div class="card soon-card" data-reveal><div class="soon-orb"></div><span class="soon-tag"><span class="dot"></span>Coming soon</span><h4>eTMF Simulation</h4><p>A simulated electronic Trial Master File, organized by ICH-GCP document zones.</p></div>
+      <div class="card soon-card" data-reveal><div class="soon-orb"></div><span class="soon-tag"><span class="dot"></span>Coming soon</span><h4>RBQM Dashboard</h4><p>Risk-based quality management indicators for multicenter trial oversight.</p></div>
+      <div class="card soon-card" data-reveal><div class="soon-orb"></div><span class="soon-tag"><span class="dot"></span>Coming soon</span><h4>Query Tracker</h4><p>A lightweight tool for logging, ageing, and resolving data queries.</p></div>
+      <div class="card soon-card" data-reveal><div class="soon-orb"></div><span class="soon-tag"><span class="dot"></span>Coming soon</span><h4>Protocol Deviation Log</h4><p>A structured log for classifying and tracking protocol deviations.</p></div>
+      <div class="card soon-card" data-reveal><div class="soon-orb"></div><span class="soon-tag"><span class="dot"></span>Coming soon</span><h4>Recruitment Forecast Dashboard</h4><p>Enrollment projections measured against site-level recruitment targets.</p></div>
+      <div class="card soon-card" data-reveal><div class="soon-orb"></div><span class="soon-tag"><span class="dot"></span>Coming soon</span><h4>Site Management Dashboard</h4><p>A single view of site performance, activation status, and monitoring visits.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="playground">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Interactive</p>
+      <h2>Experience the role of a CRA firsthand</h2>
+      <p>These four interactive modules translate clinical concepts into hands-on experience, using simulated workflows to model recruitment, data quality, and site monitoring decisions.</p>
+    </div>
+
+    <div class="pg-tabs" id="pgTabs" role="tablist" aria-label="Playground tools">
+      <button type="button" class="pg-tab active" data-tool="trial" role="tab" aria-selected="true">
+        <span class="pg-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 21V13M10 21V7M16 21v-9M22 21V4"/></svg></span>
+        Trial Simulator
+      </button>
+      <button type="button" class="pg-tab" data-tool="ecrf" role="tab" aria-selected="false">
+        <span class="pg-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3a1 1 0 011-1h4a1 1 0 011 1v1"/><path d="M8.5 13l2.3 2.3L16 10.5"/></svg></span>
+        eCRF Validator
+      </button>
+      <button type="button" class="pg-tab" data-tool="monitoring" role="tab" aria-selected="false">
+        <span class="pg-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M20 20l-4.8-4.8"/></svg></span>
+        Monitoring Simulator
+      </button>
+      <button type="button" class="pg-tab" data-tool="biomarker" role="tab" aria-selected="false">
+        <span class="pg-tab-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="6" cy="7" r="2"/><circle cx="18" cy="7" r="2"/><circle cx="12" cy="18" r="2"/><path d="M7.7 8.3L10.5 16M16.3 8.3L13.5 16M8 7h8"/></svg></span>
+        Biomarker Explorer
+      </button>
+    </div>
+    <p class="pg-note">Simulated data for demonstration purposes — not real patients, sites, or trial results.</p>
+
+    <!-- TRIAL SIMULATOR -->
+    <div class="card pg-panel active" data-panel="trial" role="tabpanel">
+      <div class="pg-panel-head">
+        <h3>Simulate a Phase III clinical trial</h3>
+        <p>Adjust the study design and watch enrollment, screen failure, and dropout move in response — the same trade-offs a Study Coordinator watches for in real time.</p>
+      </div>
+
+      <div class="pg-controls">
+        <div class="pg-control">
+          <label for="pgSites">Sites <span class="val" id="pgSitesVal">6</span></label>
+          <input type="range" id="pgSites" min="1" max="15" value="6" step="1">
+        </div>
+        <div class="pg-control">
+          <label for="pgTarget">Target patients <span class="val" id="pgTargetVal">250</span></label>
+          <input type="range" id="pgTarget" min="50" max="500" value="250" step="10">
+        </div>
+        <div class="pg-control">
+          <label for="pgDuration">Study duration (months) <span class="val" id="pgDurationVal">12</span></label>
+          <input type="range" id="pgDuration" min="3" max="24" value="12" step="1">
+        </div>
+        <div class="pg-control">
+          <label for="pgRecruitRate">Recruitment rate (pts/site/month) <span class="val" id="pgRecruitRateVal">2.5</span></label>
+          <input type="range" id="pgRecruitRate" min="0.5" max="6" value="2.5" step="0.5">
+        </div>
+        <div class="pg-control">
+          <label for="pgScreenFailRate">Screen failure rate <span class="val" id="pgScreenFailRateVal">15%</span></label>
+          <input type="range" id="pgScreenFailRate" min="0" max="40" value="15" step="1">
+        </div>
+        <div class="pg-control">
+          <label for="pgDropoutRate">Drop-out rate <span class="val" id="pgDropoutRateVal">8%</span></label>
+          <input type="range" id="pgDropoutRate" min="0" max="30" value="8" step="1">
+        </div>
+      </div>
+
+      <div class="pg-kpis">
+        <div class="pg-kpi">
+          <span class="num" id="pgKpiRandomized">—</span>
+          <span class="cap">Randomized / Target</span>
+        </div>
+        <div class="pg-kpi">
+          <span class="num" id="pgKpiRecruitPct">—</span>
+          <span class="cap">Recruitment</span>
+          <div class="bar-track"><div class="bar-fill" id="pgBarRecruit" style="width:0%"></div></div>
+        </div>
+        <div class="pg-kpi warn">
+          <span class="num" id="pgKpiScreenFailPct">—</span>
+          <span class="cap">Screen Failure</span>
+          <div class="bar-track"><div class="bar-fill" id="pgBarScreenFail" style="width:0%"></div></div>
+        </div>
+        <div class="pg-kpi warn">
+          <span class="num" id="pgKpiDropoutPct">—</span>
+          <span class="cap">Drop-out (of randomized)</span>
+          <div class="bar-track"><div class="bar-fill" id="pgBarDropout" style="width:0%"></div></div>
+        </div>
+      </div>
+
+      <p class="project-block-label" id="pgSitesAtRisk">Sites at risk: — / —</p>
+      <div class="pg-sites" id="pgSitesList"></div>
+    </div>
+
+    <!-- ECRF VALIDATOR -->
+    <div class="card pg-panel" data-panel="ecrf" role="tabpanel" hidden>
+      <div class="pg-panel-head">
+        <h3>Validate a mock eCRF</h3>
+        <p>A single visit form, pre-filled with fictional data. Change a value — for example, drop Hemoglobin below 11.5 — then validate again to see how the checks respond.</p>
+      </div>
+
+      <div class="pg-form">
+        <div class="pg-field">
+          <label for="pgPid">Patient ID</label>
+          <input type="text" id="pgPid" value="PT-00123">
+        </div>
+        <div class="pg-field">
+          <label for="pgVisitDate">Visit date — Week 4</label>
+          <input type="date" id="pgVisitDate" value="2026-07-14">
+        </div>
+        <div class="pg-field">
+          <label for="pgHgb">Hemoglobin, g/dL (ref. 11.5–17.5)</label>
+          <input type="number" id="pgHgb" value="13.6" step="0.1">
+        </div>
+        <div class="pg-field">
+          <label for="pgPlatelets">Platelets, ×10⁹/L (ref. 150–450)</label>
+          <input type="number" id="pgPlatelets" value="240" step="1">
+        </div>
+        <div class="pg-field full">
+          <label>Adverse events</label>
+          <div class="pg-radio-row">
+            <label><input type="radio" name="pgAE" id="pgAENo" value="no" checked> No</label>
+            <label><input type="radio" name="pgAE" id="pgAEYes" value="yes"> Yes</label>
+          </div>
+          <div class="pg-ae-detail" id="pgAEDetailWrap">
+            <textarea id="pgAEDetail" placeholder="Describe the adverse event..."></textarea>
+          </div>
+        </div>
+        <div class="pg-field full">
+          <label for="pgConmed">Concomitant medication (optional)</label>
+          <textarea id="pgConmed" placeholder="Leave blank if none reported"></textarea>
+        </div>
+      </div>
+
+      <button type="button" class="btn btn-primary" id="pgValidateBtn">Validate CRF</button>
+
+      <div class="pg-results" id="pgResults" hidden>
+        <p class="pg-results-summary" id="pgResultsSummary"></p>
+        <div id="pgResultsList"></div>
+      </div>
+    </div>
+
+    <!-- MONITORING SIMULATOR -->
+    <div class="card pg-panel" data-panel="monitoring" role="tabpanel" hidden>
+      <div class="pg-panel-head">
+        <h3>You are the CRA on this Phase III study</h3>
+        <p>Three sites, one monitoring visit to prioritize. Review the KPIs below and pick the site you'd flag first.</p>
+      </div>
+
+      <div class="pg-mon-cards" id="pgMonCards"></div>
+
+      <div class="pg-mon-prompt">
+        <p>Which site requires the most attention?</p>
+        <button type="button" class="btn btn-primary btn-sm" id="pgMonRevealBtn" disabled>See CRA perspective</button>
+      </div>
+
+      <div class="pg-verdict" id="pgMonVerdict" hidden></div>
+    </div>
+
+    <!-- BIOMARKER EXPLORER -->
+    <div class="card pg-panel" data-panel="biomarker" role="tabpanel" hidden>
+      <div class="pg-panel-head">
+        <h3>Biomarker Explorer</h3>
+        <p>General reference information for portfolio purposes, drawn from hematology and rare disease literature — not diagnostic guidance.</p>
+      </div>
+
+      <div class="pg-bio-selects">
+        <div class="pg-field">
+          <label for="pgDisease">Topic</label>
+          <select id="pgDisease"></select>
+        </div>
+        <div class="pg-field">
+          <label for="pgBiomarker">Biomarker</label>
+          <select id="pgBiomarker"></select>
+        </div>
+      </div>
+
+      <div class="pg-bio-card" id="pgBioCard"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="communication">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Scientific Communication</p>
+      <h2>Writing clinical research for people outside the trial</h2>
+      <p>Short LinkedIn essays translating clinical research concepts for a broader audience — junior in experience, deliberate in reasoning.</p>
+    </div>
+    <div class="pub-grid" id="pubGrid"></div>
+  </div>
+</section>
+
+<section class="section section--alt" id="writing">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Scientific Writing</p>
+      <h2>Featured review</h2>
+    </div>
+    <div class="card writing-card" data-reveal>
+      <div>
+      <img src="img/journal-cover.jpg" alt="ENLISO journal cover" loading="lazy" onerror="imgFallback(this)">
+      </div>
+      <div class="writing-body">
+        <div class="writing-meta"><span class="status-badge progress">In preparation</span></div>
+        <h3>Relationship Between GBA1 Variants and Parkinson's Disease</h3>
+        <p class="abstract">This systematic review examines current evidence on GBA1 mutations as a genetic risk factor for Parkinson's disease, focusing on the lysosomal–autophagy pathway mechanisms linking the two conditions.</p>
+        <div class="writing-fields">
+          <div class="writing-field"><p class="k">Author</p><p class="v">I. Villalta</p></div>
+          <div class="writing-field"><p class="k">Target journal</p><p class="v">en-LISOS</p></div>
+        </div>
+        <div class="project-actions">
+          <a href="assets/Isabel-Villalta-GBA1-Review.pdf" target="_blank" rel="noopener" class="btn btn-primary btn-featured">
+            <span class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 2h7l5 5v13a2 2 0 01-2 2H7a2 2 0 01-2-2V4a2 2 0 012-2z"/><path d="M14 2v5h5"/><path d="M9 13h6M9 17h6"/></svg></span>
+            Read the manuscript (PDF) ↗
+          </a>
+          <a href="https://feeteg.org/2025/03/18/en-lisos-no-7-de-la-revista-de-las-enfermedades-lisosomales/" target="_blank" rel="noopener" class="btn btn-secondary btn-featured">
+            <span class="btn-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 4h6v6"/><path d="M20 4L10 14"/><path d="M18 13v5a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2h5"/></svg></span>
+            Visit en-LISOS ↗
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="writing-more" data-reveal>
+      <div><p class="label">Reserved</p><p>Space for future publications as they're completed.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="journey">
+  <div class="container">
+    <div class="section-head center">
+      <p class="eyebrow">Learning Journey</p>
+      <h2>How I got here</h2>
+    </div>
+    <div class="timeline" id="timeline"></div>
+  </div>
+</section>
+
+<section class="section" id="toolkit">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Clinical Research Toolkit</p>
+      <h2>What I work with</h2>
+    </div>
+    <div class="toolkit-groups">
+      <div class="card toolkit-group" data-reveal>
+        <div class="toolkit-group-head">
+          <div class="toolkit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 12l2 2 4-4M12 3l8 4v5c0 5-3.5 8.5-8 9-4.5-.5-8-4-8-9V7l8-4z"/></svg></div>
+          <h4>Clinical Operations</h4>
+        </div>
+        <div class="tag-row">
+          <span class="tag">ICH-GCP E6(R3)</span>
+          <span class="tag">Study Coordination</span>
+          <span class="tag">Protocol Review</span>
+          <span class="tag">eCRFs</span>
+          <span class="tag">Monitoring Support</span>
+          <span class="tag">Essential Documents (ISF)</span>
+          <span class="tag">Project Management</span>
+        </div>
+      </div>
+
+      <div class="card toolkit-group" data-reveal>
+        <div class="toolkit-group-head">
+          <div class="toolkit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19h16M7 19v-6M12 19V7M17 19v-9"/></svg></div>
+          <h4>Excel &amp; Dashboards</h4>
+        </div>
+        <div class="tag-row">
+          <span class="tag">Pivot Tables</span>
+          <span class="tag">Clinical Data</span>
+          <span class="tag">Dashboards</span>
+          <span class="tag">Conditional Formatting</span>
+          <span class="tag">Data Validation</span>
+        </div>
+      </div>
+
+      <div class="card toolkit-group" data-reveal>
+        <div class="toolkit-group-head">
+          <div class="toolkit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3.2"/></svg></div>
+          <h4>Artificial Intelligence</h4>
+        </div>
+        <div class="tag-row">
+          <span class="tag">AI Applied to Clinical Operations</span>
+        </div>
+      </div>
+
+      <div class="card toolkit-group" data-reveal>
+        <div class="toolkit-group-head">
+          <div class="toolkit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20l4-1 11-11-3-3L5 16l-1 4z"/></svg></div>
+          <h4>Scientific Writing</h4>
+        </div>
+        <div class="tag-row">
+          <span class="tag">Literature Review</span>
+          <span class="tag">Critical Appraisal</span>
+          <span class="tag">Scientific Communication</span>
+          <span class="tag">LinkedIn Content</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--alt" id="resources">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Resources</p>
+      <h2>Where I go to check my work</h2>
+    </div>
+    <div class="res-grid" id="resGrid"></div>
+  </div>
+</section>
+
+<footer class="footer" id="contact">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h3>Let's talk</h3>
+        <p>Open to opportunities in Clinical Operations and Study Coordination — CROs, pharmaceutical companies, and research institutions.</p>
+      </div>
+      <div class="footer-links-row">
+        <a href="https://www.linkedin.com/in/isabel-villalta" class="btn btn-primary" id="linkedinBtnFooter" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="mailto:isabiotecensayos@gmail.com" class="btn btn-secondary" id="emailBtnFooter">Email</a>
+        <a href="assets/Isabel-Villalta-CV.pdf" class="btn btn-secondary" id="cvBtnFooter">Download CV</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Isabel Villalta. All rights reserved.</span>
+      <span>Zaragoza, Spain</span>
+    </div>
+  </div>
+</footer>
+
+</main>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ------------------------------------------------------------
+     0. PROFILE LINKS — edit these three values, everything
+        else on the page (nav, hero, footer, publication cards)
+        updates from here automatically.
+  ------------------------------------------------------------ */
+  var PROFILE = {
+    linkedin: "https://www.linkedin.com/in/isabel-villalta", // e.g. "https://www.linkedin.com/in/isabel-villalta"
+    email: "mailto:isabiotecensayos@gmail.com",    // e.g. "mailto:isabel.villalta@example.com"
+    cv: "assets/Isabel-Villalta-CV.pdf"        // e.g. "assets/Isabel-Villalta-CV.pdf"
+  };
+
+  document.querySelectorAll("#linkedinBtnHero, #linkedinBtnFooter").forEach(function (el) { el.href = PROFILE.linkedin; });
+  document.querySelectorAll("#cvBtnNav, #cvBtnHero, #cvBtnFooter").forEach(function (el) {
+    el.href = PROFILE.cv;
+    if (PROFILE.cv !== "#") el.setAttribute("download", "");
+  });
+  var emailBtn = document.getElementById("emailBtnFooter");
+  if (emailBtn) emailBtn.href = PROFILE.email;
+
+  /* ------------------------------------------------------------
+     1. IMAGE FALLBACK — swaps a broken/stale placeholder image
+        for a soft gradient block instead of a broken-image icon.
+  ------------------------------------------------------------ */
+  window.imgFallback = function (img) {
+    var wrap = img.closest(".media");
+    if (wrap) wrap.classList.add("img-fallback");
+  };
+
+  /* ------------------------------------------------------------
+     2. FOOTER YEAR
+  ------------------------------------------------------------ */
+  var yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  /* ------------------------------------------------------------
+     3. NAV — scroll shadow, mobile toggle, scroll-spy
+  ------------------------------------------------------------ */
+  var nav = document.getElementById("siteNav");
+  var onScroll = function () {
+    if (window.scrollY > 12) nav.classList.add("is-scrolled");
+    else nav.classList.remove("is-scrolled");
+  };
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  var toggle = document.getElementById("navToggle");
+  var links = document.getElementById("navLinks");
+  toggle.addEventListener("click", function () {
+    var open = links.classList.toggle("is-open");
+    toggle.classList.toggle("is-open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  links.querySelectorAll("a").forEach(function (a) {
+    a.addEventListener("click", function () {
+      links.classList.remove("is-open");
+      toggle.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  var navAnchors = Array.prototype.slice.call(links.querySelectorAll("a"));
+  var spySections = navAnchors
+    .map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); })
+    .filter(Boolean);
+  if ("IntersectionObserver" in window) {
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var id = entry.target.getAttribute("id");
+        var link = links.querySelector('a[href="#' + id + '"]');
+        if (!link) return;
+        navAnchors.forEach(function (a) { a.classList.remove("active"); });
+        link.classList.add("active");
+      });
+    }, { rootMargin: "-45% 0px -50% 0px", threshold: 0 });
+    spySections.forEach(function (s) { spy.observe(s); });
+  }
+
+  /* ------------------------------------------------------------
+     4. ICONS (small inline SVGs reused by data-driven sections)
+  ------------------------------------------------------------ */
+  var DOC_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>';
+  var CHECK_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>';
+  var FUTURE_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>';
+
+  /* ------------------------------------------------------------
+     5. SCIENTIFIC COMMUNICATION — data-driven publication cards
+  ------------------------------------------------------------ */
+  var pubTopics = [
+    { title: "Clinical vs Statistical Significance", desc: "Why a significant p-value and a meaningful result aren't always the same thing.",
+      images: ["img/writing/clinical-vs-statistical-1.jpg", "img/writing/clinical-vs-statistical-2.jpg", "img/writing/clinical-vs-statistical-3.jpg"] },
+    { title: "Immortal Time Bias", desc: "A subtle design flaw that can make a treatment look better than it really is.",
+      images: ["img/writing/immortal-time-bias-1.jpg", "img/writing/immortal-time-bias-2.jpg", "img/writing/immortal-time-bias-3.jpg"] },
+    { title: "Randomization", desc: "The method behind assigning participants — and why it matters more than it seems.",
+      images: ["img/writing/randomization-1.jpg", "img/writing/randomization-2.jpg", "img/writing/randomization-3.jpg"] },
+    { title: "Informed Consent", desc: "What makes consent 'informed' in practice, not just on paper.",
+      images: ["img/writing/informed-consent-1.jpg", "img/writing/informed-consent-2.jpg", "img/writing/informed-consent-3.jpg"] },
+    { title: "Risk-Based Monitoring", desc: "How trials are shifting from checking everything to checking what matters most.",
+      images: ["img/writing/risk-based-monitoring-1.jpg", "img/writing/risk-based-monitoring-2.jpg", "img/writing/risk-based-monitoring-3.jpg"] },
+    { title: "Protocol Deviations", desc: "The difference between a deviation and a violation — and why it matters.",
+      images: ["img/writing/protocol-deviations-1.jpg", "img/writing/protocol-deviations-2.jpg", "img/writing/protocol-deviations-3.jpg"] },
+    { title: "Clinical Trial Recruitment", desc: "Why the hardest part of a trial is often just finding the right patients.",
+      images: ["img/writing/clinical-trial-recruitment-1.jpg", "img/writing/clinical-trial-recruitment-2.jpg", "img/writing/clinical-trial-recruitment-3.jpg"] },
+    { title: "Source Data Verification", desc: "How SDV keeps what's written in the eCRF honest.",
+      images: ["img/writing/source-data-verification-1.jpg", "img/writing/source-data-verification-2.jpg", "img/writing/source-data-verification-3.jpg"] }
+  ];
+  var pubGrid = document.getElementById("pubGrid");
+  if (pubGrid) {
+    pubGrid.innerHTML = pubTopics.map(function (p, cardIndex) {
+      var slides = p.images.map(function (src, i) {
+        return '<img class="pub-carousel-slide' + (i === 0 ? ' active' : '') + '" src="' + src + '" alt="' + p.title + ' — slide ' + (i + 1) + '" loading="lazy" onerror="imgFallback(this)">';
+      }).join("");
+      var dots = p.images.map(function (_, i) {
+        return '<span class="carousel-dot' + (i === 0 ? ' active' : '') + '" data-dot-index="' + i + '"></span>';
+      }).join("");
+      return '<div class="card pub-card">' +
+        '<div class="pub-carousel" data-carousel data-card="' + cardIndex + '" data-index="0">' +
+          slides +
+          '<button type="button" class="carousel-btn prev" aria-label="Previous slide">‹</button>' +
+          '<button type="button" class="carousel-btn next" aria-label="Next slide">›</button>' +
+          '<div class="carousel-dots">' + dots + '</div>' +
+        '</div>' +
+        '<h4>' + p.title + '</h4><p>' + p.desc +
+        '</p><a href="' + PROFILE.linkedin + '" class="btn-ghost" target="_blank" rel="noopener">Read on LinkedIn ↗</a></div>';
+    }).join("");
+
+    pubGrid.querySelectorAll("[data-carousel]").forEach(function (carousel) {
+      var slides = carousel.querySelectorAll(".pub-carousel-slide");
+      var dots = carousel.querySelectorAll(".carousel-dot");
+      function goTo(index) {
+        var total = slides.length;
+        var newIndex = (index + total) % total;
+        slides.forEach(function (s, i) { s.classList.toggle("active", i === newIndex); });
+        dots.forEach(function (d, i) { d.classList.toggle("active", i === newIndex); });
+        carousel.setAttribute("data-index", newIndex);
+      }
+      carousel.querySelector(".prev").addEventListener("click", function () {
+        goTo(parseInt(carousel.getAttribute("data-index"), 10) - 1);
+      });
+      carousel.querySelector(".next").addEventListener("click", function () {
+        goTo(parseInt(carousel.getAttribute("data-index"), 10) + 1);
+      });
+      dots.forEach(function (dot) {
+        dot.addEventListener("click", function () {
+          goTo(parseInt(dot.getAttribute("data-dot-index"), 10));
+        });
+      });
+    });
+  }
+
+  /* ------------------------------------------------------------
+     6. LEARNING JOURNEY — data-driven timeline
+  ------------------------------------------------------------ */
+  var timelineData = [
+    { date: "Sep 2021 - Jul 2025", title: "Biotechnology Degree", desc: "Graduated from the University of Zaragoza with a foundation in molecular biology, genetics, and lab methodology." },
+    { date: "Clinical Genetics Jun - Aug 2024", title: "Hospital Miguel Servet", desc: "An internship in the Genetics Department — my first real exposure to clinical practice." },
+    { date: "Sep 2025 – May 2026", title: "CiberAula Volunteer Programme", desc: "A year volunteering in the pediatric ward at Hospital Clínico Universitario de Zaragoza." },
+    { date: "Nov 2025 - Jul 2026", title: "MSc Clinical Trial Monitoring", desc: "UNIR. Thesis: a complete Phase IIb protocol design, from monitoring plan to biomarker strategy." },
+    { date: "Jun – Dec 2026", title: "Study Coordinator Internship", desc: "Supporting Phase I–III trials in hematology and rare diseases at Hospital Quirónsalud Zaragoza." },
+    { date: "Jul 2026", title: "FEETEG Laboratory Rotation", desc: "A one-month rotation focused on lysosomal storage disease diagnostics." },
+    { date: "Completed", title: "Clinical Trial Dashboard", desc: "An Excel dashboard simulating Phase III trial oversight — my first independent project." },
+    { date: "In development", title: "eCRF Simulation", desc: "An Excel-based eCRF with automated query management, built from scratch." },
+    { date: "In preparation", title: "Scientific Writing", desc: "A review manuscript on GBA1 variants and Parkinson's disease." },
+    { date: "What's next", title: "Clinical Operations", desc: "Looking for my next step in Study Coordination — at a CRO or pharmaceutical company.", future: true }
+  ];
+  var timelineEl = document.getElementById("timeline");
+  if (timelineEl) {
+    timelineEl.innerHTML = timelineData.map(function (t) {
+      return '<div class="timeline-item' + (t.future ? " future" : "") + '"><div class="timeline-marker">' + (t.future ? FUTURE_ICON : CHECK_ICON) +
+        '</div><div class="timeline-content"><span class="timeline-date">' + t.date + '</span><h4>' + t.title + '</h4><p>' + t.desc + '</p></div></div>';
+    }).join("");
+  }
+
+  /* ------------------------------------------------------------
+     7. RESOURCES — data-driven resource cards
+  ------------------------------------------------------------ */
+  var resources = [
+    { abbr: "ICH", name: "ICH E6(R3)", desc: "The guideline that defines Good Clinical Practice standards.", url: "https://www.ich.org" },
+    { abbr: "EMA", name: "EMA", desc: "European Medicines Agency — regulatory guidance and approvals.", url: "https://www.ema.europa.eu" },
+    { abbr: "FDA", name: "FDA", desc: "U.S. Food and Drug Administration — regulatory guidance and approvals.", url: "https://www.fda.gov" },
+    { abbr: "CT", name: "ClinicalTrials.gov", desc: "The public registry of clinical studies worldwide.", url: "https://clinicaltrials.gov" },
+    { abbr: "PM", name: "PubMed", desc: "Biomedical literature database for research and reference.", url: "https://pubmed.ncbi.nlm.nih.gov" },
+    { abbr: "CON", name: "CONSORT", desc: "Reporting guidelines for randomized controlled trials.", url: "https://www.consort-statement.org" },
+    { abbr: "SPI", name: "SPIRIT", desc: "Reporting guidelines for clinical trial protocols.", url: "https://www.spirit-statement.org" },
+    { abbr: "EU", name: "EUPATI", desc: "Patient engagement and education in medicines research.", url: "https://eupati.eu" },
+    { abbr: "ISP", name: "ISPOR", desc: "Health economics and outcomes research society.", url: "https://www.ispor.org" }
+  ];
+  var resGrid = document.getElementById("resGrid");
+  if (resGrid) {
+    resGrid.innerHTML = resources.map(function (r) {
+      return '<div class="card res-card"><div class="res-logo">' + r.abbr + '</div><h4>' + r.name + '</h4><p>' + r.desc +
+        '</p><a href="' + r.url + '" class="btn-ghost" target="_blank" rel="noopener">Visit site ↗</a></div>';
+    }).join("");
+  }
+
+  /* ------------------------------------------------------------
+     8. PLAYGROUND — tab switching + 4 interactive simulators
+  ------------------------------------------------------------ */
+  var pgSectionEl = document.getElementById("playground");
+  if (pgSectionEl) {
+
+    /* 8.0 — Tabs / panel switching, shared by all four tools */
+    var pgTabs = Array.prototype.slice.call(pgSectionEl.querySelectorAll(".pg-tab"));
+    var pgPanels = Array.prototype.slice.call(pgSectionEl.querySelectorAll(".pg-panel"));
+    function pgSetActiveTool(name) {
+      pgTabs.forEach(function (t) {
+        var on = t.getAttribute("data-tool") === name;
+        t.classList.toggle("active", on);
+        t.setAttribute("aria-selected", on ? "true" : "false");
+      });
+      pgPanels.forEach(function (p) {
+        var on = p.getAttribute("data-panel") === name;
+        p.classList.toggle("active", on);
+        p.hidden = !on;
+      });
+    }
+    pgTabs.forEach(function (t) {
+      t.addEventListener("click", function () { pgSetActiveTool(t.getAttribute("data-tool")); });
+    });
+
+    function pgActivateFromHash() {
+      var m = /^#playground-(trial|ecrf|monitoring|biomarker)$/.exec(window.location.hash);
+      if (m) {
+        pgSetActiveTool(m[1]);
+        pgSectionEl.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+    window.addEventListener("hashchange", pgActivateFromHash);
+    pgActivateFromHash();
+
+    /* 8.1 — Trial Simulator */
+    var pgSitesInput = document.getElementById("pgSites");
+    var pgTargetInput = document.getElementById("pgTarget");
+    var pgDurationInput = document.getElementById("pgDuration");
+    var pgRecruitInput = document.getElementById("pgRecruitRate");
+    var pgScreenFailInput = document.getElementById("pgScreenFailRate");
+    var pgDropoutInput = document.getElementById("pgDropoutRate");
+
+    function pgSeededRand(seed) {
+      var x = Math.sin(seed) * 10000;
+      return x - Math.floor(x);
+    }
+
+    function pgRenderTrial() {
+      var sites = parseInt(pgSitesInput.value, 10);
+      var target = parseInt(pgTargetInput.value, 10);
+      var duration = parseInt(pgDurationInput.value, 10);
+      var recruitRate = parseFloat(pgRecruitInput.value);
+      var screenFailRate = parseInt(pgScreenFailInput.value, 10);
+      var dropoutRate = parseInt(pgDropoutInput.value, 10);
+
+      document.getElementById("pgSitesVal").textContent = sites;
+      document.getElementById("pgTargetVal").textContent = target;
+      document.getElementById("pgDurationVal").textContent = duration;
+      document.getElementById("pgRecruitRateVal").textContent = recruitRate.toFixed(1);
+      document.getElementById("pgScreenFailRateVal").textContent = screenFailRate + "%";
+      document.getElementById("pgDropoutRateVal").textContent = dropoutRate + "%";
+
+      var screenedTotal = Math.round(sites * recruitRate * duration);
+      var screenFailures = Math.round(screenedTotal * screenFailRate / 100);
+      var randomized = Math.max(0, screenedTotal - screenFailures);
+      var dropouts = Math.round(randomized * dropoutRate / 100);
+      var recruitPct = target > 0 ? Math.min(100, Math.round(randomized / target * 100)) : 0;
+      var screenFailPct = screenedTotal > 0 ? Math.round(screenFailures / screenedTotal * 100) : 0;
+      var dropoutPct = randomized > 0 ? Math.round(dropouts / randomized * 100) : 0;
+
+      document.getElementById("pgKpiRandomized").textContent = randomized + " / " + target;
+      document.getElementById("pgKpiRecruitPct").textContent = recruitPct + "%";
+      document.getElementById("pgKpiScreenFailPct").textContent = screenFailPct + "%";
+      document.getElementById("pgKpiDropoutPct").textContent = dropoutPct + "%";
+      document.getElementById("pgBarRecruit").style.width = recruitPct + "%";
+      document.getElementById("pgBarScreenFail").style.width = Math.min(100, screenFailPct) + "%";
+      document.getElementById("pgBarDropout").style.width = Math.min(100, dropoutPct) + "%";
+
+      var atRiskCount = 0;
+      var rowsHtml = "";
+      for (var i = 0; i < sites; i++) {
+        var seed = (i + 1) * 12.9898 + sites * 3.7 + target * 0.013 + duration * 5.3 + recruitRate * 17.1 + screenFailRate * 2.3 + dropoutRate * 4.1;
+        var perf = 0.55 + pgSeededRand(seed) * 0.9;
+        var displayPct = Math.max(8, Math.min(100, Math.round(perf * 70)));
+        var atRisk = perf < 0.75;
+        if (atRisk) atRiskCount++;
+        var siteLabel = "Site " + (i + 1 < 10 ? "0" + (i + 1) : (i + 1));
+        rowsHtml += '<div class="pg-site-row' + (atRisk ? ' at-risk' : '') + '">' +
+          '<span class="site-name">' + siteLabel + '</span>' +
+          '<span class="bar-track"><span class="bar-fill" style="width:' + displayPct + '%"></span></span>' +
+          '<span class="pg-site-flag">' + (atRisk ? 'At risk' : 'On track') + '</span></div>';
+      }
+      document.getElementById("pgSitesList").innerHTML = rowsHtml;
+      document.getElementById("pgSitesAtRisk").textContent = "Sites at risk: " + atRiskCount + " / " + sites;
+    }
+    [pgSitesInput, pgTargetInput, pgDurationInput, pgRecruitInput, pgScreenFailInput, pgDropoutInput].forEach(function (el) {
+      el.addEventListener("input", pgRenderTrial);
+    });
+    pgRenderTrial();
+
+    /* 8.2 — eCRF Validator */
+    var pgPidInput = document.getElementById("pgPid");
+    var pgVisitDateInput = document.getElementById("pgVisitDate");
+    var pgHgbInput = document.getElementById("pgHgb");
+    var pgPlateletsInput = document.getElementById("pgPlatelets");
+    var pgAEYesInput = document.getElementById("pgAEYes");
+    var pgAENoInput = document.getElementById("pgAENo");
+    var pgAEDetailWrapEl = document.getElementById("pgAEDetailWrap");
+    var pgAEDetailInput = document.getElementById("pgAEDetail");
+    var pgConmedInput = document.getElementById("pgConmed");
+    var pgValidateBtn = document.getElementById("pgValidateBtn");
+    var pgResultsBox = document.getElementById("pgResults");
+    var pgResultsSummaryEl = document.getElementById("pgResultsSummary");
+    var pgResultsListEl = document.getElementById("pgResultsList");
+
+    function pgToggleAeDetail() {
+      pgAEDetailWrapEl.classList.toggle("show", pgAEYesInput.checked);
+    }
+    pgAEYesInput.addEventListener("change", pgToggleAeDetail);
+    pgAENoInput.addEventListener("change", pgToggleAeDetail);
+    pgToggleAeDetail();
+
+    function pgValidateEcrf() {
+      var rows = [];
+      var issues = 0;
+
+      var pid = pgPidInput.value.trim();
+      if (!pid) { rows.push({ label: "Patient ID", status: "Missing", cls: "error" }); issues++; }
+      else if (!/^PT-\d{5}$/.test(pid)) { rows.push({ label: "Patient ID", status: "Check format", cls: "warn" }); issues++; }
+      else { rows.push({ label: "Patient ID", status: "Valid", cls: "done" }); }
+
+      if (!pgVisitDateInput.value) { rows.push({ label: "Visit Date", status: "Missing", cls: "error" }); issues++; }
+      else { rows.push({ label: "Visit Date", status: "Valid", cls: "done" }); }
+
+      if (pgHgbInput.value === "") { rows.push({ label: "Hemoglobin", status: "Missing", cls: "error" }); issues++; }
+      else {
+        var hgbNum = parseFloat(pgHgbInput.value);
+        if (hgbNum < 11.5 || hgbNum > 17.5) { rows.push({ label: "Hemoglobin", status: "Out of range", cls: "warn" }); issues++; }
+        else { rows.push({ label: "Hemoglobin", status: "Valid range", cls: "done" }); }
+      }
+
+      if (pgPlateletsInput.value === "") { rows.push({ label: "Platelets", status: "Missing", cls: "error" }); issues++; }
+      else {
+        var pltNum = parseFloat(pgPlateletsInput.value);
+        if (pltNum < 150 || pltNum > 450) { rows.push({ label: "Platelets", status: "Out of range", cls: "warn" }); issues++; }
+        else { rows.push({ label: "Platelets", status: "Valid range", cls: "done" }); }
+      }
+
+      var aeSelected = pgAEYesInput.checked ? "yes" : (pgAENoInput.checked ? "no" : null);
+      if (!aeSelected) { rows.push({ label: "Adverse Events", status: "Missing", cls: "error" }); issues++; }
+      else if (aeSelected === "yes" && !pgAEDetailInput.value.trim()) { rows.push({ label: "Adverse Events", status: "Needs detail", cls: "warn" }); issues++; }
+      else { rows.push({ label: "Adverse Events", status: "Valid", cls: "done" }); }
+
+      var conmedVal = pgConmedInput.value.trim();
+      rows.push({ label: "Concomitant Medication", status: conmedVal ? "Documented" : "None reported", cls: "done" });
+
+      pgResultsSummaryEl.textContent = issues === 0
+        ? "Complete — no fields would generate a query."
+        : issues + (issues === 1 ? " field would generate a query." : " fields would generate a query.");
+      pgResultsListEl.innerHTML = rows.map(function (r) {
+        return '<div class="pg-result-row"><span>' + r.label + '</span><span class="status-badge ' + r.cls + '">' + r.status + '</span></div>';
+      }).join("");
+      pgResultsBox.hidden = false;
+    }
+    pgValidateBtn.addEventListener("click", pgValidateEcrf);
+
+    /* 8.3 — Monitoring Simulator */
+    var pgMonSites = [
+      { id: "s1", name: "Site 01", recruitment: 82, sdv: 96, queries: 2, deviations: 1, ae: 100 },
+      { id: "s2", name: "Site 02", recruitment: 34, sdv: 61, queries: 17, deviations: 8, ae: 78 },
+      { id: "s3", name: "Site 03", recruitment: 91, sdv: 94, queries: 3, deviations: 0, ae: 100 }
+    ];
+    var pgCorrectSite = "s2";
+    var pgSelectedSite = null;
+    var pgMonCardsEl = document.getElementById("pgMonCards");
+    var pgRevealBtn = document.getElementById("pgMonRevealBtn");
+    var pgVerdictEl = document.getElementById("pgMonVerdict");
+
+    pgMonCardsEl.innerHTML = pgMonSites.map(function (s) {
+      return '<div class="pg-mon-card" data-site="' + s.id + '">' +
+        '<div class="pg-mon-card-head"><h4>' + s.name + '</h4><span class="pg-mon-radio"></span></div>' +
+        '<div class="pg-mon-kpi"><span>Recruitment</span><span class="v">' + s.recruitment + '%</span></div>' +
+        '<div class="pg-mon-kpi"><span>SDV completion</span><span class="v">' + s.sdv + '%</span></div>' +
+        '<div class="pg-mon-kpi"><span>Open queries</span><span class="v">' + s.queries + '</span></div>' +
+        '<div class="pg-mon-kpi"><span>Protocol deviations</span><span class="v">' + s.deviations + '</span></div>' +
+        '<div class="pg-mon-kpi"><span>AE reporting</span><span class="v">' + s.ae + '%</span></div></div>';
+    }).join("");
+
+    Array.prototype.slice.call(pgMonCardsEl.querySelectorAll(".pg-mon-card")).forEach(function (card) {
+      card.addEventListener("click", function () {
+        pgSelectedSite = card.getAttribute("data-site");
+        Array.prototype.slice.call(pgMonCardsEl.querySelectorAll(".pg-mon-card")).forEach(function (c) {
+          c.classList.toggle("selected", c === card);
+        });
+        pgRevealBtn.disabled = false;
+        pgVerdictEl.hidden = true;
+      });
+    });
+
+    pgRevealBtn.addEventListener("click", function () {
+      if (!pgSelectedSite) return;
+      var correct = pgSelectedSite === pgCorrectSite;
+      var reasonBullets = [
+        "Recruitment is far behind target at 34%, risking the enrollment timeline.",
+        "17 open queries — more than the other two sites combined.",
+        "8 protocol deviations, the highest of the three sites.",
+        "AE reporting sits at 78%, incomplete on its own."
+      ];
+      var intro = "";
+      if (correct) { intro = "Your read matches the CRA read."; }
+      else if (pgSelectedSite === "s1") { intro = "Site 01 is actually performing well — strong recruitment and complete AE reporting. It's not the priority right now."; }
+      else if (pgSelectedSite === "s3") { intro = "Site 03 is your strongest site on almost every measure. It's not the one that needs attention first."; }
+      var bulletsHtml = reasonBullets.map(function (b) { return "<li>" + b + "</li>"; }).join("");
+      pgVerdictEl.className = "pg-verdict" + (correct ? " correct" : "");
+      pgVerdictEl.innerHTML =
+        '<p class="pg-verdict-head">CRA Perspective</p>' +
+        "<h4>Site 02 needs attention first" + (correct ? "" : " — here's why") + "</h4>" +
+        (intro ? '<p class="pg-verdict-note" style="margin-bottom:14px;">' + intro + "</p>" : "") +
+        '<ul class="feature-list">' + bulletsHtml + "</ul>" +
+        '<p class="pg-verdict-note">Site 02 should be prioritized for a monitoring visit and a targeted data-quality review before the next data cutoff.</p>';
+      pgVerdictEl.hidden = false;
+    });
+
+    /* 8.4 — Biomarker Explorer */
+    var pgDiseases = [
+      { id: "gaucher", name: "Gaucher Disease", biomarkers: [
+        { name: "Chitotriosidase", sample: "Peripheral blood (plasma); reported as enzyme activity, not concentration.", utility: "Reflects activated-macrophage burden and is used mainly to track disease activity and treatment response over time. CHIT1 genotyping is required before first use — around 5–6% of people are homozygous for a null CHIT1 variant and show no measurable activity regardless of disease status, making the test uninterpretable for them.", interpretation: "Plasma chitotriosidase activity typically exceeds 3,000–6,000 nmol/mL/h in untreated Gaucher disease, falling sharply upon effective therapy and stabilizing at lower residual levels. However, clinical interpretation requires caution due to CHIT1 polymorphisms: homozygous mutated genotypes (e.g., dup24) cause complete enzyme deficiency in ~6% of the population. This leads to falsely negative (undetectable) results, necessitating alternative biomarkers such as Lyso-Gb1 or CCL18. Furthermore, because mild-to-moderate elevations also occur in Niemann-Pick disease, sarcoidosis, tuberculosis, and leishmaniasis, chitotriosidase is not a standalone diagnostic tool" },
+        { name: "GCase enzyme activity", sample: "Dried blood spot or leukocytes.", utility: "The primary diagnostic test — measures activity of the enzyme that is deficient in Gaucher disease.", interpretation: "Reduced activity supports the diagnosis, but the degree of reduction doesn't reliably predict severity, so it isn't used for monitoring.", timing: "Once, at initial diagnostic work-up." },
+        { name: "Lyso-Gb1 (Glucosylsphingosine)", sample: "Plasma, measured by mass spectrometry.", utility: "The most specific and clinically valuable biomarker in Gaucher disease — used for both diagnosis and month-to-month monitoring of treatment response.", interpretation: "Normal range is roughly 0.1–0.9 ng/mL; in active, untreated disease it can reach 700–1,500 ng/mL or higher (one illustrative case: 744 ng/mL). Levels fall with enzyme replacement or substrate reduction therapy but rarely return fully to normal — they typically settle at a residual value, and a sustained rise suggests worsening disease or reduced treatment adherence.", timing: "Followed monthly to track treatment response; a clinician interprets the significance of any change." },
+        { name: "CCL18 / PARC", sample: "Plasma.", utility: "A nonspecific macrophage-inflammation marker used as a complementary measure alongside the other Gaucher biomarkers, never on its own.", interpretation: "One laboratory reference range in use: 22–144 U — a value of 137 U, for example, falls within range and is considered controlled. Can also be altered by non-lysosomal causes such as infection or chronic inflammation, so it's read together with the other markers rather than in isolation.", timing: "Measured alongside the other Gaucher biomarkers during routine monitoring." }
+      ]},
+      { id: "fabry", name: "Fabry Disease", biomarkers: [
+        { name: "Alpha-galactosidase A (GLA) activity", sample: "Dried blood spot, leukocytes, or plasma.", utility: "The primary diagnostic test in males, who carry only one copy of the gene.", interpretation: "Low or absent activity confirms the diagnosis in males. In females, activity can appear normal due to X-chromosome inactivation, so a normal result doesn't rule Fabry out — genetic testing is needed.", timing: "At initial diagnostic work-up." },
+        { name: "Lyso-Gb3 (Globotriaosylsphingosine)", sample: "Plasma; a dried-blood-spot method is also in development.", utility: "Correlates with disease severity and organ involvement, and — unlike enzyme activity — is informative in both males and females, since specificity for Fabry is very high.", interpretation: "Elevated in classic Fabry disease; levels are followed over time to gauge response to treatment. Female carriers can still have normal enzyme activity due to random X-inactivation, so genetic confirmation of the GLA gene remains essential regardless of this result.", timing: "At diagnosis and throughout treatment monitoring." }
+      ]},
+      { id: "asmd", name: "ASMD (Niemann-Pick Types A/B)", biomarkers: [
+        { name: "SM-509 / Lyso-SM-509", sample: "Plasma; a dried-blood-spot method is being validated in the lab.", utility: "The key marker for telling ASMD apart from Niemann-Pick type C — both conditions raise lyso-sphingomyelin (Lyso-SM), but only SM-509 tells them apart, since Lyso-SM alone can't.", interpretation: "Elevated in ASMD, but to a clearly lesser degree than in Niemann-Pick type C — it's the relative magnitude that carries the diagnostic information, not the absolute value alone.", timing: "Used at diagnosis and for differential work-up alongside Lyso-SM." }
+      ]},
+      { id: "npc", name: "Niemann-Pick Disease Type C", biomarkers: [
+        { name: "SM-509 / Lyso-SM-509", sample: "Plasma; a dried-blood-spot method is being validated in the lab.", utility: "The key marker for telling Niemann-Pick type C apart from ASMD — both conditions raise lyso-sphingomyelin (Lyso-SM), but only SM-509 tells them apart.", interpretation: "Markedly elevated in NPC, clearly higher than the levels seen in ASMD — that gap is what allows the two conditions to be distinguished.", timing: "Used at diagnosis and for differential work-up alongside Lyso-SM and 7-ketocholesterol." },
+        { name: "7-Ketocholesterol (7-keto)", sample: "Plasma.", utility: "The primary NPC biomarker in this laboratory, and currently the most accessible marker available for the condition.", interpretation: "Reference range roughly 2–103 ng/mL; one illustrative NPC case reached 273 ng/mL, clearly elevated. Specificity is moderate — it can also rise with oxidative stress, liver disease, and other metabolic conditions — but it remains the most practical NPC marker currently available.", timing: "At diagnostic work-up; since NPC currently has no curative treatment, monitoring is used mainly to characterize disease course." }
+      ]},
+      { id: "dbs-qc", name: "Dried Blood Spot (DBS) Testing", biomarkers: [
+        { name: "β-galactosidase (quality control)", sample: "Dried blood spot.", utility: "Not a disease marker itself — an internal quality-control enzyme that confirms a dried-blood-spot sample was collected and processed correctly before its other enzyme results are trusted.", interpretation: "A result at or above roughly 133 nmol/h/mg (protocol-dependent) indicates the spot is in good condition and its other enzyme results are reliable — one illustrative in-range case: 240 nmol/h/mg. A result below that threshold raises concern the sample degraded. Exception: patients homozygous for a non-functional β-galactosidase gene show no measurable level regardless of sample quality, so this control can't be used for them.", timing: "Run alongside every DBS-based enzyme test — including LAL-D (LIPA), ASMD, and GLA (Fabry) — as a standard quality check." }
+      ]},
+      { id: "myelofibrosis", name: "Myelofibrosis", biomarkers: [
+        { name: "JAK2 V617F mutation", sample: "Peripheral blood (molecular/PCR testing).", utility: "One of the major diagnostic criteria for myeloproliferative neoplasms; present in roughly half to two-thirds of primary myelofibrosis cases.", interpretation: "A positive result supports the diagnosis and confirms the disease is clonal, though allele burden doesn't map neatly onto disease stage.", timing: "At diagnostic work-up, as part of standard molecular profiling." },
+        { name: "CALR mutation", sample: "Peripheral blood.", utility: "Found in a meaningful share of JAK2-negative myelofibrosis cases and helps refine prognosis.", interpretation: "CALR-mutated disease often follows a more favorable course than JAK2-mutated or triple-negative disease; result feeds into standard prognostic scoring.", timing: "At diagnostic work-up." }
+      ]},
+      { id: "pv", name: "Polycythemia Vera", biomarkers: [
+        { name: "JAK2 V617F mutation", sample: "Peripheral blood.", utility: "A near-universal finding in polycythemia vera and a major WHO diagnostic criterion.", interpretation: "Found in the large majority of PV cases; combined with an elevated hemoglobin/hematocrit, a positive result strongly supports the diagnosis.", timing: "At diagnostic work-up." },
+        { name: "Erythropoietin (EPO), serum", sample: "Serum blood test.", utility: "Helps distinguish PV from secondary causes of a high red blood cell count.", interpretation: "Typically low in PV, because the bone marrow produces red cells autonomously and suppresses the kidney's normal EPO output — the opposite pattern seen in secondary polycythemia.", timing: "Part of the initial differential-diagnosis work-up." }
+      ]}
+    ];
+    var pgDiseaseSelect = document.getElementById("pgDisease");
+    var pgBiomarkerSelect = document.getElementById("pgBiomarker");
+    var pgBioCardEl = document.getElementById("pgBioCard");
+
+    pgDiseaseSelect.innerHTML = pgDiseases.map(function (d) { return '<option value="' + d.id + '">' + d.name + '</option>'; }).join("");
+
+    function pgFindDisease() {
+      var match = pgDiseases.filter(function (d) { return d.id === pgDiseaseSelect.value; });
+      return match[0];
+    }
+    function pgPopulateBiomarkers() {
+      var disease = pgFindDisease();
+      if (!disease) return;
+      pgBiomarkerSelect.innerHTML = disease.biomarkers.map(function (b, i) { return '<option value="' + i + '">' + b.name + '</option>'; }).join("");
+      pgRenderBiomarkerCard();
+    }
+    function pgRenderBiomarkerCard() {
+      var disease = pgFindDisease();
+      if (!disease) return;
+      var biomarker = disease.biomarkers[parseInt(pgBiomarkerSelect.value, 10)] || disease.biomarkers[0];
+      pgBioCardEl.innerHTML =
+        '<div class="pg-bio-field"><p class="k">Sample</p><p class="v">' + biomarker.sample + '</p></div>' +
+        '<div class="pg-bio-field"><p class="k">Utility</p><p class="v">' + biomarker.utility + '</p></div>' +
+        '<div class="pg-bio-field"><p class="k">Interpretation</p><p class="v">' + biomarker.interpretation + '</p></div>' +
+        '<div class="pg-bio-field"><p class="k">Collection timing</p><p class="v">' + biomarker.timing + '</p></div>';
+    }
+    pgDiseaseSelect.addEventListener("change", pgPopulateBiomarkers);
+    pgBiomarkerSelect.addEventListener("change", pgRenderBiomarkerCard);
+    pgPopulateBiomarkers();
+  }
+
+  /* ------------------------------------------------------------
+     9. ABOUT — FILM STRIP (visual journey)
+  ------------------------------------------------------------ */
+  var journeyData = [
+    { title: "Biotechnology Laboratory", caption: "Degree Practicals · Zaragoza", img: "images/about-01.jpg", alt: "Biotechnology laboratory practicals during the degree" },
+    { title: "Molecular Biology", caption: "University Projects · Bench Work", img: "images/about-02.jpg", alt: "Molecular biology bench work during university projects" },
+    { title: "Bioinformatics", caption: "Protein-Ligand · Pymol", img: "images/about-02b.jpg", alt: "Protein-ligand modeling with PyMOL" },
+    { title: "Genetics Department", caption: "Hospital Miguel Servet", img: "images/about-03.jpg", alt: "Clinical Genetics rotation at Hospital Miguel Servet" },
+    { title: "Scientific Research", caption: "Bachelor thesis · Murine muscle ALS inflammatory biomarkers", img: "images/about-04.jpg", alt: "Thesis research on inflammatory biomarkers" },
+    { title: "Clinical Research", caption: "MSc Clinical Trial Monitoring", img: "images/about-05.jpg", alt: "Clinical research coursework for the MSc thesis" },
+    { title: "Hematology &amp; Rare Diseases", caption: "Study Coordinator Internship", img: "images/about-06.jpg", alt: "Study coordination training in hematology and rare diseases" },
+    { title: "eCRF &amp; Query Management", caption: "Excel Simulation", img: "images/about-07.jpg", alt: "Clinical trial data and eCRF query management project" },
+    { title: "Clinical Trial Dashboard", caption: "Excel Simulation", img: "images/about-07'.jpg", alt: "Clinical trial data and eCRF query management project" },
+    { title: "FEETEG / Diagnostic Laboratory", caption: "Enzyme activity in DBS", img: "images/about-08.jpg", alt: "Enzyme activity testing in dried blood spot samples" }
+  ];
+
+  var filmstripEl = document.getElementById("aboutFilmstrip");
+  if (filmstripEl) {
+    var fsTrack = document.getElementById("filmstripTrack");
+    var fsViewport = filmstripEl.querySelector(".filmstrip-viewport");
+    var fsDots = document.getElementById("filmstripDots");
+    var fsCount = document.getElementById("filmstripCount");
+    var fsTitle = document.getElementById("filmstripTitle");
+    var fsCaption = document.getElementById("filmstripCaption");
+    var fsPrev = document.getElementById("filmstripPrev");
+    var fsNext = document.getElementById("filmstripNext");
+    var fsTotal = journeyData.length;
+    var fsIndex = 0;
+    var fsReducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    var lightbox = document.getElementById("filmstripLightbox");
+    var lbImg = document.getElementById("filmstripLightboxImg");
+    var lbTitle = document.getElementById("filmstripLightboxTitle");
+    var lbCaption = document.getElementById("filmstripLightboxCaption");
+    var lbCount = document.getElementById("filmstripLightboxCount");
+    var lbClose = document.getElementById("filmstripLightboxClose");
+    var lbLastFocused = null;
+
+    function pad(n) { return n < 10 ? "0" + n : "" + n; }
+
+    fsTrack.innerHTML = journeyData.map(function (item, i) {
+      return '<button type="button" class="filmstrip-frame' + (i === 0 ? " is-active" : "") + '" data-index="' + i +
+        '" role="option" aria-selected="' + (i === 0 ? "true" : "false") + '" aria-label="' + item.title + ", photo " + (i + 1) + " of " + fsTotal + '">' +
+        '<span class="media" data-fallback-icon="' + item.title + '"><img src="' + item.img + '" alt="' + item.alt + '" loading="lazy" onerror="imgFallback(this)"></span>' +
+        "</button>";
+    }).join("");
+
+    fsDots.innerHTML = journeyData.map(function (_, i) {
+      return '<button type="button" class="filmstrip-dot' + (i === 0 ? " is-active" : "") + '" data-dot-index="' + i + '" aria-label="Go to photo ' + (i + 1) + '"></button>';
+    }).join("");
+
+    var fsFrames = Array.prototype.slice.call(fsTrack.querySelectorAll(".filmstrip-frame"));
+    var fsDotEls = Array.prototype.slice.call(fsDots.querySelectorAll(".filmstrip-dot"));
+
+    function centerActiveFrame() {
+      var frame = fsFrames[fsIndex];
+      if (!frame) return;
+      var offset = frame.offsetLeft + frame.offsetWidth / 2 - fsViewport.clientWidth / 2;
+      fsTrack.style.transform = "translateX(" + (-offset) + "px)";
+    }
+
+    function renderInfo() {
+      var item = journeyData[fsIndex];
+      fsCount.textContent = pad(fsIndex + 1) + " / " + pad(fsTotal);
+      fsTitle.innerHTML = item.title;
+      fsCaption.innerHTML = item.caption;
+    }
+
+    function goTo(index) {
+      fsIndex = (index + fsTotal) % fsTotal;
+      fsFrames.forEach(function (f, i) {
+        f.classList.toggle("is-active", i === fsIndex);
+        f.setAttribute("aria-selected", i === fsIndex ? "true" : "false");
+      });
+      fsDotEls.forEach(function (d, i) { d.classList.toggle("is-active", i === fsIndex); });
+      renderInfo();
+      centerActiveFrame();
+    }
+
+    function next() { goTo(fsIndex + 1); }
+    function prev() { goTo(fsIndex - 1); }
+
+    /* Autoplay: every 5s, pauses on hover, stops for good on user interaction */
+    var fsAutoplayId = null;
+    var fsAutoplayEnabled = !fsReducedMotion;
+    function playAutoplay() {
+      if (!fsAutoplayEnabled) return;
+      window.clearInterval(fsAutoplayId);
+      fsAutoplayId = window.setInterval(next, 5000);
+    }
+    function pauseAutoplay() { window.clearInterval(fsAutoplayId); }
+    function stopAutoplayForGood() { fsAutoplayEnabled = false; pauseAutoplay(); }
+
+    filmstripEl.addEventListener("mouseenter", pauseAutoplay);
+    filmstripEl.addEventListener("mouseleave", playAutoplay);
+    filmstripEl.addEventListener("focusin", pauseAutoplay);
+    filmstripEl.addEventListener("focusout", playAutoplay);
+
+    fsPrev.addEventListener("click", function () { stopAutoplayForGood(); prev(); });
+    fsNext.addEventListener("click", function () { stopAutoplayForGood(); next(); });
+    fsDotEls.forEach(function (dot) {
+      dot.addEventListener("click", function () {
+        stopAutoplayForGood();
+        goTo(parseInt(dot.getAttribute("data-dot-index"), 10));
+      });
+    });
+
+    fsFrames.forEach(function (frame) {
+      frame.addEventListener("click", function () {
+        var i = parseInt(frame.getAttribute("data-index"), 10);
+        stopAutoplayForGood();
+        if (i === fsIndex) {
+          openLightbox(i);
+        } else {
+          goTo(i);
+        }
+      });
+    });
+
+    filmstripEl.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowLeft") { stopAutoplayForGood(); prev(); e.preventDefault(); }
+      else if (e.key === "ArrowRight") { stopAutoplayForGood(); next(); e.preventDefault(); }
+    });
+
+    /* Swipe support for touch devices */
+    var touchStartX = 0, touchDeltaX = 0, touching = false;
+    fsTrack.addEventListener("touchstart", function (e) {
+      touching = true;
+      touchStartX = e.touches[0].clientX;
+      touchDeltaX = 0;
+      pauseAutoplay();
+    }, { passive: true });
+    fsTrack.addEventListener("touchmove", function (e) {
+      if (!touching) return;
+      touchDeltaX = e.touches[0].clientX - touchStartX;
+    }, { passive: true });
+    fsTrack.addEventListener("touchend", function () {
+      if (!touching) return;
+      touching = false;
+      stopAutoplayForGood();
+      if (touchDeltaX > 40) prev();
+      else if (touchDeltaX < -40) next();
+      else centerActiveFrame();
+    });
+
+    window.addEventListener("resize", function () {
+      window.clearTimeout(window.__fsResizeT);
+      window.__fsResizeT = window.setTimeout(centerActiveFrame, 120);
+    });
+
+    /* Lightbox */
+    function openLightbox(index) {
+      var item = journeyData[index];
+      lbImg.src = item.img;
+      lbImg.alt = item.alt;
+      lbImg.onerror = function () { lbImg.closest(".filmstrip-lightbox-media").style.background = "linear-gradient(135deg, var(--blue-light), #DCE7F2)"; };
+      lbTitle.innerHTML = item.title;
+      lbCaption.innerHTML = item.caption;
+      lbCount.textContent = pad(index + 1) + " / " + pad(fsTotal);
+      lbLastFocused = document.activeElement;
+      lightbox.classList.add("is-open");
+      lightbox.setAttribute("aria-hidden", "false");
+      lbClose.focus();
+    }
+    function closeLightbox() {
+      lightbox.classList.remove("is-open");
+      lightbox.setAttribute("aria-hidden", "true");
+      if (lbLastFocused) lbLastFocused.focus();
+    }
+    lbClose.addEventListener("click", closeLightbox);
+    lightbox.addEventListener("click", function (e) {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && lightbox.classList.contains("is-open")) closeLightbox();
+    });
+
+    /* Init */
+    goTo(0);
+    playAutoplay();
+  }
+
+  /* ------------------------------------------------------------
+     9. HOW I THINK — scenario switcher + reasoning reveal
+  ------------------------------------------------------------ */
+  var thinkSectionEl = document.getElementById("thinking");
+  if (thinkSectionEl) {
+    var thinkScenarios = [
+      {
+        id: "deviations",
+        tabLabel: "Protocol deviations",
+        situation: "A clinical trial site has a sudden increase in protocol deviations.",
+        question: "What would you investigate first?",
+        options: [
+          { label: "Recruitment pressure", reasoning: "This is often where I'd start. When a site is under pressure to hit enrollment targets, protocol adherence is usually the first thing to slip — visit windows get compressed, procedures get reordered around the patient's schedule instead of the protocol's. I'd line up the enrollment timeline against the deviation timeline: if the spike tracks a recruitment push or an approaching deadline, that's a strong signal, and the fix is about workload, not retraining." },
+          { label: "Staff training", reasoning: "This is my first call when the pattern is new rather than constant. I'd check whether there's been recent staff turnover, and whether the deviations cluster around one procedure or one person rather than spreading evenly across the site. A tight cluster usually points to a training gap; deviations spread broadly across long-standing staff usually don't." },
+          { label: "Protocol complexity", reasoning: "I'd look here when the same pattern shows up across multiple sites, not just one — that points to the protocol itself being hard to execute rather than a site-specific problem. I'd check whether deviations cluster around one particular visit or procedure, like a narrow visit window or a confusing eligibility criterion. If so, that's something an amendment or a clarifying note fixes, not something any one site did wrong." },
+          { label: "Data entry issues", reasoning: "Worth ruling out early, because it's the cheapest check and can make a site look worse than it is. Some \u201cdeviations\u201d are really documentation problems — the event happened as coded, but was logged late, miscategorized, or duplicated in the eCRF. I'd pull the raw deviation log and check timestamps and categorization before assuming every entry reflects an actual protocol breach." }
+        ],
+        closing: "Realistically, I'd check all four before drawing a conclusion — but the order tells me fastest whether this is a workload problem, a training problem, a protocol-design problem, or a documentation problem, and each one has a completely different fix."
+      },
+      {
+        id: "sae",
+        tabLabel: "SAE reporting delay",
+        situation: "A patient's hospitalization isn't reported as a Serious Adverse Event until three days after the site learns about it — well outside the 24-hour window.",
+        question: "What would you look at first?",
+        options: [
+          { label: "Site's SAE workflow", reasoning: "This is usually where the delay actually lives. I'd ask who's responsible for catching hospital admissions outside clinic hours, and whether that's written down anywhere or just assumed. No defined weekend or holiday coverage for safety reporting is the most common root cause of a 24-hour breach — and it's fixable with a simple written escalation plan, not a training session." },
+          { label: "Investigator's weekend coverage", reasoning: "Worth checking, but it's really a subset of the workflow question. If there's no formal on-call plan for safety events outside clinic hours, one person's availability that weekend won't fix the underlying gap. I'd still ask, but frame it as \u201cis there a written on-call plan\u201d rather than \u201cwas the investigator reachable.\u201d" },
+          { label: "Patient's emergency instructions", reasoning: "This matters more than it might seem. Did the patient know to mention the trial when they were admitted? A wallet card with a simple instruction — mention the trial, call this number — can cut the delay dramatically, because it moves the first alert from \u201cthe site finds out Monday morning\u201d to \u201cthe hospital calls that night.\u201d" },
+          { label: "eCRF system access", reasoning: "Less likely to be the root cause here, but a fast check worth doing. If the safety eCRF was inaccessible, or the investigator wasn't sure how to submit outside business hours, that's a system fix rather than a communication gap — and it's quick to rule in or out." }
+        ],
+        closing: "The fastest way I've found to stop this from recurring is usually a written weekend/holiday safety-reporting plan paired with a patient-facing prompt to mention the trial on admission — both are cheap to set up and close most of the gap."
+      },
+      {
+        id: "drug-accountability",
+        tabLabel: "Drug accountability",
+        situation: "A patient returns their pill bottle, and the count doesn't match the expected dose for the days elapsed since the last visit.",
+        question: "What would you check first?",
+        options: [
+          { label: "Dispensing log vs. IWRS", reasoning: "This is the first cross-check I'd run. Before assuming the patient under- or over-took the medication, I'd confirm the site actually dispensed what the interactive system (IWRS) says it dispensed. A mismatch between the system and the physical dispensing log is more common than it sounds, and it has nothing to do with the patient." },
+          { label: "Patient's dosing diary", reasoning: "If the dispensing records check out, this is next. Does the patient have any record of a missed or doubled dose, and does it line up with the count? That turns an unexplained discrepancy into a documented, explainable one — which is what a monitor and an auditor actually need to see." },
+          { label: "Date the return was recorded", reasoning: "I'd check this early if the numbers look close but not quite right. A pill count is only as good as the date it's measured against, and it's common for a return to be logged a day or two after the actual visit — which throws off the expected-versus-actual math without anything having actually gone wrong." },
+          { label: "Bottle labeling", reasoning: "Worth a quick look, especially if the patient is on more than one study medication or has switched kits between visits. A mislabeled or swapped bottle can look exactly like a dosing discrepancy at first glance, and it's a fast thing to rule out." }
+        ],
+        closing: "In my experience, the recorded return date is the most common false alarm — I'd rule that out first with a quick date check before treating this as a real compliance issue."
+      },
+      {
+        id: "ae-followup",
+        tabLabel: "AE follow-up",
+        situation: "An adverse event is still marked \u201cnot resolved\u201d at the current visit, even though the lab value behind it normalized weeks earlier.",
+        question: "What's the most likely cause?",
+        options: [
+          { label: "Missed at data entry", reasoning: "The most common and most fixable cause — the lab came back normal, but nobody went back into the eCRF to update the AE status once the result was in. I'd check whether there's a routine step where open AEs get cross-checked against new lab results before each visit, or whether it only happens if someone happens to notice." },
+          { label: "Investigator hasn't reviewed the trend", reasoning: "Worth checking if the coordinator can't close the AE without investigator sign-off. A normal lab value doesn't update the eCRF on its own — if the physician hasn't reviewed and confirmed resolution, the event stays open even though the data already points to it being resolved." },
+          { label: "eCRF workflow gap", reasoning: "If this keeps happening across more than one patient, it points to a process gap rather than a single missed update — no defined point in the visit workflow where open AEs get checked against new results, for example. That's a checklist fix, not a one-off correction." },
+          { label: "Genuinely still unresolved", reasoning: "I wouldn't assume this without checking. A normal lab value doesn't always mean the adverse event itself has resolved — symptoms can lag behind labs, or the reverse — so this needs the investigator's clinical judgment, not just the numbers on the page." }
+        ],
+        closing: "My default assumption is a process gap rather than a clinical one — I'd build a routine monthly cross-check between lab reports and open AE status specifically to catch this before it reaches monitoring."
+      }
+    ];
+
+    var thinkActiveScenario = 0;
+    var thinkTabsEl = document.getElementById("thinkTabs");
+    var thinkSituationEl = document.getElementById("thinkSituation");
+    var thinkQuestionEl = document.getElementById("thinkQuestion");
+    var thinkOptionsEl = document.getElementById("thinkOptions");
+    var thinkReasoningEl = document.getElementById("thinkReasoning");
+    var thinkReasoningLabelEl = document.getElementById("thinkReasoningLabel");
+    var thinkReasoningTextEl = document.getElementById("thinkReasoningText");
+    var thinkClosingEl = document.getElementById("thinkClosing");
+
+    thinkTabsEl.innerHTML = thinkScenarios.map(function (s, i) {
+      return '<button type="button" class="think-tab' + (i === 0 ? ' active' : '') + '" data-index="' + i + '">' + s.tabLabel + '</button>';
+    }).join("");
+
+    function thinkSelectOption(optionIndex) {
+      var s = thinkScenarios[thinkActiveScenario];
+      var o = s.options[optionIndex];
+      Array.prototype.slice.call(thinkOptionsEl.querySelectorAll(".think-option")).forEach(function (btn, bi) {
+        btn.classList.toggle("selected", bi === optionIndex);
+      });
+      thinkReasoningLabelEl.textContent = "If I picked \u201c" + o.label + "\u201d";
+      thinkReasoningTextEl.textContent = o.reasoning;
+      thinkClosingEl.textContent = s.closing;
+      thinkReasoningEl.hidden = false;
+    }
+
+    function thinkRenderScenario(index) {
+      thinkActiveScenario = index;
+      var s = thinkScenarios[index];
+      Array.prototype.slice.call(thinkTabsEl.querySelectorAll(".think-tab")).forEach(function (t, i) {
+        t.classList.toggle("active", i === index);
+      });
+      thinkSituationEl.textContent = s.situation;
+      thinkQuestionEl.textContent = s.question;
+      thinkOptionsEl.innerHTML = s.options.map(function (o, i) {
+        return '<button type="button" class="think-option" data-index="' + i + '">' + o.label + '</button>';
+      }).join("");
+      thinkReasoningEl.hidden = true;
+      Array.prototype.slice.call(thinkOptionsEl.querySelectorAll(".think-option")).forEach(function (btn) {
+        btn.addEventListener("click", function () { thinkSelectOption(parseInt(btn.getAttribute("data-index"), 10)); });
+      });
+    }
+
+    Array.prototype.slice.call(thinkTabsEl.querySelectorAll(".think-tab")).forEach(function (tab) {
+      tab.addEventListener("click", function () { thinkRenderScenario(parseInt(tab.getAttribute("data-index"), 10)); });
+    });
+
+    thinkRenderScenario(0);
+  }
+
+})();
+</script>
+
+</body>
+</html>
