@@ -706,6 +706,44 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   .think-card { padding: 26px 22px; }
   .think-options { grid-template-columns: 1fr; }
 }
+
+/* ============================================================
+   21. VIDEO INTRODUCTION
+============================================================ */
+.intro-video-wrap {
+  position: relative; max-width: 780px; margin: 0 auto;
+  aspect-ratio: 16 / 9; border-radius: var(--r-lg); overflow: hidden;
+  background: var(--gray-900); box-shadow: var(--shadow-sm); border: 1px solid var(--gray-200);
+}
+.intro-video-wrap video { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+.intro-video-play {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(180deg, rgba(10,31,61,0.12), rgba(10,31,61,0.34));
+  border: none; padding: 0; cursor: pointer; transition: background .2s ease;
+}
+.intro-video-play:hover { background: linear-gradient(180deg, rgba(10,31,61,0.18), rgba(10,31,61,0.4)); }
+.intro-video-play .play-circle {
+  width: 74px; height: 74px; border-radius: 50%; background: var(--navy);
+  display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-md); transition: transform .2s ease;
+}
+.intro-video-play:hover .play-circle { transform: scale(1.06); }
+.intro-video-play svg { width: 24px; height: 24px; margin-left: 3px; }
+.intro-video-play.hidden { display: none; }
+
+.intro-video-tagline { text-align: center; margin-top: 22px; font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.04em; color: var(--gray-600); }
+
+.intro-video-cta { text-align: center; margin-top: 40px; }
+.intro-video-cta p { font-size: 0.92rem; color: var(--gray-600); margin-bottom: 14px; }
+
+/* Scroll reveal — scoped to this section only; does not touch any existing animation */
+.intro-video-reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+.intro-video-reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 560px) {
+  .intro-video-play .play-circle { width: 58px; height: 58px; }
+  .intro-video-play svg { width: 20px; height: 20px; }
+}
 </style>
 </head>
 <body>
@@ -774,6 +812,36 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
         <p class="eyebrow">Currently</p>
         <strong>Quirónsalud Zaragoza · Study Coordinator and Clinical Research Trainee</strong>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     VIDEO INTRODUCTION
+============================================================ -->
+<section class="section" id="intro-video">
+  <div class="container">
+    <div class="section-head center intro-video-reveal">
+      <p class="eyebrow">Welcome to my portfolio</p>
+      <h2>A brief introduction from me</h2>
+    </div>
+
+    <div class="intro-video-wrap intro-video-reveal">
+      <video id="introVideo" controls playsinline preload="metadata" poster="assets/intro-video-poster.jpg">
+        <source src="assets/intro-video.mp4" type="video/mp4">
+        <track kind="subtitles" src="assets/intro-video-en.vtt" srclang="en" label="English">
+        Your browser doesn't support embedded video. <a href="assets/intro-video.mp4">Download the video</a> instead.
+      </video>
+      <button type="button" class="intro-video-play" id="introVideoPlay" aria-label="Play introduction video">
+        <span class="play-circle"><svg viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span>
+      </button>
+    </div>
+
+    <p class="intro-video-tagline intro-video-reveal">Clinical Research · Biotechnology · Clinical Trials</p>
+
+    <div class="intro-video-cta intro-video-reveal">
+      <p>Ready to explore?</p>
+      <a href="#about" class="btn btn-secondary">Explore my portfolio ↓</a>
     </div>
   </div>
 </section>
@@ -2178,6 +2246,34 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
     });
 
     thinkRenderScenario(0);
+  }
+
+  /* ------------------------------------------------------------
+     10. VIDEO INTRODUCTION — custom play button + scoped scroll-reveal
+     (isolated: does not touch any other section, class, or animation)
+  ------------------------------------------------------------ */
+  var introVideoEl = document.getElementById("introVideo");
+  var introVideoPlayBtn = document.getElementById("introVideoPlay");
+  if (introVideoEl && introVideoPlayBtn) {
+    introVideoPlayBtn.addEventListener("click", function () { introVideoEl.play(); });
+    introVideoEl.addEventListener("play", function () { introVideoPlayBtn.classList.add("hidden"); });
+  }
+
+  var introVideoRevealEls = Array.prototype.slice.call(document.querySelectorAll(".intro-video-reveal"));
+  if (introVideoRevealEls.length) {
+    if ("IntersectionObserver" in window) {
+      var introVideoObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            introVideoObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      introVideoRevealEls.forEach(function (el) { introVideoObserver.observe(el); });
+    } else {
+      introVideoRevealEls.forEach(function (el) { el.classList.add("is-visible"); });
+    }
   }
 
 })();
