@@ -124,7 +124,7 @@ p { color: var(--gray-600); }
   padding: 12px 20px; z-index: 1000; border-radius: 0 0 8px 0;
 }
 .skip-link:focus { left: 0; }
-main section[id], footer[id] { scroll-margin-top: 88px; }
+main [id], footer [id] { scroll-margin-top: 88px; }
 
 /* Focus visibility (accessibility) */
 a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
@@ -197,6 +197,50 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   .nav-links.is-open { transform: translateY(0); opacity: 1; pointer-events: auto; }
   .nav-cta .btn-secondary { display: none; }
   .nav-toggle { display: flex; }
+}
+
+/* Nav dropdowns (About / Scientific Writing / Projects) */
+.nav-dropdown { position: relative; }
+.nav-dropdown-trigger {
+  font: inherit; font-size: 0.86rem; font-weight: 500; color: var(--gray-600);
+  background: none; border: none; margin: 0; padding: 4px 0; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 4px; position: relative;
+  transition: color .2s ease;
+}
+.nav-dropdown-trigger:hover, .nav-dropdown-trigger.active { color: var(--navy); }
+.nav-dropdown-trigger.active::after {
+  content: ''; position: absolute; bottom: -6px; left: 0; right: 0; height: 2px;
+  background: var(--blue); border-radius: 2px;
+}
+.nav-caret { display: inline-block; font-size: 0.65em; transition: transform .2s ease; }
+.nav-dropdown.is-open .nav-caret { transform: rotate(180deg); }
+
+.nav-dropdown-panel {
+  position: absolute; top: 100%; left: 50%; margin-top: 12px; min-width: 232px; padding: 8px;
+  background: #fff; border: 1px solid var(--gray-200); border-radius: var(--r-md); box-shadow: var(--shadow-md);
+  opacity: 0; visibility: hidden; transform: translateX(-50%) translateY(-6px);
+  transition: opacity .18s ease, transform .18s ease;
+  list-style: none; z-index: 2;
+}
+.nav-dropdown.is-open .nav-dropdown-panel { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+.nav-dropdown-panel li + li { margin-top: 2px; }
+.nav-dropdown-panel a {
+  display: block; padding: 9px 12px; border-radius: var(--r-sm); font-size: 0.85rem;
+  font-weight: 500; color: var(--gray-600); white-space: nowrap; transition: background .15s ease, color .15s ease;
+}
+.nav-dropdown-panel a:hover, .nav-dropdown-panel a:focus-visible { background: var(--blue-light); color: var(--navy); }
+
+@media (max-width: 860px) {
+  .nav-dropdown { width: 100%; }
+  .nav-dropdown-trigger { width: 100%; justify-content: space-between; padding: 4px 0; }
+  .nav-dropdown-panel {
+    position: static; margin-top: 8px; padding: 0 0 0 14px; min-width: 0; box-shadow: none; border: none;
+    opacity: 1; transform: none; max-height: 0; overflow: hidden;
+    transition: max-height .25s ease, visibility 0s linear .25s;
+  }
+  .nav-dropdown.is-open .nav-dropdown-panel { max-height: 320px; visibility: visible; transform: none; transition: max-height .25s ease, visibility 0s linear 0s; }
+  .nav-dropdown-panel li + li { margin-top: 6px; }
+  .nav-dropdown-panel a { padding: 6px 0; white-space: normal; }
 }
 
 /* ============================================================
@@ -758,12 +802,35 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
     <a href="#home" class="nav-logo">Isabel Villalta<span>.</span></a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#home" data-nav="home">Home</a></li>
-      <li><a href="#about" data-nav="about">About</a></li>
-      <li><a href="#thinking" data-nav="thinking">Thinking</a></li>
-      <li><a href="#experience" data-nav="experience">Experience</a></li>
-      <li><a href="#projects" data-nav="projects">Projects</a></li>
+
+      <li class="nav-dropdown">
+        <button type="button" class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">About <span class="nav-caret">▾</span></button>
+        <ul class="nav-dropdown-panel">
+          <li><a href="#about">Career Summary</a></li>
+          <li><a href="#thinking">How I Think</a></li>
+          <li><a href="#experience">Clinical Experience</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-dropdown">
+        <button type="button" class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Scientific Writing <span class="nav-caret">▾</span></button>
+        <ul class="nav-dropdown-panel">
+          <li><a href="#communication">LinkedIn Publications</a></li>
+          <li><a href="#writing">Scientific Reviews</a></li>
+        </ul>
+      </li>
+
+      <li class="nav-dropdown">
+        <button type="button" class="nav-dropdown-trigger" aria-haspopup="true" aria-expanded="false">Projects <span class="nav-caret">▾</span></button>
+        <ul class="nav-dropdown-panel">
+          <li><a href="#project-dashboard">Clinical Trial Dashboard</a></li>
+          <li><a href="#project-ecrf">eCRF Simulation</a></li>
+          <li><a href="#project-soon">Coming Soon</a></li>
+          <li><a href="#playground">Experience the Role of a CRA Firsthand</a></li>
+        </ul>
+      </li>
+
       <li><a href="#playground" data-nav="playground">Playground</a></li>
-      <li><a href="#communication" data-nav="journey">Journey</a></li>
       <li><a href="#toolkit" data-nav="toolkit">Toolkit</a></li>
       <li><a href="#contact" data-nav="contact">Contact</a></li>
     </ul>
@@ -991,6 +1058,11 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
       <h2>Hematology and rare diseases, in practice</h2>
     </div>
 
+    <div class="exp-note" data-reveal style="margin-bottom: 30px;">
+      <strong>On my role</strong>
+      As a Clinical Research &amp; Study Coordination and Clinical Research trainee, I support these trials under supervision — resolving data queries, assisting with source data verification, coordinating visits and shipments, and maintaining eCRFs. I don't run these trials; I help keep them on track.
+    </div>
+    
     <div class="exp-group" data-reveal>
       <div class="exp-group-label"><h3>Hematology</h3><span class="exp-group-tag">4 conditions</span></div>
       <div class="exp-grid">
@@ -1030,11 +1102,6 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
         </div>
       </div>
     </div>
-
-    <div class="exp-note" data-reveal>
-      <strong>On my role</strong>
-      As a Clinical Research &amp; Study Coordination and Clinical Research trainee, I support these trials under supervision — resolving data queries, assisting with source data verification, coordinating visits and shipments, and maintaining eCRFs. I don't run these trials; I help keep them on track.
-    </div>
   </div>
 </section>
 
@@ -1047,7 +1114,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
     </div>
 
     <div class="projects-grid">
-      <div class="card project-card" data-reveal>
+      <div class="card project-card" id="project-dashboard" data-reveal>
         <div class="media" data-fallback-icon="Clinical Trial Dashboard">
           <img src="img/dashboard.jpg" alt="Clinical Trial Dashboard" loading="lazy" onerror="imgFallback(this)">
         </div>
@@ -1086,7 +1153,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
         </div>
       </div>
 
-      <div class="card project-card reverse" data-reveal>
+      <div class="card project-card reverse" id="project-ecrf" data-reveal>
         <div class="media" data-fallback-icon="eCRF Simulation">
           <img src="img/ecrf-simulation.jpg" alt="eCRF Simulation dashboard" loading="lazy" onerror="imgFallback(this)">
         </div>
@@ -1128,7 +1195,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
       </div>
     </div>
 
-    <div class="section-head sub" data-reveal>
+    <div class="section-head sub" id="project-soon" data-reveal>
       <p class="eyebrow">What's next</p>
       <h3>Coming soon</h3>
     </div>
@@ -1535,7 +1602,38 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
     });
   });
 
+  /* Nav dropdowns: About / Scientific Writing / Projects */
+  var navDropdowns = Array.prototype.slice.call(links.querySelectorAll(".nav-dropdown"));
+  function closeAllDropdowns() {
+    navDropdowns.forEach(function (dd) {
+      dd.classList.remove("is-open");
+      dd.querySelector(".nav-dropdown-trigger").setAttribute("aria-expanded", "false");
+    });
+  }
+  navDropdowns.forEach(function (dd) {
+    var trigger = dd.querySelector(".nav-dropdown-trigger");
+    trigger.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var wasOpen = dd.classList.contains("is-open");
+      closeAllDropdowns();
+      if (!wasOpen) {
+        dd.classList.add("is-open");
+        trigger.setAttribute("aria-expanded", "true");
+      }
+    });
+    dd.querySelectorAll(".nav-dropdown-panel a").forEach(function (a) {
+      a.addEventListener("click", closeAllDropdowns);
+    });
+  });
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".nav-dropdown")) closeAllDropdowns();
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") closeAllDropdowns();
+  });
+
   var navAnchors = Array.prototype.slice.call(links.querySelectorAll("a"));
+  var navDropdownTriggers = Array.prototype.slice.call(links.querySelectorAll(".nav-dropdown-trigger"));
   var spySections = navAnchors
     .map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); })
     .filter(Boolean);
@@ -1544,10 +1642,17 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
         var id = entry.target.getAttribute("id");
-        var link = links.querySelector('a[href="#' + id + '"]');
+        var candidates = Array.prototype.slice.call(links.querySelectorAll('a[href="#' + id + '"]'));
+        var link = candidates.filter(function (a) { return !a.closest(".nav-dropdown-panel"); })[0] || candidates[0];
         if (!link) return;
         navAnchors.forEach(function (a) { a.classList.remove("active"); });
+        navDropdownTriggers.forEach(function (b) { b.classList.remove("active"); });
         link.classList.add("active");
+        var parentDropdown = link.closest(".nav-dropdown");
+        if (parentDropdown) {
+          var parentTrigger = parentDropdown.querySelector(".nav-dropdown-trigger");
+          if (parentTrigger) parentTrigger.classList.add("active");
+        }
       });
     }, { rootMargin: "-45% 0px -50% 0px", threshold: 0 });
     spySections.forEach(function (s) { spy.observe(s); });
