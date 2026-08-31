@@ -433,6 +433,67 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
 }
 .filmstrip-lightbox-close:hover { background: rgba(10,31,61,0.85); }
 
+/* Disease "superlink" pills + step-by-step explainer modal */
+.disease-link {
+  display: inline-flex; align-items: center; gap: 5px; font: inherit; font-weight: inherit;
+  color: inherit; background: none; border: none; padding: 0; margin: 0; cursor: pointer;
+  text-decoration: none; border-bottom: 2px dashed var(--accent-line); transition: color .2s ease, border-color .2s ease;
+}
+.disease-link:hover, .disease-link:focus-visible { color: var(--blue); border-color: var(--blue); }
+.disease-link .disease-link-icon {
+  width: 16px; height: 16px; border-radius: 50%; background: var(--blue-light); color: var(--navy);
+  display: inline-flex; align-items: center; justify-content: center; font-family: var(--font-mono);
+  font-size: .62rem; font-weight: 700; flex-shrink: 0;
+}
+p .disease-link { border-bottom-width: 1px; }
+
+.disease-modal {
+  position: fixed; inset: 0; z-index: 999; display: flex; align-items: center; justify-content: center;
+  padding: 24px; background: rgba(10,31,61,0.8);
+  opacity: 0; pointer-events: none; transition: opacity .3s ease;
+}
+.disease-modal.is-open { opacity: 1; pointer-events: auto; }
+.disease-modal-inner {
+  position: relative; width: 100%; max-width: 720px; max-height: 86vh; display: flex; flex-direction: column;
+  background: #fff; border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow-lg);
+  transform: scale(.94) translateY(10px); transition: transform .3s ease;
+}
+.disease-modal.is-open .disease-modal-inner { transform: scale(1) translateY(0); }
+.disease-modal-close {
+  position: absolute; top: 14px; right: 14px; z-index: 2; width: 36px; height: 36px; border-radius: 50%;
+  background: rgba(10,31,61,0.55); color: #fff; font-size: 1.2rem; line-height: 1;
+  display: flex; align-items: center; justify-content: center; transition: background .2s ease;
+}
+.disease-modal-close:hover { background: rgba(10,31,61,0.85); }
+.disease-modal-scroll { overflow-y: auto; }
+.disease-modal-body { padding: 50px 32px 32px; }
+.disease-modal-head { margin-bottom: 22px; }
+.disease-modal-eyebrow { font-family: var(--font-mono); font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--blue); margin-bottom: 8px; display: block; }
+.disease-modal-head h3 { font-size: 1.5rem; margin-bottom: 10px; }
+.disease-modal-summary { font-size: .96rem; line-height: 1.7; }
+
+.disease-steps { list-style: none; counter-reset: disease-step; margin: 26px 0; padding: 0; display: flex; flex-direction: column; gap: 18px; }
+.disease-step { position: relative; padding-left: 40px; }
+.disease-step::before {
+  counter-increment: disease-step; content: counter(disease-step);
+  position: absolute; left: 0; top: 0; width: 26px; height: 26px; border-radius: 50%;
+  background: var(--navy); color: #fff; font-family: var(--font-mono); font-size: .78rem; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.disease-step h4 { font-size: .95rem; margin-bottom: 4px; }
+.disease-step p { font-size: .88rem; line-height: 1.6; margin: 0; }
+
+.disease-refs { border-top: 1px solid var(--gray-200); padding-top: 20px; margin-top: 6px; }
+.disease-refs .label { font-family: var(--font-mono); font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--gray-400); margin-bottom: 10px; display: block; }
+.disease-refs ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.disease-refs a { display: inline-flex; align-items: center; gap: 6px; font-size: .86rem; font-weight: 600; color: var(--blue); }
+.disease-refs a:hover { color: var(--navy); }
+.disease-refs a svg { width: 13px; height: 13px; flex-shrink: 0; }
+
+@media (max-width: 560px) {
+  .disease-modal-body { padding: 50px 20px 26px; }
+}
+
 /* ============================================================
    11. CLINICAL EXPERIENCE
 ============================================================ */
@@ -944,7 +1005,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
         <div class="media focus-media"><img src="img/gba1-parkinsons.jpg" alt="GBA1 variants and Parkinson's disease systematic review" loading="lazy" onerror="imgFallback(this)"></div>
         <div class="focus-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5V6a2 2 0 012-2h13v16H6a2 2 0 00-2 2z"/><path d="M6 17h13"/></svg></div>
         <p class="label">Current Scientific Project</p>
-        <h4>GBA1 Variants &amp; Parkinson's Disease</h4>
+        <h4>GBA1 Variants &amp; <button type="button" class="disease-link" data-disease="parkinsons">Parkinson's Disease<span class="disease-link-icon" aria-hidden="true">i</span></button></h4>
         <p>A systematic review of current scientific literature exploring the link between GBA1 variants and Parkinson’s disease, conducted in strict accordance with PRISMA guidelines.</p>
         <a href="#writing" class="card-link">See review →</a>
       </div>
@@ -1024,6 +1085,26 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
   </div>
 </div>
 
+<div class="disease-modal" id="diseaseModal" aria-hidden="true">
+  <div class="disease-modal-inner" role="dialog" aria-modal="true" aria-labelledby="diseaseModalTitle">
+    <button type="button" class="disease-modal-close" id="diseaseModalClose" aria-label="Close">×</button>
+    <div class="disease-modal-scroll">
+      <div class="disease-modal-body">
+        <div class="disease-modal-head">
+          <span class="disease-modal-eyebrow" id="diseaseModalEyebrow">—</span>
+          <h3 id="diseaseModalTitle">—</h3>
+          <p class="disease-modal-summary" id="diseaseModalSummary">—</p>
+        </div>
+        <ol class="disease-steps" id="diseaseModalSteps"></ol>
+        <div class="disease-refs">
+          <span class="label">Learn more</span>
+          <ul id="diseaseModalRefs"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <section class="section" id="thinking">
   <div class="container">
     <div class="section-head">
@@ -1067,19 +1148,19 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
       <div class="exp-grid">
         <div class="card exp-card">
           <div class="media" data-fallback-icon="Myelofibrosis"><img src="img/myelofibrosis.jpg" alt="Myelofibrosis" loading="lazy" onerror="imgFallback(this)"></div>
-          <div class="exp-card-body"><h4>Myelofibrosis</h4><p>A chronic myeloproliferative neoplasm driven by JAK-STAT dysregulation, causing progressive bone marrow fibrosis, cytopenias, and splenomegaly. The most protocol-intensive area of my internship: I support Phase I–III studies spanning a telomerase inhibitor in JAK-inhibitor-refractory disease, an XPO1 inhibitor combined with ruxolitinib, an oral MDM2 inhibitor restoring p53-mediated apoptosis, a subcutaneous TGF-&beta; ligand trap for anemia-dominant profiles, and a BTK inhibitor for patients ineligible for standard JAK inhibition.</p></div>
+          <div class="exp-card-body"><h4><button type="button" class="disease-link" data-disease="myelofibrosis">Myelofibrosis<span class="disease-link-icon" aria-hidden="true">i</span></button></h4><p>A chronic myeloproliferative neoplasm driven by JAK-STAT dysregulation, causing progressive bone marrow fibrosis, cytopenias, and splenomegaly. The most protocol-intensive area of my internship: I support Phase I–III studies spanning a telomerase inhibitor in JAK-inhibitor-refractory disease, an XPO1 inhibitor combined with ruxolitinib, an oral MDM2 inhibitor restoring p53-mediated apoptosis, a subcutaneous TGF-&beta; ligand trap for anemia-dominant profiles, and a BTK inhibitor for patients ineligible for standard JAK inhibition.</p></div>
         </div>
         <div class="card exp-card">
           <div class="media" data-fallback-icon="Polycythemia Vera"><img src="img/polycythemia-vera.jpg" alt="Polycythemia Vera" loading="lazy" onerror="imgFallback(this)"></div>
-          <div class="exp-card-body"><h4>Polycythemia Vera</h4><p>A clonal myeloproliferative disorder caused by JAK2 mutations driving excess red blood cell production and a heightened risk of thrombotic events. Trial protocols in this area focus on long-term disease control and event prevention, with close haematological monitoring at every scheduled visit.</p></div>
+          <div class="exp-card-body"><h4><button type="button" class="disease-link" data-disease="polycythemia-vera">Polycythemia Vera<span class="disease-link-icon" aria-hidden="true">i</span></button></h4><p>A clonal myeloproliferative disorder caused by JAK2 mutations driving excess red blood cell production and a heightened risk of thrombotic events. Trial protocols in this area focus on long-term disease control and event prevention, with close haematological monitoring at every scheduled visit.</p></div>
         </div>
         <div class="card exp-card">
           <div class="media" data-fallback-icon="Chronic Myeloid Leukemia"><img src="img/chronic-myeloid-leukemia.jpg" alt="Chronic Myeloid Leukemia" loading="lazy" onerror="imgFallback(this)"></div>
-          <div class="exp-card-body"><h4>Chronic Myeloid Leukemia</h4><p>A clonal myeloid malignancy defined by the BCR-ABL1 fusion oncogene and its constitutively active tyrosine kinase. I support a Phase 1/2 study evaluating a next-generation allosteric BCR-ABL1 inhibitor — designed to overcome resistance mutations that limit earlier-generation TKIs — in previously treated patients in chronic phase.</p></div>
+          <div class="exp-card-body"><h4><button type="button" class="disease-link" data-disease="cml">Chronic Myeloid Leukemia<span class="disease-link-icon" aria-hidden="true">i</span></button></h4><p>A clonal myeloid malignancy defined by the BCR-ABL1 fusion oncogene and its constitutively active tyrosine kinase. I support a Phase 1/2 study evaluating a next-generation allosteric BCR-ABL1 inhibitor — designed to overcome resistance mutations that limit earlier-generation TKIs — in previously treated patients in chronic phase.</p></div>
         </div>
         <div class="card exp-card">
           <div class="media" data-fallback-icon="Mastocytosis"><img src="img/mastocytosis.jpg" alt="Mastocytosis" loading="lazy" onerror="imgFallback(this)"></div>
-          <div class="exp-card-body"><h4>Mastocytosis</h4><p>A clonal disorder of pathological mast cell accumulation, most often driven by KIT D816V mutations. I support a Phase 2 trial evaluating an oral BTK inhibitor in patients with indolent systemic mastocytosis — a population with significant unmet need and limited approved therapeutic options.</p></div>
+          <div class="exp-card-body"><h4><button type="button" class="disease-link" data-disease="mastocytosis">Mastocytosis<span class="disease-link-icon" aria-hidden="true">i</span></button></h4><p>A clonal disorder of pathological mast cell accumulation, most often driven by KIT D816V mutations. I support a Phase 2 trial evaluating an oral BTK inhibitor in patients with indolent systemic mastocytosis — a population with significant unmet need and limited approved therapeutic options.</p></div>
         </div>
       </div>
     </div>
@@ -1089,15 +1170,15 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
       <div class="exp-grid">
         <div class="card exp-card">
           <div class="media" data-fallback-icon="Gaucher Disease"><img src="img/gaucher-disease.jpg" alt="Gaucher Disease" loading="lazy" onerror="imgFallback(this)"></div>
-          <div class="exp-card-body"><h4>Gaucher Disease</h4><p>The most prevalent lysosomal storage disorder, caused by glucocerebrosidase deficiency and leading to lipid accumulation in the liver, spleen, and bone marrow. My exposure spans three therapeutic paradigms: a long-term observational registry following patients on established therapy; a Phase 1/2 first-in-human rAAV9-based gene therapy trial; and an early-phase adenoviral vector gene therapy study targeting hepatic glucocerebrosidase expression.</p></div>
+          <div class="exp-card-body"><h4><button type="button" class="disease-link" data-disease="gaucher">Gaucher Disease<span class="disease-link-icon" aria-hidden="true">i</span></button></h4><p>The most prevalent lysosomal storage disorder, caused by glucocerebrosidase deficiency and leading to lipid accumulation in the liver, spleen, and bone marrow. My exposure spans three therapeutic paradigms: a long-term observational registry following patients on established therapy; a Phase 1/2 first-in-human rAAV9-based gene therapy trial; and an early-phase adenoviral vector gene therapy study targeting hepatic glucocerebrosidase expression.</p></div>
         </div>
         <div class="card exp-card">
           <div class="media" data-fallback-icon="Fabry Disease"><img src="img/fabry-disease.jpg" alt="Fabry Disease" loading="lazy" onerror="imgFallback(this)"></div>
-          <div class="exp-card-body"><h4>Fabry Disease</h4><p>An X-linked lysosomal storage disorder caused by alpha-galactosidase A deficiency, with systemic involvement affecting the kidneys, heart, and nervous system. I support the Phase 3 MODIFY trial evaluating lucerastat — an oral substrate reduction therapy — in a randomized, double-blind, placebo-controlled design with a long-term open-label extension.</p></div>
+          <div class="exp-card-body"><h4><button type="button" class="disease-link" data-disease="fabry">Fabry Disease<span class="disease-link-icon" aria-hidden="true">i</span></button></h4><p>An X-linked lysosomal storage disorder caused by alpha-galactosidase A deficiency, with systemic involvement affecting the kidneys, heart, and nervous system. I support the Phase 3 MODIFY trial evaluating lucerastat — an oral substrate reduction therapy — in a randomized, double-blind, placebo-controlled design with a long-term open-label extension.</p></div>
         </div>
         <div class="card exp-card">
           <div class="media" data-fallback-icon="Lysosomal Disorders"><img src="img/lysosomal-disorders.jpg" alt="Lysosomal Disorders" loading="lazy" onerror="imgFallback(this)"></div>
-          <div class="exp-card-body"><h4>Lysosomal Disorders — FEETEG Lab</h4><p>During a rotation at the FEETEG specialist diagnostic laboratory, I assisted with enzyme activity testing and biochemical follow-up across four rare lysosomal conditions: ASMD (formerly Niemann-Pick A/B), Niemann-Pick type C, Lysosomal Acid Lipase Deficiency (LAL-D), and Fabry Disease — a setting where biochemical precision at diagnosis directly shapes long-term treatment decisions.</p></div>
+          <div class="exp-card-body"><h4>Lysosomal Disorders — FEETEG Lab</h4><p>During a rotation at the FEETEG specialist diagnostic laboratory, I assisted with enzyme activity testing and biochemical follow-up across four rare lysosomal conditions: <button type="button" class="disease-link" data-disease="asmd">ASMD (formerly Niemann-Pick A/B)<span class="disease-link-icon" aria-hidden="true">i</span></button>, <button type="button" class="disease-link" data-disease="npc">Niemann-Pick type C<span class="disease-link-icon" aria-hidden="true">i</span></button>, <button type="button" class="disease-link" data-disease="lald">Lysosomal Acid Lipase Deficiency (LAL-D)<span class="disease-link-icon" aria-hidden="true">i</span></button>, and <button type="button" class="disease-link" data-disease="fabry">Fabry Disease<span class="disease-link-icon" aria-hidden="true">i</span></button> — a setting where biochemical precision at diagnosis directly shapes long-term treatment decisions.</p></div>
         </div>
       </div>
     </div>
@@ -1408,7 +1489,7 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
       </div>
       <div class="writing-body">
         <div class="writing-meta"><span class="status-badge progress">In preparation</span></div>
-        <h3>Relationship Between GBA1 Variants and Parkinson's Disease</h3>
+        <h3>Relationship Between GBA1 Variants and <button type="button" class="disease-link" data-disease="parkinsons">Parkinson's Disease<span class="disease-link-icon" aria-hidden="true">i</span></button></h3>
         <p class="abstract">This systematic review examines current evidence on GBA1 mutations as a genetic risk factor for Parkinson's disease, focusing on the lysosomal–autophagy pathway mechanisms linking the two conditions.</p>
         <div class="writing-fields">
           <div class="writing-field"><p class="k">Author</p><p class="v">I. Villalta</p></div>
@@ -2240,6 +2321,208 @@ a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
     /* Init */
     goTo(0);
     playAutoplay();
+  }
+
+  /* ------------------------------------------------------------
+     8b. DISEASE EXPLAINER — "superlink" modal for every named
+         condition: step-by-step sections + external references
+  ------------------------------------------------------------ */
+  var diseaseData = {
+    "myelofibrosis": {
+      eyebrow: "Hematology · Myeloproliferative Neoplasm",
+      name: "Myelofibrosis",
+      summary: "A chronic myeloproliferative neoplasm in which abnormal blood stem cells cause progressive scarring (fibrosis) of the bone marrow, disrupting normal blood cell production.",
+      steps: [
+        { title: "What it is", text: "Bone marrow tissue is gradually replaced by fibrous scar tissue, crowding out the healthy cells that make red cells, white cells, and platelets." },
+        { title: "Why it happens", text: "Most cases are driven by mutations in JAK2, CALR, or MPL, which keep JAK-STAT growth signalling permanently switched on in blood stem cells." },
+        { title: "Signs & symptoms", text: "Fatigue, anemia, an enlarged spleen (splenomegaly), night sweats, weight loss, and progressively low blood counts." },
+        { title: "My role in the trials I support", text: "I help coordinate Phase I–III studies spanning JAK-inhibitor combinations, an XPO1 inhibitor, an MDM2 inhibitor, a TGF-β ligand trap, and a BTK inhibitor — resolving queries and scheduling visits within protocol windows." }
+      ],
+      refs: [
+        { label: "NORD — Primary Myelofibrosis", url: "https://rarediseases.org/rare-diseases/primary-myelofibrosis/" },
+        { label: "ClinicalTrials.gov — Myelofibrosis studies", url: "https://clinicaltrials.gov/search?cond=Myelofibrosis" }
+      ]
+    },
+    "polycythemia-vera": {
+      eyebrow: "Hematology · Myeloproliferative Neoplasm",
+      name: "Polycythemia Vera",
+      summary: "A clonal myeloproliferative disorder in which the bone marrow makes too many red blood cells, thickening the blood and raising the risk of clots.",
+      steps: [
+        { title: "What it is", text: "The bone marrow overproduces red blood cells — and often white cells and platelets too — making the blood abnormally thick (hyperviscosity)." },
+        { title: "Why it happens", text: "About 95% of patients carry a JAK2 V617F mutation that keeps growth signalling constantly active in blood-forming stem cells." },
+        { title: "Signs & symptoms", text: "Migraine-like headaches, itching after a warm shower, dizziness, an enlarged spleen, and an increased risk of blood clots." },
+        { title: "My role in the trials I support", text: "Protocols in this area focus on long-term disease control and event prevention, with close haematological monitoring at every scheduled visit." }
+      ],
+      refs: [
+        { label: "NORD — Polycythemia Vera", url: "https://rarediseases.org/rare-diseases/polycythemia-vera/" },
+        { label: "ClinicalTrials.gov — Polycythemia Vera studies", url: "https://clinicaltrials.gov/search?cond=Polycythemia+Vera" }
+      ]
+    },
+    "cml": {
+      eyebrow: "Hematology · Leukemia",
+      name: "Chronic Myeloid Leukemia",
+      summary: "A clonal myeloid malignancy in which the bone marrow makes too many white blood cells, driven by a single, well-characterized fusion oncogene.",
+      steps: [
+        { title: "What it is", text: "A slowly progressing blood and bone marrow cancer, usually diagnosed during or after middle age." },
+        { title: "Why it happens", text: "Pieces of chromosomes 9 and 22 swap places, forming the Philadelphia chromosome and the BCR-ABL1 fusion gene — a tyrosine kinase that is permanently switched on." },
+        { title: "Signs & symptoms", text: "Fatigue, weight loss, night sweats, and fullness below the left ribs from an enlarged spleen; many patients have no symptoms at diagnosis." },
+        { title: "My role in the trials I support", text: "I support a Phase 1/2 study of a next-generation allosteric BCR-ABL1 inhibitor, designed for patients who progressed on earlier-generation TKIs." }
+      ],
+      refs: [
+        { label: "National Cancer Institute — CML (PDQ)", url: "https://www.cancer.gov/types/leukemia/patient/cml-treatment-pdq" },
+        { label: "ClinicalTrials.gov — CML studies", url: "https://clinicaltrials.gov/search?cond=Chronic+Myeloid+Leukemia" }
+      ]
+    },
+    "mastocytosis": {
+      eyebrow: "Hematology · Mast Cell Disorder",
+      name: "Mastocytosis",
+      summary: "A clonal disorder of pathological mast cell accumulation in the skin, bone marrow, or internal organs.",
+      steps: [
+        { title: "What it is", text: "Mast cells — immune cells that normally help fight infection — build up abnormally and release chemicals like histamine, causing a wide range of symptoms." },
+        { title: "Why it happens", text: "Most systemic cases are driven by a KIT D816V mutation that keeps mast cells alive and dividing when they normally wouldn't." },
+        { title: "Signs & symptoms", text: "Flushing, itching, hives, abdominal pain and, in more advanced forms, anaphylaxis-like episodes triggered by mast cell mediators." },
+        { title: "My role in the trials I support", text: "I support a Phase 2 trial of an oral BTK inhibitor in indolent systemic mastocytosis, a population with significant unmet need." }
+      ],
+      refs: [
+        { label: "NORD — Mastocytosis", url: "https://rarediseases.org/rare-diseases/mastocytosis/" },
+        { label: "ClinicalTrials.gov — Mastocytosis studies", url: "https://clinicaltrials.gov/search?cond=Mastocytosis" }
+      ]
+    },
+    "gaucher": {
+      eyebrow: "Rare Disease · Lysosomal Storage Disorder",
+      name: "Gaucher Disease",
+      summary: "The most prevalent lysosomal storage disorder, causing lipid accumulation in the liver, spleen, and bone marrow.",
+      steps: [
+        { title: "What it is", text: "A build-up of fatty substances inside cells damages the liver, spleen, bone marrow and, in some forms, the nervous system." },
+        { title: "Why it happens", text: "Inherited variants in the GBA1 gene reduce the activity of glucocerebrosidase, the enzyme that normally breaks these lipids down." },
+        { title: "Signs & symptoms", text: "Enlarged liver and spleen, anemia, easy bruising, and bone pain or fractures; some forms also involve seizures and neurological decline." },
+        { title: "My role in the trials I support", text: "I'm exposed to three paradigms: a long-term observational registry and two early-phase gene therapy trials targeting glucocerebrosidase expression." }
+      ],
+      refs: [
+        { label: "MedlinePlus Genetics — Gaucher disease", url: "https://medlineplus.gov/genetics/condition/gaucher-disease/" },
+        { label: "ClinicalTrials.gov — Gaucher disease studies", url: "https://clinicaltrials.gov/search?cond=Gaucher+Disease" }
+      ]
+    },
+    "fabry": {
+      eyebrow: "Rare Disease · Lysosomal Storage Disorder",
+      name: "Fabry Disease",
+      summary: "An X-linked lysosomal storage disorder with systemic involvement affecting the kidneys, heart, and nervous system.",
+      steps: [
+        { title: "What it is", text: "A fatty substance called globotriaosylceramide progressively builds up inside cells throughout the body." },
+        { title: "Why it happens", text: "Variants in the GLA gene reduce or eliminate alpha-galactosidase A activity, the enzyme responsible for breaking that lipid down." },
+        { title: "Signs & symptoms", text: "Pain in the hands and feet, small dark-red skin spots (angiokeratomas), reduced sweating, and, over time, kidney, heart and nervous system involvement." },
+        { title: "My role in the trials I support", text: "I support the Phase 3 MODIFY trial of lucerastat, an oral substrate reduction therapy, in a randomized, placebo-controlled design with open-label extension." }
+      ],
+      refs: [
+        { label: "MedlinePlus Genetics — Fabry disease", url: "https://medlineplus.gov/genetics/condition/fabry-disease/" },
+        { label: "ClinicalTrials.gov — Fabry disease studies", url: "https://clinicaltrials.gov/search?cond=Fabry+Disease" }
+      ]
+    },
+    "asmd": {
+      eyebrow: "Rare Disease · Lysosomal Storage Disorder",
+      name: "ASMD (Niemann-Pick Types A/B)",
+      summary: "Acid Sphingomyelinase Deficiency is a spectrum disorder ranging from a severe infantile form to milder, adult-onset presentations.",
+      steps: [
+        { title: "What it is", text: "Formerly split into Niemann-Pick disease types A and B, now recognized as one condition spanning a range of severity." },
+        { title: "Why it happens", text: "Variants in the SMPD1 gene reduce activity of the enzyme acid sphingomyelinase, causing sphingomyelin to build up inside cells." },
+        { title: "Signs & symptoms", text: "Enlarged liver and spleen, lung involvement, low platelets and, in the severe infantile form, progressive neurological damage." },
+        { title: "Why it matters in my lab rotation", text: "At the FEETEG laboratory, I assisted with enzyme activity testing that helps tell ASMD apart from Niemann-Pick type C using the Lyso-SM and SM-509 biomarkers." }
+      ],
+      refs: [
+        { label: "NORD — Acid Sphingomyelinase Deficiency", url: "https://rarediseases.org/rare-diseases/acid-sphingomyelinase-deficiency/" },
+        { label: "ClinicalTrials.gov — ASMD studies", url: "https://clinicaltrials.gov/search?cond=Acid+Sphingomyelinase+Deficiency" }
+      ]
+    },
+    "npc": {
+      eyebrow: "Rare Disease · Lysosomal Storage Disorder",
+      name: "Niemann-Pick Disease Type C",
+      summary: "A progressive disorder in which cells lose the ability to transport cholesterol and other lipids correctly.",
+      steps: [
+        { title: "What it is", text: "Cholesterol and other fatty substances accumulate inside cells, including in brain tissue, damaging the affected areas over time." },
+        { title: "Why it happens", text: "Variants in the NPC1 gene (or, less often, NPC2) disrupt intracellular cholesterol transport — a different mechanism from the enzyme deficiency seen in ASMD." },
+        { title: "Signs & symptoms", text: "Highly variable — from a fatal neonatal form to a late-onset, chronic disorder with ataxia, cognitive decline and abnormal eye movements." },
+        { title: "Why it matters in my lab rotation", text: "SM-509/Lyso-SM levels run markedly higher in NPC than in ASMD — that gap is central to differential diagnosis work at FEETEG." }
+      ],
+      refs: [
+        { label: "NORD — Niemann-Pick Disease Type C", url: "https://rarediseases.org/rare-diseases/niemann-pick-disease/" },
+        { label: "ClinicalTrials.gov — NPC studies", url: "https://clinicaltrials.gov/search?cond=Niemann-Pick+Disease+Type+C" }
+      ]
+    },
+    "lald": {
+      eyebrow: "Rare Disease · Lysosomal Storage Disorder",
+      name: "Lysosomal Acid Lipase Deficiency (LAL-D)",
+      summary: "A condition causing harmful build-up of fats and cholesterol in cells, historically split into Wolman disease (infantile) and CESD (later-onset).",
+      steps: [
+        { title: "What it is", text: "Cells lose the ability to break down cholesteryl esters and triglycerides, which then accumulate — particularly in the liver." },
+        { title: "Why it happens", text: "Variants in the LIPA gene reduce activity of the enzyme lysosomal acid lipase." },
+        { title: "Signs & symptoms", text: "Enlarged liver and spleen, liver fibrosis progressing to cirrhosis, high cholesterol, and early atherosclerosis in the later-onset form." },
+        { title: "Why it matters in my lab rotation", text: "LAL-D is one of four conditions I helped test for via dried-blood-spot enzyme activity assays during my FEETEG rotation." }
+      ],
+      refs: [
+        { label: "MedlinePlus Genetics — LAL deficiency", url: "https://medlineplus.gov/genetics/condition/lysosomal-acid-lipase-deficiency/" },
+        { label: "ClinicalTrials.gov — LAL-D studies", url: "https://clinicaltrials.gov/search?cond=Lysosomal+Acid+Lipase+Deficiency" }
+      ]
+    },
+    "parkinsons": {
+      eyebrow: "Neurology · Neurodegenerative Disorder",
+      name: "Parkinson's Disease",
+      summary: "A progressive brain disorder that damages dopamine-producing neurons in a region called the substantia nigra.",
+      steps: [
+        { title: "What it is", text: "A neurodegenerative disorder that gradually impairs movement and, often, non-movement functions like sleep, mood, and cognition." },
+        { title: "Why it happens", text: "The exact cause is largely unknown, but genetic risk factors — including GBA1 variants, the focus of my systematic review — and environmental factors both play a role." },
+        { title: "Signs & symptoms", text: "Tremor, slowness of movement (bradykinesia), rigidity, and balance problems, often alongside sleep disturbance and loss of smell." },
+        { title: "My role in this project", text: "My systematic review examines how GBA1 variants disrupt the lysosomal-autophagy pathway — a mechanistic link between Gaucher disease biology and Parkinson's risk." }
+      ],
+      refs: [
+        { label: "Parkinson's Foundation — What is Parkinson's?", url: "https://www.parkinson.org/understanding-parkinsons/what-is-parkinsons" },
+        { label: "ClinicalTrials.gov — Parkinson's disease studies", url: "https://clinicaltrials.gov/search?cond=Parkinson+Disease" }
+      ]
+    }
+  };
+
+  var diseaseModal = document.getElementById("diseaseModal");
+  if (diseaseModal) {
+    var dmEyebrow = document.getElementById("diseaseModalEyebrow");
+    var dmTitle = document.getElementById("diseaseModalTitle");
+    var dmSummary = document.getElementById("diseaseModalSummary");
+    var dmSteps = document.getElementById("diseaseModalSteps");
+    var dmRefs = document.getElementById("diseaseModalRefs");
+    var dmClose = document.getElementById("diseaseModalClose");
+    var dmLastFocused = null;
+
+    function openDiseaseModal(id) {
+      var d = diseaseData[id];
+      if (!d) return;
+      dmEyebrow.textContent = d.eyebrow;
+      dmTitle.textContent = d.name;
+      dmSummary.textContent = d.summary;
+      dmSteps.innerHTML = d.steps.map(function (s) {
+        return '<li class="disease-step"><h4>' + s.title + "</h4><p>" + s.text + "</p></li>";
+      }).join("");
+      dmRefs.innerHTML = d.refs.map(function (r) {
+        return '<li><a href="' + r.url + '" target="_blank" rel="noopener">' +
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 4h6v6"/><path d="M20 4L10 14"/><path d="M18 13v5a2 2 0 01-2 2H6a2 2 0 01-2-2V8a2 2 0 012-2h5"/></svg>' +
+          r.label + "</a></li>";
+      }).join("");
+      dmLastFocused = document.activeElement;
+      diseaseModal.classList.add("is-open");
+      diseaseModal.setAttribute("aria-hidden", "false");
+      dmClose.focus();
+    }
+    function closeDiseaseModal() {
+      diseaseModal.classList.remove("is-open");
+      diseaseModal.setAttribute("aria-hidden", "true");
+      if (dmLastFocused) dmLastFocused.focus();
+    }
+
+    document.querySelectorAll(".disease-link").forEach(function (btn) {
+      btn.addEventListener("click", function () { openDiseaseModal(btn.getAttribute("data-disease")); });
+    });
+    dmClose.addEventListener("click", closeDiseaseModal);
+    diseaseModal.addEventListener("click", function (e) { if (e.target === diseaseModal) closeDiseaseModal(); });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && diseaseModal.classList.contains("is-open")) closeDiseaseModal();
+    });
   }
 
   /* ------------------------------------------------------------
