@@ -1144,7 +1144,7 @@ p .disease-link { border-bottom-width: 1px; }
     </div>
     
     <div class="exp-group" data-reveal>
-      <div class="exp-group-label"><h3>Hematology</h3><span class="exp-group-tag">4 conditions</span></div>
+      <div class="exp-group-label"><h3>Hematology</h3><span class="exp-group-tag">5 conditions</span></div>
       <div class="exp-grid">
         <div class="card exp-card">
           <div class="media" data-fallback-icon="Myelofibrosis"><img src="img/myelofibrosis.jpg" alt="Myelofibrosis" loading="lazy" onerror="imgFallback(this)"></div>
@@ -1161,6 +1161,10 @@ p .disease-link { border-bottom-width: 1px; }
         <div class="card exp-card">
           <div class="media" data-fallback-icon="Mastocytosis"><img src="img/mastocytosis.jpg" alt="Mastocytosis" loading="lazy" onerror="imgFallback(this)"></div>
           <div class="exp-card-body"><h4><button type="button" class="disease-link" data-disease="mastocytosis">Mastocytosis<span class="disease-link-icon" aria-hidden="true">i</span></button></h4><p>A clonal disorder of pathological mast cell accumulation, most often driven by KIT D816V mutations. I support a Phase 2 trial evaluating an oral BTK inhibitor in patients with indolent systemic mastocytosis — a population with significant unmet need and limited approved therapeutic options.</p></div>
+        </div>
+        <div class="card exp-card">
+          <div class="media" data-fallback-icon="Chronic Lymphocytic Leukemia"><img src="img/chronic-lymphocytic-leukemia.jpg" alt="Chronic Lymphocytic Leukemia" loading="lazy" onerror="imgFallback(this)"></div>
+          <div class="exp-card-body"><h4><button type="button" class="disease-link" data-disease="cll">Chronic Lymphocytic Leukemia<span class="disease-link-icon" aria-hidden="true">i</span></button></h4><p>A common, typically slow-progressing leukemia of mature B lymphocytes. I support a Phase 2 study evaluating zanubrutinib — a third-generation BTK inhibitor — in patients who had become intolerant to earlier-generation BTK inhibitors, testing whether switching therapy resolves prior toxicities while preserving disease control. I've also taken part in a Site Selection Visit for a new CLL trial, working alongside the monitor to assess site feasibility and describe the electronic systems used for clinical record-keeping.</p></div>
         </div>
       </div>
     </div>
@@ -2386,6 +2390,24 @@ p .disease-link { border-bottom-width: 1px; }
       refs: [
         { label: "NORD — Mastocytosis", url: "https://rarediseases.org/rare-diseases/mastocytosis/" },
         { label: "ClinicalTrials.gov — Mastocytosis studies", url: "https://clinicaltrials.gov/search?cond=Mastocytosis" }
+      ]
+    },
+    "cll": {
+      eyebrow: "Hematology · Leukemia",
+      name: "Chronic Lymphocytic Leukemia (CLL)",
+      summary: "A slow-growing cancer of mature B lymphocytes that accumulate in the blood, bone marrow, and lymph nodes, most often diagnosed in older adults.",
+      steps: [
+        { title: "What it is", text: "The bone marrow and lymph nodes fill with abnormal B lymphocytes that don't fight infection effectively and gradually crowd out healthy blood cells." },
+        { title: "Why it happens", text: "Malignant B cells depend on continuous B-cell receptor (BCR) signalling to survive and proliferate. Genetic features such as IGHV mutation status and TP53/17p deletions strongly influence disease behaviour and treatment choice." },
+        { title: "Signs & symptoms", text: "Painless swollen lymph nodes, fatigue, fullness below the ribs from an enlarged spleen, frequent infections, easy bruising, and weight loss; many cases are found incidentally on routine bloodwork." },
+        { title: "How zanubrutinib works at the molecular level", text: "Zanubrutinib is a third-generation Bruton's Tyrosine Kinase (BTK) inhibitor. It binds covalently to a cysteine residue (Cys481) in the BTK active site, irreversibly blocking the kinase that relays BCR survival signals through the PLCγ2, NF-κB, and PI3K/AKT pathways. Malignant B cells lose these survival cues, are mobilized out of protective lymph node niches, and undergo apoptosis. Compared with earlier-generation BTK inhibitors, zanubrutinib is more selective for BTK over off-target kinases (e.g., ITK, EGFR, TEC) implicated in bleeding and cardiac side effects — the rationale for offering it to patients who couldn't tolerate ibrutinib or acalabrutinib." },
+        { title: "The trial I support: design", text: "Patients were grouped by which prior BTK inhibitor had caused intolerance: an ibrutinib-intolerant cohort, an acalabrutinib-intolerant cohort, and a dual-intolerance cohort (sequential intolerance to both). All received full-dose zanubrutinib monotherapy — either 160 mg twice daily or 320 mg once daily, at the treating physician's discretion. The primary (safety) endpoint measured whether prior adverse events recurred after the switch, and with what severity; secondary endpoints tracked continued efficacy via Overall Response Rate, Duration of Response, and Progression-Free Survival. Topline data showed that the large majority of prior intolerance events did not recur after switching to zanubrutinib, allowing patients to continue treatment safely and effectively." },
+        { title: "My role in this trial", text: "I took part in a Site Selection Visit with the study monitor for a new CLL trial — helping assess the site's feasibility and providing information on the electronic systems used locally to manage clinical records." }
+      ],
+      refs: [
+        { label: "National Cancer Institute — CLL (PDQ)", url: "https://www.cancer.gov/types/leukemia/patient/cll-treatment-pdq" },
+        { label: "NCI — Zanubrutinib drug information", url: "https://www.cancer.gov/about-cancer/treatment/drugs/zanubrutinib" },
+        { label: "ClinicalTrials.gov — CLL & zanubrutinib studies", url: "https://clinicaltrials.gov/search?cond=Chronic+Lymphocytic+Leukemia&term=zanubrutinib" }
       ]
     },
     "gaucher": {
