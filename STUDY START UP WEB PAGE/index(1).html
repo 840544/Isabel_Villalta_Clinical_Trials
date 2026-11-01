@@ -1,0 +1,1495 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Isabel Villalta | Study Start-Up Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" rel="stylesheet">
+<style>
+/* ── TOKENS ── */
+:root {
+  --white:      #FFFFFF;
+  --gray-50:    #F7F9FB;
+  --gray-100:   #EDF1F6;
+  --gray-200:   #DDE4EC;
+  --gray-400:   #9AABBE;
+  --gray-600:   #52627A;
+  --gray-800:   #1E2A3B;
+  --navy:       #0A192F;
+  --aqua:       #00B4D8;
+  --aqua-dark:  #007A94;
+  --aqua-soft:  rgba(0,180,216,.10);
+  --aqua-line:  rgba(0,180,216,.35);
+  --radius:     12px;
+  --radius-sm:  8px;
+  --shadow-sm:  0 1px 3px rgba(10,25,47,.06);
+  --shadow-md:  0 4px 14px rgba(10,25,47,.09);
+  --shadow-lg:  0 12px 32px rgba(10,25,47,.14);
+  --font:       'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --ease:       cubic-bezier(.2,.7,.2,1);
+  --sidebar-w:  312px;
+}
+/* ── RESET ── */
+*,*::before,*::after{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{
+  margin:0; height:100vh; height:100dvh;
+  display:flex; flex-direction:column; overflow:hidden;
+  font-family:var(--font); font-size:16px; line-height:1.65;
+  color:var(--gray-800); background:var(--gray-50);
+  -webkit-font-smoothing:antialiased;
+}
+:focus-visible{outline:2px solid var(--aqua-dark);outline-offset:2px;}
+.skip-link{position:absolute;left:-9999px;top:8px;z-index:100;padding:8px 14px;border-radius:var(--radius-sm);background:var(--aqua);color:var(--navy);font-weight:600;text-decoration:none;}
+.skip-link:focus{left:8px;}
+
+/* ── HEADER ── */
+.site-header{
+  flex-shrink:0;
+  display:flex;align-items:center;justify-content:space-between;gap:20px;
+  padding:12px 32px;
+  background:var(--white);
+  border-bottom:1px solid var(--gray-200);
+  box-shadow:var(--shadow-sm);
+}
+.brand{display:flex;align-items:center;gap:12px;min-width:0;}
+.brand-mark{
+  flex-shrink:0;width:40px;height:40px;border-radius:10px;
+  display:grid;place-items:center;
+  background:var(--aqua);color:var(--white);
+  font-weight:800;font-size:.85rem;letter-spacing:.02em;
+}
+.brand-name{margin:0;font-size:1.05rem;font-weight:700;line-height:1.2;color:var(--navy);}
+.brand-title{margin:0;font-size:.78rem;font-weight:500;color:var(--gray-600);}
+.header-actions{display:flex;align-items:center;gap:14px;flex-shrink:0;}
+.social-links{display:flex;gap:8px;}
+.social-link{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:7px 13px;border-radius:999px;
+  border:1px solid var(--gray-200);
+  color:var(--gray-600);text-decoration:none;font-size:.8rem;font-weight:500;
+  transition:border-color .2s var(--ease),color .2s var(--ease);
+}
+.social-link:hover{border-color:var(--aqua);color:var(--aqua-dark);}
+.social-link svg{width:14px;height:14px;fill:currentColor;flex-shrink:0;}
+
+/* lang switch */
+.lang-switch{display:inline-flex;padding:2px;border-radius:999px;background:var(--gray-100);border:1px solid var(--gray-200);}
+.lang-btn{
+  font:inherit;font-size:.74rem;font-weight:700;letter-spacing:.06em;
+  padding:5px 11px;border:0;border-radius:999px;
+  background:transparent;color:var(--gray-600);cursor:pointer;
+  transition:background .15s,color .15s;
+}
+.lang-btn[aria-pressed="true"]{background:var(--aqua);color:var(--white);}
+
+/* ── LAYOUT ── */
+.dashboard{flex:1;min-height:0;display:grid;grid-template-columns:var(--sidebar-w) minmax(0,1fr);}
+
+/* ── SIDEBAR ── */
+.sidebar{
+  display:flex;flex-direction:column;gap:18px;
+  padding:22px 16px;overflow-y:auto;
+  background:var(--white);border-right:1px solid var(--gray-200);
+}
+.sidebar-label{margin:0 4px;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gray-400);}
+.nav{display:flex;flex-direction:column;gap:6px;}
+.nav-item{
+  position:relative;width:100%;
+  display:flex;align-items:flex-start;gap:10px;
+  padding:11px 12px;text-align:left;
+  font:inherit;color:var(--gray-800);
+  background:transparent;border:1px solid transparent;border-radius:var(--radius);
+  cursor:pointer;
+  transition:background .2s var(--ease),border-color .2s var(--ease);
+}
+.nav-item:hover{background:var(--gray-50);}
+.nav-item.active{background:var(--aqua-soft);border-color:var(--aqua-line);}
+.nav-item.active::before{
+  content:"";position:absolute;left:-1px;top:12px;bottom:12px;width:3px;
+  border-radius:0 3px 3px 0;background:var(--aqua);
+}
+.nav-num{
+  flex-shrink:0;width:32px;height:32px;border-radius:8px;
+  display:grid;place-items:center;
+  background:var(--gray-100);color:var(--gray-600);
+  font-size:.8rem;font-weight:700;
+  transition:background .2s,color .2s;
+}
+.nav-item.active .nav-num{background:var(--aqua);color:var(--white);}
+.nav-title{display:block;font-size:.88rem;font-weight:600;line-height:1.3;color:var(--navy);}
+.nav-sub{display:block;margin-top:2px;font-size:.74rem;color:var(--gray-600);}
+
+.progress{padding:12px;border-radius:var(--radius);background:var(--gray-50);border:1px solid var(--gray-200);}
+.progress-head{display:flex;justify-content:space-between;margin-bottom:7px;font-size:.74rem;font-weight:600;color:var(--gray-600);}
+.progress-track{height:5px;border-radius:999px;background:var(--gray-200);overflow:hidden;}
+.progress-fill{height:100%;width:33.333%;border-radius:inherit;background:var(--aqua);transition:width .4s var(--ease);}
+
+.side-card{
+  margin-top:auto;padding:16px;border-radius:var(--radius);
+  background:var(--gray-50);border:1px solid var(--gray-200);
+}
+.side-card-label{margin:0 0 5px;font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--aqua-dark);}
+.side-card-text{margin:0 0 10px;font-size:.82rem;line-height:1.5;color:var(--gray-600);}
+.chips{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:5px;}
+.chips li{padding:2px 9px;border-radius:999px;font-size:.7rem;font-weight:600;background:var(--aqua-soft);color:var(--aqua-dark);border:1px solid var(--aqua-line);}
+
+/* ── MAIN ── */
+.main{overflow-y:auto;scroll-behavior:smooth;padding:32px clamp(18px,4vw,52px) 48px;}
+.main-inner{max-width:960px;margin:0 auto;}
+
+/* ── PANELS ── */
+.panel{display:none;}
+.panel.active{display:block;animation:panelIn .35s var(--ease) both;}
+.panel:focus{outline:none;}
+@keyframes panelIn{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:none;}}
+
+.panel-head{margin-bottom:22px;}
+.eyebrow{margin:0 0 7px;font-size:.74rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--aqua-dark);}
+.panel-head h2{margin:0;font-size:clamp(1.4rem,2.5vw,1.9rem);font-weight:800;line-height:1.2;letter-spacing:-.02em;color:var(--navy);}
+.tags{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:7px;}
+.tags li{padding:4px 11px;border-radius:999px;font-size:.74rem;font-weight:600;color:var(--aqua-dark);background:var(--aqua-soft);border:1px solid var(--aqua-line);}
+
+/* ── CARDS ── */
+.card{margin-bottom:22px;padding:26px;background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius);box-shadow:var(--shadow-sm);}
+.card-title{display:flex;align-items:center;gap:9px;margin:0 0 13px;font-size:1rem;font-weight:700;color:var(--navy);}
+.card-title::before{content:"";width:3px;height:16px;border-radius:2px;background:var(--aqua);}
+.card p{margin:0 0 12px;color:var(--gray-600);font-size:.93rem;}
+.card p:last-child{margin-bottom:0;}
+.card strong{color:var(--navy);font-weight:600;}
+
+/* ── ASIDE IMAGE + TEXT ── */
+.content-aside{
+  display:grid;grid-template-columns:1fr 220px;gap:24px;
+  align-items:start;margin-bottom:22px;
+}
+@media(max-width:700px){.content-aside{grid-template-columns:1fr;}}
+.aside-img-slot{
+  width:100%;aspect-ratio:4/3;
+  border-radius:var(--radius);
+  border:1px dashed var(--aqua-line);
+  background:var(--aqua-soft);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
+  color:var(--aqua-dark);font-size:.8rem;text-align:center;padding:16px;
+  transition:border-color .2s;
+}
+.aside-img-slot.has-image{border-style:solid;border-color:var(--gray-200);background:var(--white);padding:0;overflow:hidden;}
+.aside-img-slot img{width:100%;height:100%;object-fit:cover;display:block;}
+.aside-img-slot svg{width:32px;height:32px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+
+/* ── FOCUS GRID ── */
+.focus-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-bottom:22px;}
+@media(max-width:600px){.focus-grid{grid-template-columns:1fr;}}
+.focus-card{
+  padding:18px;background:var(--white);
+  border:1px solid var(--gray-200);border-radius:var(--radius);
+  transition:border-color .2s var(--ease),box-shadow .2s var(--ease);
+}
+.focus-card:hover{border-color:var(--aqua-line);box-shadow:var(--shadow-md);}
+.focus-icon{
+  width:32px;height:32px;margin-bottom:10px;
+  color:var(--aqua-dark);
+}
+.focus-icon svg{width:100%;height:100%;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+.focus-card h4{margin:0 0 5px;font-size:.9rem;font-weight:700;color:var(--navy);}
+.focus-card p{margin:0;font-size:.84rem;line-height:1.55;color:var(--gray-600);}
+
+/* ── STEPS ── */
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:12px;counter-reset:step;}
+.steps--4{grid-template-columns:repeat(4,minmax(0,1fr));}
+.steps--6{grid-template-columns:repeat(3,minmax(0,1fr));}
+@media(max-width:1000px){.steps--4{grid-template-columns:repeat(2,minmax(0,1fr));}}
+@media(max-width:640px){.steps--4,.steps--6{grid-template-columns:1fr;}}
+.step{
+  counter-increment:step;padding:14px;
+  background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--radius-sm);
+}
+.step::before{
+  content:counter(step);width:26px;height:26px;margin-bottom:9px;border-radius:50%;
+  display:grid;place-items:center;
+  background:var(--aqua);color:var(--white);font-size:.75rem;font-weight:700;
+}
+.step-title{display:block;margin-bottom:3px;font-size:.87rem;font-weight:700;color:var(--navy);}
+.step-desc{display:block;font-size:.8rem;line-height:1.5;color:var(--gray-600);}
+
+/* ── CTIS TIMELINE ── */
+.ctis-box{
+  margin-bottom:22px;padding:24px;
+  background:var(--white);border:1px solid var(--gray-200);border-radius:var(--radius);
+  box-shadow:var(--shadow-sm);
+}
+.ctis-box .card-title{margin-bottom:18px;}
+.ctis-scenarios{display:flex;flex-direction:column;gap:12px;}
+.ctis-row{display:flex;align-items:center;gap:10px;}
+.ctis-lbl{
+  width:120px;min-width:120px;font-size:.76rem;font-weight:600;
+  color:var(--gray-600);text-align:right;line-height:1.3;
+}
+@media(max-width:520px){.ctis-lbl{width:72px;min-width:72px;font-size:.7rem;}}
+.ctis-track{flex:1;min-width:0;height:28px;position:relative;background:var(--gray-100);border-radius:6px;overflow:hidden;}
+.ctis-seg{
+  position:absolute;top:3px;height:22px;border-radius:4px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.67rem;font-weight:700;color:rgba(255,255,255,.9);
+  overflow:hidden;white-space:nowrap;
+}
+.ctis-total{width:48px;min-width:48px;font-size:.82rem;font-weight:700;color:var(--navy);text-align:right;}
+.ctis-total small{font-size:.68rem;font-weight:400;color:var(--gray-400);}
+.ctis-legend{
+  display:flex;flex-wrap:wrap;gap:8px 16px;
+  margin-top:16px;padding-top:14px;border-top:1px solid var(--gray-200);
+}
+.ctis-leg-item{display:flex;align-items:center;gap:5px;font-size:.74rem;color:var(--gray-600);}
+.ctis-leg-dot{width:9px;height:9px;border-radius:2px;flex-shrink:0;}
+
+/* ── VIDEO ── */
+.video-frame{
+  position:relative;aspect-ratio:16/9;overflow:hidden;
+  border-radius:var(--radius);background:#050d1a;box-shadow:var(--shadow-lg);
+}
+.video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+.video-player{
+  position:absolute;inset:0;width:100%;height:100%;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;
+  padding:0;border:0;cursor:pointer;font:inherit;color:var(--white);
+  background:linear-gradient(135deg,#0A192F 0%,#07111f 100%);
+}
+.play-btn{
+  width:76px;height:76px;border-radius:50%;
+  display:grid;place-items:center;
+  background:rgba(0,180,216,.18);border:2px solid var(--aqua);
+  box-shadow:0 0 0 8px rgba(0,180,216,.07),0 6px 24px rgba(0,180,216,.3);
+  transition:transform .25s var(--ease),background .25s var(--ease);
+}
+.play-btn::before{content:"";margin-left:5px;border-style:solid;border-width:13px 0 13px 22px;border-color:transparent transparent transparent var(--aqua);}
+.play-btn::after{content:"";position:absolute;inset:-2px;border-radius:50%;border:2px solid var(--aqua);opacity:0;animation:pulse 2.4s ease-out infinite;}
+@keyframes pulse{0%{transform:scale(1);opacity:.5;}100%{transform:scale(1.5);opacity:0;}}
+.video-player:hover .play-btn{transform:scale(1.07);background:rgba(0,180,216,.28);}
+.video-label{font-size:.86rem;font-weight:500;color:rgba(255,255,255,.8);padding:8px 16px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);}
+.video-hint{
+  position:absolute;left:50%;bottom:52px;z-index:2;
+  max-width:calc(100% - 28px);padding:9px 14px;border-radius:var(--radius-sm);
+  font-size:.8rem;font-weight:500;text-align:center;color:var(--navy);
+  background:var(--white);box-shadow:var(--shadow-lg);
+  opacity:0;pointer-events:none;transform:translate(-50%,8px);
+  transition:opacity .25s var(--ease),transform .25s var(--ease);
+}
+.video-hint.show{opacity:1;transform:translate(-50%,0);}
+.media-note{margin:0 0 14px;font-size:.84rem;color:var(--gray-600);}
+
+/* ── SCHEMA SLOT ── */
+.schema-slot{
+  position:relative;min-height:300px;padding:24px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+  border:1px dashed var(--aqua-line);border-radius:var(--radius);
+  background:var(--aqua-soft);
+  transition:border-color .2s,background .2s;
+}
+.schema-slot:hover{border-color:var(--aqua);background:rgba(0,180,216,.07);}
+.schema-slot.has-image{padding:0;border-style:solid;border-color:var(--gray-200);background:var(--white);overflow:hidden;}
+.schema-slot img{display:block;max-width:100%;height:auto;border-radius:var(--radius);}
+.schema-placeholder{display:flex;flex-direction:column;align-items:center;gap:9px;}
+.schema-placeholder svg{width:44px;height:44px;color:var(--aqua-dark);stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+.schema-placeholder strong{font-size:.9rem;color:var(--navy);}
+.schema-placeholder span{font-size:.8rem;color:var(--gray-600);max-width:44ch;}
+.schema-slot figcaption{margin-top:14px;font-size:.76rem;color:var(--gray-600);}
+
+/* ── PAGER ── */
+.panel-pager{display:flex;justify-content:space-between;gap:10px;margin-top:8px;}
+.pager-btn{
+  display:inline-flex;align-items:center;gap:7px;padding:11px 18px;
+  font:inherit;font-size:.86rem;font-weight:600;color:var(--navy);
+  background:var(--white);border:1px solid var(--gray-200);border-radius:999px;cursor:pointer;
+  transition:border-color .2s,box-shadow .2s,transform .2s;
+}
+.pager-btn:hover{border-color:var(--aqua);box-shadow:var(--shadow-md);transform:translateY(-1px);}
+.pager-btn--next{margin-left:auto;color:var(--white);background:var(--aqua);border-color:var(--aqua);}
+.pager-btn--next:hover{background:var(--aqua-dark);border-color:var(--aqua-dark);}
+
+/* ── ABOUT PANEL ── */
+.about-grid{display:grid;grid-template-columns:1fr 200px;gap:24px;align-items:start;margin-bottom:22px;}
+@media(max-width:640px){.about-grid{grid-template-columns:1fr;}}
+.about-avatar{
+  width:100%;aspect-ratio:1;border-radius:var(--radius);
+  border:1px dashed var(--aqua-line);background:var(--aqua-soft);
+  display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;
+  color:var(--aqua-dark);font-size:.78rem;text-align:center;padding:16px;
+  cursor:pointer;transition:border-color .2s;overflow:hidden;
+}
+.about-avatar.has-image{border-style:solid;border-color:var(--gray-200);background:var(--white);padding:0;}
+.about-avatar img{width:100%;height:100%;object-fit:cover;display:block;}
+.about-avatar svg{width:36px;height:36px;stroke:currentColor;fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+.about-avatar:hover{border-color:var(--aqua);}
+.skills-row{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px;}
+.skill-chip{
+  display:inline-flex;align-items:center;gap:5px;
+  padding:4px 11px;border-radius:999px;font-size:.76rem;font-weight:500;
+  background:var(--white);border:1px solid var(--gray-200);color:var(--gray-600);
+}
+.skill-chip svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:1.5;flex-shrink:0;}
+
+/* ── FOOTER ── */
+.site-footer{
+  display:flex;flex-wrap:wrap;justify-content:space-between;gap:7px;
+  margin-top:32px;padding-top:18px;border-top:1px solid var(--gray-200);
+  font-size:.78rem;color:var(--gray-400);
+}
+
+/* ── PHOTO MODAL ── */
+#photo-modal{
+  position:fixed;inset:0;background:rgba(0,0,0,.65);
+  z-index:200;display:flex;align-items:center;justify-content:center;
+  cursor:zoom-out;opacity:0;pointer-events:none;transition:opacity .2s;
+}
+#photo-modal.open{opacity:1;pointer-events:all;}
+#photo-modal .modal-inner{
+  width:min(380px,82vw);height:min(380px,82vw);
+  border-radius:50%;border:4px solid rgba(255,255,255,.25);
+  box-shadow:0 8px 50px rgba(0,0,0,.55);
+  background:var(--aqua-soft);display:flex;align-items:center;justify-content:center;
+  overflow:hidden;
+}
+#photo-modal .modal-inner img{width:100%;height:100%;object-fit:cover;display:block;}
+
+/* ── REFINEMENT: white canvas, dark ink, aqua accents ── */
+:root{--white:#FFFFFF;--gray-50:#F5F9FB;--gray-100:#E8F2F5;--gray-200:#D6E4E9;--gray-400:#6F8394;--gray-600:#34455A;--gray-800:#14223A;--navy:#0B1A30;--aqua:#18B6CB;--aqua-dark:#00778F;--aqua-soft:rgba(24,182,203,.09);--aqua-line:rgba(24,182,203,.4);--serif:'Source Serif 4',Georgia,'Times New Roman',serif;--sidebar-w:288px;--shadow-sm:none}
+body{background:#fff;color:var(--gray-800)}
+.site-header{padding:16px 40px;box-shadow:none}
+.brand-mark{background:var(--aqua-dark);border-radius:50%;font-family:var(--serif);font-weight:600;font-size:.95rem}
+.brand-name{font-family:var(--serif);font-size:1.25rem;font-weight:600}
+.brand-title{font-size:.84rem;color:var(--gray-600)}
+.social-link:hover{border-color:var(--aqua-dark)}
+.lang-btn[aria-pressed="true"]{background:var(--aqua-dark)}
+.sidebar{padding:28px 18px;background:#fff}
+.sidebar-label,.side-card-label,.eyebrow{text-transform:none;letter-spacing:.01em;font-size:.88rem;font-weight:600}
+.sidebar-label{color:var(--gray-400)}
+.nav-item{border-radius:10px}
+.nav-item.active{background:var(--aqua-soft);border-color:transparent}
+.nav-num{background:#fff;border:1px solid var(--gray-200);border-radius:50%}
+.nav-item.active .nav-num{background:var(--aqua-dark);border-color:var(--aqua-dark)}
+.side-card{background:var(--aqua-soft);border-color:transparent}
+.main{padding:44px clamp(20px,5vw,76px) 56px;background:#fff}
+.main-inner{max-width:1080px}
+.panel-head{position:relative;margin-bottom:30px;padding-bottom:22px;border-bottom:1px solid var(--gray-200)}
+.panel-head::after{content:"";position:absolute;left:0;bottom:-1px;width:72px;height:2px;background:var(--aqua)}
+.panel-head h2{font-family:var(--serif);font-size:clamp(1.75rem,3.2vw,2.5rem);font-weight:600;line-height:1.15;letter-spacing:-.01em}
+.card,.ctis-box{padding:30px;border-radius:12px;box-shadow:none}
+.card-title{font-family:var(--serif);font-size:1.2rem;font-weight:600}
+.card p{font-size:.98rem;line-height:1.75;color:var(--gray-600)}
+.focus-card{padding:22px;border-top:2px solid var(--aqua);border-radius:10px}
+.focus-card:hover{box-shadow:none;border-color:var(--gray-200);border-top-color:var(--aqua)}
+.focus-card p,.step-desc{color:var(--gray-600)}
+.step{background:var(--aqua-soft);border-color:transparent}
+.step::before{background:var(--aqua-dark)}
+.pager-btn--next{background:var(--aqua-dark);border-color:var(--aqua-dark)}
+.pager-btn--next:hover{background:var(--navy);border-color:var(--navy)}
+.site-footer{color:var(--gray-600)}
+.about-avatar{aspect-ratio:4/5}
+.card .facts{list-style:none;margin:24px 0;padding:20px 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;border-top:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200)}
+.card .facts strong{display:block;margin-bottom:4px;font-family:var(--serif);font-size:1.9rem;font-weight:600;line-height:1.1;color:var(--aqua-dark)}
+.facts span{display:block;font-size:.84rem;line-height:1.45;color:var(--gray-600)}
+@media(max-width:600px){.card .facts{grid-template-columns:1fr}}
+
+/* ── SLIDE GALLERY ── */
+.carousel-section{margin:8px 0 34px}
+.carousel-label{margin:0 0 14px;font:600 1.2rem/1.3 var(--serif);color:var(--navy)}
+.gallery{outline-offset:6px}
+.stage{position:relative;aspect-ratio:16/9;display:grid;place-items:center;overflow:hidden;touch-action:pan-y;background:var(--gray-50);border:1px solid var(--gray-200);border-radius:14px}
+.stage-img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity .3s var(--ease)}
+.stage-img.in{opacity:1}
+.stage-empty{display:none;flex-direction:column;align-items:center;gap:10px;padding:24px;text-align:center;font-size:.92rem;color:var(--aqua-dark)}
+.stage-empty svg{width:56px;height:56px;stroke:currentColor;fill:none;stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round}
+.stage.empty .stage-empty{display:flex}
+.g-btn,.g-full{position:absolute;display:grid;place-items:center;padding:0;border:1px solid var(--gray-200);background:rgba(255,255,255,.93);color:var(--navy);cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.g-btn{top:50%;width:48px;height:48px;margin-top:-24px;border-radius:50%}
+.g-prev{left:16px}.g-next{right:16px}
+.g-full{top:14px;right:14px;width:38px;height:38px;border-radius:10px}
+.g-btn:hover,.g-full:hover{background:var(--aqua-dark);border-color:var(--aqua-dark);color:#fff}
+.g-btn svg,.g-full svg{width:22px;height:22px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.g-full svg{width:18px;height:18px}
+.g-bar{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin:14px 2px 12px}
+.g-cap strong{display:block;font-size:1rem;color:var(--navy)}
+.g-cap span{font-size:.88rem;color:var(--gray-600)}
+.g-count{flex-shrink:0;font-size:.88rem;font-weight:600;color:var(--aqua-dark);font-variant-numeric:tabular-nums}
+.g-thumbs{position:relative;display:flex;gap:10px;overflow-x:auto;padding:2px 2px 8px;scrollbar-width:thin}
+.g-thumb{flex:0 0 112px;aspect-ratio:16/10;padding:0;overflow:hidden;cursor:pointer;background:var(--gray-100);border:2px solid var(--gray-200);border-radius:8px;opacity:.72;transition:opacity .2s,border-color .2s}
+.g-thumb img{display:block;width:100%;height:100%;object-fit:cover}
+.g-thumb:hover{opacity:1}
+.g-thumb[aria-current="true"]{opacity:1;border-color:var(--aqua)}
+.gallery:fullscreen{display:flex;flex-direction:column;padding:2.5vh 3vw;background:#fff}
+.gallery:fullscreen .stage{flex:1;min-height:0;aspect-ratio:auto}
+.gallery:-webkit-full-screen{display:flex;flex-direction:column;padding:2.5vh 3vw;background:#fff}
+.gallery:-webkit-full-screen .stage{flex:1;min-height:0;aspect-ratio:auto}
+@media(max-width:600px){.g-btn{width:40px;height:40px;margin-top:-20px}.g-prev{left:8px}.g-next{right:8px}.g-thumb{flex-basis:84px}}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  body{display:block;height:auto;overflow:visible;}
+  .site-header{flex-wrap:wrap;padding:12px 18px;}
+  .dashboard{display:block;}
+  .sidebar{
+    position:sticky;top:0;z-index:30;
+    flex-direction:row;align-items:center;overflow:visible;
+    padding:10px 12px;border-right:0;border-bottom:1px solid var(--gray-200);
+  }
+  .sidebar-label,.progress,.side-card,.nav-sub{display:none;}
+  .nav{flex-direction:row;width:100%;gap:6px;padding-bottom:2px;overflow-x:auto;}
+  .nav-item{flex:0 0 auto;width:auto;min-width:210px;max-width:260px;align-items:center;}
+  .nav-item.active::before{display:none;}
+  .main{overflow:visible;padding:22px 16px 40px;}
+  .panel{scroll-margin-top:110px;}
+}
+@media(max-width:600px){
+  .header-actions{width:100%;justify-content:space-between;}
+  .card{padding:18px;}
+  .content-aside,.about-grid{grid-template-columns:1fr;}
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;}}
+</style>
+
+<!-- ═══════ PHOTO MODAL ═══════ -->
+<div id="photo-modal" role="dialog" aria-modal="true" aria-label="Profile photo">
+  <div class="modal-inner" id="modal-inner"></div>
+</div>
+
+<!-- ═══════ SKIP ═══════ -->
+<a class="skip-link" href="#main">Skip to content</a>
+
+<!-- ═══════ HEADER ═══════ -->
+<header class="site-header">
+  <div class="brand">
+    <div class="brand-mark" aria-hidden="true">IV</div>
+    <div>
+      <h1 class="brand-name">Isabel Villalta</h1>
+      <p class="brand-title" data-i18n="brand-title">Biotechnologist · Study Start-Up &amp; Study Coordination</p>
+    </div>
+  </div>
+  <div class="header-actions">
+    <nav class="social-links" aria-label="Professional profiles">
+      <a class="social-link" href="https://www.linkedin.com/in/isabel-villalta" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="4.9" cy="5.1" r="2.1"/><rect x="3.1" y="9.2" width="3.6" height="11"/><path d="M9.5 9.2h3.4v1.5c.6-1 1.9-1.8 3.6-1.8 3.6 0 4.5 2.3 4.5 5.4v5.9h-3.6v-5.2c0-1.4-.1-2.7-1.7-2.7s-1.9 1.2-1.9 2.6v5.3H9.5z"/></svg>
+        LinkedIn
+      </a>
+      <a class="social-link" href="mailto:isabiotecensayos@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true" style="fill:none;stroke:currentColor;stroke-width:1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email</a>
+    </nav>
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button type="button" class="lang-btn" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" class="lang-btn" data-lang="es" aria-pressed="false">ES</button>
+    </div>
+  </div>
+</header>
+
+<div class="dashboard">
+  <!-- ═══════ SIDEBAR ═══════ -->
+  <aside class="sidebar" aria-label="Navigation">
+    <p class="sidebar-label" data-i18n="nav-section">Milestones</p>
+    <div class="nav" id="milestone-tabs" role="tablist" aria-orientation="vertical">
+      <button type="button" class="nav-item active" id="tab-0" role="tab" aria-selected="true" aria-controls="panel-about">
+        <span class="nav-num" aria-hidden="true">✦</span>
+        <span><span class="nav-title" data-i18n="nav-about">About Me</span></span>
+      </button>
+      <button type="button" class="nav-item" id="tab-1" role="tab" aria-selected="false" aria-controls="panel-1" tabindex="-1">
+        <span class="nav-num" aria-hidden="true">01</span>
+        <span>
+          <span class="nav-title" data-i18n="nav-m1">Site Feasibility &amp; Selection</span>
+          <span class="nav-sub" data-i18n="nav-m1-sub">Feasibility · Site qualification</span>
+        </span>
+      </button>
+      <button type="button" class="nav-item" id="tab-2" role="tab" aria-selected="false" aria-controls="panel-2" tabindex="-1">
+        <span class="nav-num" aria-hidden="true">02</span>
+        <span>
+          <span class="nav-title" data-i18n="nav-m2">Regulatory Dossier &amp; CTIS</span>
+          <span class="nav-sub" data-i18n="nav-m2-sub">Part I / Part II · RFI management</span>
+        </span>
+      </button>
+      <button type="button" class="nav-item" id="tab-3" role="tab" aria-selected="false" aria-controls="panel-3" tabindex="-1">
+        <span class="nav-num" aria-hidden="true">03</span>
+        <span>
+          <span class="nav-title" data-i18n="nav-m3">Essential Documents &amp; Green Light</span>
+          <span class="nav-sub" data-i18n="nav-m3-sub">eTMF / ISF QC · Site activation</span>
+        </span>
+      </button>
+    </div>
+    <div class="progress">
+      <div class="progress-head"><span data-i18n="progress-label">Milestone</span><span id="progress-step">1 / 3</span></div>
+      <div class="progress-track" aria-hidden="true"><div class="progress-fill" id="progress-fill"></div></div>
+    </div>
+    <div class="side-card">
+      <p class="side-card-label" data-i18n="profile-snapshot">Profile snapshot</p>
+      <p class="side-card-text" data-i18n="profile-text">Biotechnologist completing an MSc in Clinical Trial Monitoring (UNIR), with six months of hands-on experience at Hospital Quirónsalud Zaragoza. Focused on Study Start-Up and Clinical Operations.</p>
+      <ul class="chips"><li>SSU</li><li>ICH-GCP</li><li>CTIS</li><li>ISF</li><li>Clinical Ops</li></ul>
+    </div>
+  </aside>
+
+  <!-- ═══════ MAIN ═══════ -->
+  <main class="main" id="main">
+    <div class="main-inner">
+
+      <!-- ══ ABOUT ══ -->
+      <section class="panel active" id="panel-about" role="tabpanel" aria-labelledby="tab-0" tabindex="0">
+        <header class="panel-head">
+          <p class="eyebrow" data-i18n="about-eyebrow">Biotechnologist · MSc Clinical Trial Monitoring</p>
+          <h2 data-i18n="about-title">About Me</h2>
+        </header>
+        <div class="about-grid">
+          <article class="card" style="margin-bottom:0">
+            <h3 class="card-title" data-i18n="about-card-title">Professional Profile</h3>
+            <p data-i18n="about-p1">I am a Biotechnology graduate completing an MSc in Clinical Trial Monitoring at UNIR, with six months of hands-on clinical research experience at Hospital Quirónsalud Zaragoza. I am looking for a Clinical Research opportunity from December 2026, with a particular interest in Study Start-Up and Clinical Operations.</p>
+            <p data-i18n="about-p2">During my placement I have contributed to the coordination of 7 Phase I–III clinical trials in Haematology and Rare Diseases and supported start-up activities for 5 new studies. This includes preparing and managing essential trial documentation, maintaining the Investigator Site File (ISF) and supporting the preparation of Part II documentation for CTIS submissions, including document collection and signature follow-up. Working alongside investigators, study coordinators, clinical trial technicians and CRAs has also given me practical exposure to monitoring visits, source data review, query resolution, AE/SAE follow-up and the coordination of protocol-specific procedures and biological sample shipments.</p>
+            <ul class="facts">
+              <li><strong>7</strong><span data-i18n="fact1">Phase I–III trials coordinated as part of the site team</span></li>
+              <li><strong>5</strong><span data-i18n="fact2">New studies supported in start-up</span></li>
+              <li><strong>Part II</strong><span data-i18n="fact3">CTIS documentation: document collection and signature follow-up</span></li>
+            </ul>
+            <p data-i18n="about-p3">My Biotechnology background adds laboratory training, data analysis and scientific writing, and a strong appreciation for data quality, documentation accuracy and traceability. My MSc final project is the design of a full clinical trial protocol for a psoriasis study, from feasibility to site close-out. I also build independent projects — Excel-based clinical trial dashboards, eCRF simulations and this HTML portfolio — and I am exploring how AI and Machine Learning can support clinical data quality, risk detection and workflow optimisation.</p>
+               <div style="margin-top: 1.8rem; margin-bottom: 1.8rem;">
+              <a href="https://840544.github.io/Isabel_Villalta_Clinical_Trials/" target="_blank" rel="noopener noreferrer" class="pager-btn" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-weight: 600; padding: 0.6rem 1.4rem; background-color: var(--aqua-dark); color: #ffffff; border-radius: 20px; transition: all 0.2s ease;">
+                <span>Visit My Clinical Trials Website</span>
+                <span aria-hidden="true" style="font-size: 1.1rem;">↗</span>
+              </a>
+            </div>
+
+            <div class="skills-row" id="skills-row"></div>
+          </article>
+          <div style="display: flex; flex-direction: column; gap: 7rem;">
+            
+            <!-- Primera Foto -->
+            <div class="about-avatar" id="about-avatar" role="button" tabindex="0" aria-label="Profile photo — click to enlarge" data-image-src="images/mi foto.jpg" style="border-radius: 0px !important; background-image: url('images/mi foto.jpg'); background-size: cover; background-position: center; margin: 0;">
+            </div>
+            
+            <!-- Segunda Foto con su pie de foto -->
+            <div>
+              <div class="about-avatar" style="border-radius: 0px !important; background-image: url('images/mi foto 2.jpg'); background-size: cover; background-position: center; cursor: default; margin: 0;" aria-label="Photo showing clinical data entry">
+              </div>
+              <p style="font-size: 0.75rem; color: #666; margin-top: 0.5rem; line-height: 1.3; font-style: italic; max-width: 100%;">
+                Entering clinical trial visit data into the electronic Case Report Form (eCRF).
+              </p>
+            </div>
+
+            <!-- Tercera Foto con su pie de foto -->
+            <div>
+              <div class="about-avatar" style="border-radius: 0px !important; background-image: url('images/mi foto 3.jpg'); background-size: cover; background-position: center; cursor: default; margin: 0;" aria-label="Photo showing clinical trial documentation">
+              </div>
+              <p style="font-size: 0.75rem; color: #666; margin-top: 0.5rem; line-height: 1.3; font-style: italic; max-width: 100%;">
+                Reviewing essential trial documentation and maintaining the Investigator Site File (ISF).
+              </p>
+            </div>
+
+          </div>
+
+        </div> 
+        <nav class="panel-pager" aria-label="Milestone pagination">
+          <button type="button" class="pager-btn pager-btn--next" data-goto="1" data-i18n-btn="next-m1">Next: Site Feasibility →</button>
+        </nav>
+        <footer class="site-footer">
+          <span>© <span class="year-span">2026</span> Isabel Villalta · Study Start-Up Portfolio</span>
+          <span data-i18n="footer-built">Built with HTML5, CSS3 and vanilla JavaScript</span>
+        </footer>
+      </section>
+
+      <!-- ══ MILESTONE 1 ══ -->
+      <section class="panel" id="panel-1" role="tabpanel" aria-labelledby="tab-1" tabindex="0" hidden>
+        <header class="panel-head">
+          <p class="eyebrow" data-i18n="m1-eyebrow">Milestone 01 / 03</p>
+          <h2 data-i18n="m1-title">Site Feasibility &amp; Selection</h2>
+          <ul class="tags"><li>CDA</li><li>Feasibility Questionnaire (SFQ)</li><li>Site Qualification Visit</li><li>Selection Rationale</li></ul>
+        </header>
+
+        <!-- aside: text + image slot -->
+        <div class="content-aside">
+          <article class="card" style="margin-bottom:0">
+            <h3 class="card-title" data-i18n="m1-overview-title">Technical Overview</h3>
+            <p data-i18n="m1-p1">Site feasibility is the structured, data-driven evaluation of whether a candidate investigator site can deliver a protocol-defined study on time, on target and in full compliance with Good Clinical Practice. Performed before site selection, it protects the sponsor's timelines and budget by filtering out sites that are unlikely to activate, enrol or retain participants as planned.</p>
+            <p data-i18n="m1-p2">Two pillars underpin the assessment. <strong>Local suitability</strong> establishes whether the site has genuine access to the target population: epidemiology of the indication, patient volumes in the relevant clinical units, the real-world fit of the eligibility criteria, and competing studies recruiting the same patients. <strong>Historical recruitment performance</strong> provides objective evidence of delivery: enrolment rate per site per month, screen-failure and drop-out rates, protocol deviation trends, and the outcome of previous audits or inspections.</p>
+          </article>
+          <figure class="aside-img-slot" style="margin:0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+            <img src="images/SITE FEASIBILITY.jpg" alt="Site feasibility schema" style="width: 100%; height: auto; max-height: 100%; object-fit: contain;">
+          </figure>
+        </div>
+
+        <div class="focus-grid">
+          <div class="focus-card">
+            <div class="focus-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            </div>
+            <h4 data-i18n="m1-fc1-title">Patient Pool &amp; Eligibility Fit</h4>
+            <p data-i18n="m1-fc1-desc">Verification of patient volumes and the realistic impact of inclusion/exclusion criteria on the local population.</p>
+          </div>
+          <div class="focus-card">
+            <div class="focus-icon">
+              <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <h4 data-i18n="m1-fc2-title">Recruitment Track Record</h4>
+            <p data-i18n="m1-fc2-desc">Enrolment velocity, screen-failure rate, retention and protocol deviation history from comparable studies.</p>
+          </div>
+          <div class="focus-card">
+            <div class="focus-icon">
+              <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <h4 data-i18n="m1-fc3-title">Operational Readiness</h4>
+            <p data-i18n="m1-fc3-desc">Investigator experience, GCP training, team workload, equipment, pharmacy and IMP storage, and laboratory capabilities.</p>
+          </div>
+          <div class="focus-card">
+            <div class="focus-icon">
+              <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            </div>
+            <h4 data-i18n="m1-fc4-title">Governance &amp; Contracting</h4>
+            <p data-i18n="m1-fc4-desc">Anticipated ethics committee, contract and budget timelines that drive the time to site activation.</p>
+          </div>
+        </div>
+
+        <article class="card">
+          <h3 class="card-title" data-i18n="m1-workflow-title">Workflow at a Glance</h3>
+          <ol class="steps steps--4">
+            <li class="step"><span class="step-title" data-i18n="m1-s1">Confidentiality Agreement</span><span class="step-desc" data-i18n="m1-s1d">CDA executed before the protocol synopsis is shared.</span></li>
+            <li class="step"><span class="step-title" data-i18n="m1-s2">Feasibility Questionnaire</span><span class="step-desc" data-i18n="m1-s2d">Site reports population, capacity and infrastructure.</span></li>
+            <li class="step"><span class="step-title" data-i18n="m1-s3">Site Qualification Visit</span><span class="step-desc" data-i18n="m1-s3d">On-site or remote review of team, facilities and processes.</span></li>
+            <li class="step"><span class="step-title" data-i18n="m1-s4">Selection &amp; Rationale</span><span class="step-desc" data-i18n="m1-s4d">Decision documented and filed in the TMF.</span></li>
+          </ol>
+        </article>
+
+        <!-- Carousel M1 -->
+        <div class="carousel-section">
+          <p class="carousel-label" data-i18n="carousel-label">Document &amp; Image Gallery</p>
+          <div class="carousel-track-wrap"><div class="carousel-track" id="track-m1"></div></div>
+        </div>
+
+        <!-- Video M1 -->
+        <section class="card" aria-labelledby="vt1">
+          <h3 class="card-title" id="vt1" data-i18n="video-title">Video Walkthrough</h3>
+          <p class="media-note" data-i18n="m1-video-note">A concise breakdown of how feasibility data translates into a defensible site selection decision.</p>
+          <div class="video-frame" data-embed-src="" data-video-title="Feasibility Breakdown">
+            <button type="button" class="video-player" aria-label="Play video">
+              <span class="play-btn" aria-hidden="true"></span>
+              <span class="video-label" data-i18n="video-cta">Watch Video — Feasibility Breakdown</span>
+            </button>
+            <div class="video-hint" role="status" data-i18n="video-hint">Add YouTube embed URL to data-embed-src</div>
+          </div>
+        </section>
+
+        <!-- Schema M1 -->
+        <section class="card" aria-labelledby="st1">
+          <h3 class="card-title" id="st1" data-i18n="schema-title">Visual Schema</h3>
+          <p class="media-note" data-i18n="m1-schema-note">Process flow of the feasibility and site selection pathway.</p>
+          <figure class="schema-slot" data-image-src="" data-image-alt="Feasibility flow diagram">
+            <div class="schema-placeholder">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="5" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="8" y="16" width="8" height="5" rx="1"/><path d="M6.5 8v4h11V8M12 12v4"/></svg>
+              <strong data-i18n="schema-placeholder">Insert your flow diagram here</strong>
+              <span data-i18n="schema-hint-text">PNG, SVG or WebP · Set path in data-image-src</span>
+            </div>
+            <figcaption data-i18n="m1-fig">Figure 1 — Site feasibility &amp; selection decision flow</figcaption>
+          </figure>
+        </section>
+
+        <nav class="panel-pager">
+          <button type="button" class="pager-btn" data-goto="0" data-i18n-btn="back-about">← About Me</button>
+          <button type="button" class="pager-btn pager-btn--next" data-goto="2" data-i18n-btn="next-m2">Next: Regulatory Dossier →</button>
+        </nav>
+        <footer class="site-footer">
+          <span>© <span class="year-span">2026</span> Isabel Villalta · Study Start-Up Portfolio</span>
+          <span data-i18n="footer-built">Built with HTML5, CSS3 and vanilla JavaScript</span>
+        </footer>
+      </section>
+
+      <!-- ══ MILESTONE 2 ══ -->
+      <section class="panel" id="panel-2" role="tabpanel" aria-labelledby="tab-2" tabindex="0" hidden>
+        <header class="panel-head">
+          <p class="eyebrow" data-i18n="m2-eyebrow">Milestone 02 / 03</p>
+          <h2 data-i18n="m2-title">Regulatory Dossier &amp; CTIS Submission (CTR 536/2014)</h2>
+          <ul class="tags"><li>Regulation (EU) 536/2014</li><li>CTIS</li><li>Part I / Part II</li><li>RFI Management</li><li>EU CT Number</li></ul>
+        </header>
+
+        <div class="content-aside">
+          <article class="card" style="margin-bottom:0">
+            <h3 class="card-title" data-i18n="m2-overview-title">Technical Overview</h3>
+            <p data-i18n="m2-p1">Regulation (EU) No 536/2014, the Clinical Trials Regulation (CTR), harmonises the authorisation of clinical trials across the EU/EEA through a single entry point: the Clinical Trials Information System (CTIS). Applicable since 31 January 2022 and governing all clinical trials in the EU/EEA since 30 January 2025, it replaces country-by-country submissions with one electronic application sent to all Member States Concerned (MSCs), with a Reporting Member State (RMS) coordinating the assessment.</p>
+            <p data-i18n="m2-p2">The dossier is divided into two parts that follow different assessment paths. <strong>Part I</strong> covers the scientific and clinical aspects common to every Member State (protocol, Investigator's Brochure, IMP Dossier, GMP documentation and IMP labelling) and is assessed jointly under the RMS's coordination. <strong>Part II</strong> covers national and site-specific aspects (informed consent documentation, subject recruitment arrangements, investigator and facility suitability, insurance, financial arrangements and data-protection compliance) and is assessed by each MSC individually, including ethics review under national law.</p>
+          </article>
+          <figure class="aside-img-slot" data-image-src="images/CTIS.jpg" data-image-alt="CTIS dossier schema" style="margin:0">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            <span style="font-size:.72rem" data-i18n="img-hint">Set data-image-src to your JPG/PNG path</span>
+          </figure>
+        </div>
+
+        <!-- CTIS TIMELINE -->
+        <div class="ctis-box">
+          <h3 class="card-title" data-i18n="ctis-title">CTIS Authorization Timeline — Spain</h3>
+          <div class="ctis-scenarios" id="ctis-scenarios"></div>
+          <div class="ctis-legend" id="ctis-legend"></div>
+        </div>
+
+        <div class="focus-grid">
+          <div class="focus-card">
+            <div class="focus-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+            <h4 data-i18n="m2-fc1-title">Part I — Sponsor / Clinical</h4>
+            <p data-i18n="m2-fc1-desc">Protocol, IB, IMPD, GMP documentation and labelling. Jointly assessed by the MSCs and led by the RMS.</p>
+          </div>
+          <div class="focus-card">
+            <div class="focus-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+            <h4 data-i18n="m2-fc2-title">Part II — National / Site</h4>
+            <p data-i18n="m2-fc2-desc">ICF and subject information, site suitability, insurance, financial arrangements and GDPR compliance.</p>
+          </div>
+          <div class="focus-card">
+            <div class="focus-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+            <h4 data-i18n="m2-fc3-title">CTIS Workspace Management</h4>
+            <p data-i18n="m2-fc3-desc">Dossier structure, document metadata, user roles and strict version control within the sponsor workspace.</p>
+          </div>
+          <div class="focus-card">
+            <div class="focus-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <h4 data-i18n="m2-fc4-title">RFI &amp; Timeline Control</h4>
+            <p data-i18n="m2-fc4-desc">Tracking statutory deadlines and coordinating consolidated, consistent responses with the sponsor and sites.</p>
+          </div>
+        </div>
+
+        <article class="card">
+          <h3 class="card-title" data-i18n="m2-workflow-title">Submission Workflow</h3>
+          <ol class="steps steps--6">
+            <li class="step"><span class="step-title" data-i18n="m2-s1">Dossier Assembly</span><span class="step-desc" data-i18n="m2-s1d">Part I and Part II documents prepared, QC'd and version-controlled.</span></li>
+            <li class="step"><span class="step-title" data-i18n="m2-s2">CTIS Submission</span><span class="step-desc" data-i18n="m2-s2d">Application created and submitted to all MSCs through CTIS.</span></li>
+            <li class="step"><span class="step-title" data-i18n="m2-s3">Validation (10 d)</span><span class="step-desc" data-i18n="m2-s3d">RMS confirms scope and completeness of the application.</span></li>
+            <li class="step"><span class="step-title" data-i18n="m2-s4">Assessment (45 d)</span><span class="step-desc" data-i18n="m2-s4d">Coordinated Part I review and national Part II review.</span></li>
+            <li class="step"><span class="step-title" data-i18n="m2-s5">RFI Management</span><span class="step-desc" data-i18n="m2-s5d">Responses prepared and submitted within statutory deadline.</span></li>
+            <li class="step"><span class="step-title" data-i18n="m2-s6">Authorisation (5 d)</span><span class="step-desc" data-i18n="m2-s6d">Each MSC notifies the sponsor of its decision via CTIS.</span></li>
+          </ol>
+        </article>
+
+        <!-- Carousel M2 -->
+        <div class="carousel-section">
+          <p class="carousel-label" data-i18n="carousel-label">Document &amp; Image Gallery</p>
+          <div class="carousel-track-wrap"><div class="carousel-track" id="track-m2"></div></div>
+        </div>
+
+        <!-- Video M2 -->
+        <section class="card" aria-labelledby="vt2">
+          <h3 class="card-title" id="vt2" data-i18n="video-title">Video Walkthrough</h3>
+          <p class="media-note" data-i18n="m2-video-note">A practical tour of the CTIS workspace and how Requests for Information are handled end to end.</p>
+          <div class="video-frame" data-embed-src="" data-video-title="CTIS Navigation and RFI Management">
+            <button type="button" class="video-player" aria-label="Play video">
+              <span class="play-btn" aria-hidden="true"></span>
+              <span class="video-label" data-i18n="m2-video-cta">Watch Video — CTIS Navigation &amp; RFI Management</span>
+            </button>
+            <div class="video-hint" role="status" data-i18n="video-hint">Add YouTube embed URL to data-embed-src</div>
+          </div>
+        </section>
+
+        <!-- Schema M2 -->
+        <section class="card" aria-labelledby="st2">
+          <h3 class="card-title" id="st2" data-i18n="schema-title">Visual Schema</h3>
+          <p class="media-note" data-i18n="m2-schema-note">Concept map of the regulatory dossier: Part I and Part II documentation and their assessment paths.</p>
+          <figure class="schema-slot" data-image-src="" data-image-alt="Dossier concept map">
+            <div class="schema-placeholder">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="3"/><circle cx="5" cy="19" r="3"/><circle cx="19" cy="19" r="3"/><path d="M10 7.5 6.5 17M14 7.5l3.5 9.5M8 19h8"/></svg>
+              <strong data-i18n="schema-placeholder">Insert your dossier concept map here</strong>
+              <span data-i18n="schema-hint-text">PNG, SVG or WebP · Set path in data-image-src</span>
+            </div>
+            <figcaption data-i18n="m2-fig">Figure 2 — CTR dossier structure: Part I and Part II</figcaption>
+          </figure>
+        </section>
+
+        <nav class="panel-pager">
+          <button type="button" class="pager-btn" data-goto="1" data-i18n-btn="back-m1">← Site Feasibility</button>
+          <button type="button" class="pager-btn pager-btn--next" data-goto="3" data-i18n-btn="next-m3">Next: Essential Documents →</button>
+        </nav>
+        <footer class="site-footer">
+          <span>© <span class="year-span">2026</span> Isabel Villalta · Study Start-Up Portfolio</span>
+          <span data-i18n="footer-built">Built with HTML5, CSS3 and vanilla JavaScript</span>
+        </footer>
+      </section>
+
+      <!-- ══ MILESTONE 3 ══ -->
+      <section class="panel" id="panel-3" role="tabpanel" aria-labelledby="tab-3" tabindex="0" hidden>
+        <header class="panel-head">
+          <p class="eyebrow" data-i18n="m3-eyebrow">Milestone 03 / 03</p>
+          <h2 data-i18n="m3-title">Essential Documents &amp; Green Light Generation</h2>
+          <ul class="tags"><li>ICH E6 GCP</li><li>eTMF</li><li>ISF</li><li>SIV</li><li>Green Light</li></ul>
+        </header>
+
+        <div class="content-aside">
+          <article class="card" style="margin-bottom:0">
+            <h3 class="card-title" data-i18n="m3-overview-title">Technical Overview</h3>
+            <p data-i18n="m3-p1">Before a site can be activated, the study team must demonstrate that every essential document required by ICH E6 Good Clinical Practice and the applicable regulations is present, accurate and correctly filed. These documents allow the conduct of the trial and the quality of the resulting data to be evaluated, and they are the first material requested during audits and inspections.</p>
+            <p data-i18n="m3-p2">Quality control operates on both sides of the file structure: the sponsor or CRO maintains the electronic Trial Master File (eTMF), while the investigator maintains the Investigator Site File (ISF). Pre-SIV quality control verifies completeness, legibility, correct versions, valid signatures and dates, and consistency between the two — for example, approved ICF versions, the delegation log against CVs and GCP certificates, laboratory normal ranges and equipment calibration records.</p>
+          </article>
+          <figure class="aside-img-slot" data-image-src="" data-image-alt="Green light checklist schema" style="margin:0">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            <span style="font-size:.72rem" data-i18n="img-hint">Set data-image-src to your JPG/PNG path</span>
+          </figure>
+        </div>
+
+        <div class="focus-grid">
+          <div class="focus-card">
+            <div class="focus-icon"><svg viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></div>
+            <h4 data-i18n="m3-fc1-title">eTMF Quality Control</h4>
+            <p data-i18n="m3-fc1-desc">Completeness, timeliness, legibility and version-control checks against the TMF plan and index.</p>
+          </div>
+          <div class="focus-card">
+            <div class="focus-icon"><svg viewBox="0 0 24 24"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+            <h4 data-i18n="m3-fc2-title">ISF Reconciliation</h4>
+            <p data-i18n="m3-fc2-desc">Alignment of site-held documents with the eTMF: ICF versions, delegation log, CVs and GCP certificates.</p>
+          </div>
+          <div class="focus-card">
+            <div class="focus-icon"><svg viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></div>
+            <h4 data-i18n="m3-fc3-title">Regulatory &amp; Contractual Readiness</h4>
+            <p data-i18n="m3-fc3-desc">Trial authorisation, ethics opinion, executed contract and insurance confirmed before activation.</p>
+          </div>
+          <div class="focus-card">
+            <div class="focus-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="2"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></div>
+            <h4 data-i18n="m3-fc4-title">Logistics &amp; Supplies</h4>
+            <p data-i18n="m3-fc4-desc">IMP and pharmacy documentation, laboratory kits, EDC access and training prerequisites.</p>
+          </div>
+        </div>
+
+        <article class="card">
+          <h3 class="card-title" data-i18n="m3-workflow-title">Activation Workflow</h3>
+          <ol class="steps steps--6">
+            <li class="step"><span class="step-title" data-i18n="m3-s1">Document Collection</span><span class="step-desc" data-i18n="m3-s1d">Essential documents gathered from the site and study team.</span></li>
+            <li class="step"><span class="step-title" data-i18n="m3-s2">QC Review</span><span class="step-desc" data-i18n="m3-s2d">Systematic eTMF and ISF checks against the TMF index.</span></li>
+            <li class="step"><span class="step-title" data-i18n="m3-s3">Gap Resolution</span><span class="step-desc" data-i18n="m3-s3d">Findings tracked in an issue log and closed with the site.</span></li>
+            <li class="step"><span class="step-title" data-i18n="m3-s4">Green Light</span><span class="step-desc" data-i18n="m3-s4d">Site activation notice issued once all criteria are met.</span></li>
+            <li class="step"><span class="step-title" data-i18n="m3-s5">SIV &amp; Training</span><span class="step-desc" data-i18n="m3-s5d">Protocol, systems and GCP training delivered to the site team.</span></li>
+            <li class="step"><span class="step-title" data-i18n="m3-s6">IMP Release</span><span class="step-desc" data-i18n="m3-s6d">Supplies shipped and the site is ready to screen.</span></li>
+          </ol>
+        </article>
+
+        <!-- Carousel M3 -->
+        <div class="carousel-section">
+          <p class="carousel-label" data-i18n="carousel-label">Document &amp; Image Gallery</p>
+          <div class="carousel-track-wrap"><div class="carousel-track" id="track-m3"></div></div>
+        </div>
+
+        <!-- Video M3 -->
+        <section class="card" aria-labelledby="vt3">
+          <h3 class="card-title" id="vt3" data-i18n="video-title">Video Walkthrough</h3>
+          <p class="media-note" data-i18n="m3-video-note">How the Green Light checklist and activation logistics come together before the Site Initiation Visit.</p>
+          <div class="video-frame" data-embed-src="" data-video-title="Green Light Checklist and Logistics">
+            <button type="button" class="video-player" aria-label="Play video">
+              <span class="play-btn" aria-hidden="true"></span>
+              <span class="video-label" data-i18n="m3-video-cta">Watch Video — Green Light Checklist &amp; Logistics</span>
+            </button>
+            <div class="video-hint" role="status" data-i18n="video-hint">Add YouTube embed URL to data-embed-src</div>
+          </div>
+        </section>
+
+        <!-- Schema M3 -->
+        <section class="card" aria-labelledby="st3">
+          <h3 class="card-title" id="st3" data-i18n="schema-title">Visual Schema</h3>
+          <p class="media-note" data-i18n="m3-schema-note">Visual site activation checklist: the criteria that must be met to issue the Green Light.</p>
+          <figure class="schema-slot" data-image-src="" data-image-alt="Site activation checklist">
+            <div class="schema-placeholder">
+              <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="15" y2="16"/><polyline points="9 9 9 9"/></svg>
+              <strong data-i18n="schema-placeholder">Insert your activation checklist here</strong>
+              <span data-i18n="schema-hint-text">PNG, SVG or WebP · Set path in data-image-src</span>
+            </div>
+            <figcaption data-i18n="m3-fig">Figure 3 — Site activation checklist (Green Light criteria)</figcaption>
+          </figure>
+        </section>
+
+        <nav class="panel-pager">
+          <button type="button" class="pager-btn" data-goto="2" data-i18n-btn="back-m2">← Regulatory Dossier</button>
+          <button type="button" class="pager-btn pager-btn--next" data-goto="0" data-i18n-btn="back-start">Back to start ↺</button>
+        </nav>
+        <footer class="site-footer">
+          <span>© <span class="year-span">2026</span> Isabel Villalta · Study Start-Up Portfolio</span>
+          <span data-i18n="footer-built">Built with HTML5, CSS3 and vanilla JavaScript</span>
+        </footer>
+      </section>
+
+    </div><!-- /main-inner -->
+  </main>
+</div><!-- /dashboard -->
+
+<script>
+(() => {
+'use strict';
+
+/* ── i18n ── */
+const STRINGS = {
+en: {
+  "brand-title": "Biotechnologist · Study Start-Up & Study Coordination",
+  "nav-section": "Milestones",
+  "nav-about": "About Me",
+  "nav-m1": "Site Feasibility & Selection",
+  "nav-m1-sub": "Feasibility · Site qualification",
+  "nav-m2": "Regulatory Dossier & CTIS",
+  "nav-m2-sub": "Part I / Part II · RFI management",
+  "nav-m3": "Essential Documents & Green Light",
+  "nav-m3-sub": "eTMF / ISF QC · Site activation",
+  "progress-label": "Milestone",
+  "profile-snapshot": "Profile snapshot",
+  "profile-text": "Biotechnologist completing an MSc in Clinical Trial Monitoring (UNIR), with six months of hands-on experience at Hospital Quirónsalud Zaragoza. Focused on Study Start-Up and Clinical Operations.",
+  "about-eyebrow": "Biotechnologist · MSc Clinical Trial Monitoring",
+  "about-title": "About Me",
+  "about-card-title": "Professional Profile",
+  "about-p1": "I am a Biotechnology graduate completing an MSc in Clinical Trial Monitoring at UNIR, with six months of hands-on clinical research experience at Hospital Quirónsalud Zaragoza. I am looking for a Clinical Research opportunity from December 2026, with a particular interest in Study Start-Up and Clinical Operations.",
+  "about-p2": "During my placement I have contributed to the coordination of 7 Phase I–III clinical trials in Haematology and Rare Diseases and supported start-up activities for 5 new studies. This includes preparing and managing essential trial documentation, maintaining the Investigator Site File (ISF) and supporting the preparation of Part II documentation for CTIS submissions, including document collection and signature follow-up. Working alongside investigators, study coordinators, clinical trial technicians and CRAs has also given me practical exposure to monitoring visits, source data review, query resolution, AE/SAE follow-up and the coordination of protocol-specific procedures and biological sample shipments.",
+  "photo-hint": "Add your photo via data-image-src",
+  "about-p3": "My Biotechnology background adds laboratory training, data analysis and scientific writing, and a strong appreciation for data quality, documentation accuracy and traceability. My MSc final project is the design of a full clinical trial protocol for a psoriasis study, from feasibility to site close-out. I also build independent projects — Excel-based clinical trial dashboards, eCRF simulations and this HTML portfolio — and I am exploring how AI and Machine Learning can support clinical data quality, risk detection and workflow optimisation.",
+  "fact1": "Phase I–III trials coordinated as part of the site team",
+  "fact2": "New studies supported in start-up",
+  "fact3": "CTIS documentation: document collection and signature follow-up",
+  "gal-prev": "Previous slide",
+  "gal-next": "Next slide",
+  "gal-full": "Full screen",
+  "footer-built": "Built with HTML5, CSS3 and vanilla JavaScript",
+  "m1-eyebrow": "Milestone 01 / 03",
+  "m1-title": "Site Feasibility & Selection",
+  "m1-overview-title": "Technical Overview",
+  "m1-p1": "Site feasibility is the structured, data-driven evaluation of whether a candidate investigator site can deliver a protocol-defined study on time, on target and in full compliance with Good Clinical Practice. Performed before site selection, it protects the sponsor's timelines and budget by filtering out sites that are unlikely to activate, enrol or retain participants as planned.",
+  "m1-p2": "Two pillars underpin the assessment. <strong>Local suitability</strong> establishes whether the site has genuine access to the target population: epidemiology of the indication, patient volumes in the relevant clinical units, the real-world fit of the eligibility criteria, and competing studies recruiting the same patients. <strong>Historical recruitment performance</strong> provides objective evidence of delivery: enrolment rate per site per month, screen-failure and drop-out rates, protocol deviation trends, and the outcome of previous audits or inspections.",
+  "img-hint": "Set data-image-src to your JPG/PNG path",
+  "m1-fc1-title": "Patient Pool & Eligibility Fit",
+  "m1-fc1-desc": "Verification of patient volumes and the realistic impact of inclusion/exclusion criteria on the local population.",
+  "m1-fc2-title": "Recruitment Track Record",
+  "m1-fc2-desc": "Enrolment velocity, screen-failure rate, retention and protocol deviation history from comparable studies.",
+  "m1-fc3-title": "Operational Readiness",
+  "m1-fc3-desc": "Investigator experience, GCP training, team workload, equipment, pharmacy and IMP storage, and laboratory capabilities.",
+  "m1-fc4-title": "Governance & Contracting",
+  "m1-fc4-desc": "Anticipated ethics committee, contract and budget timelines that drive the time to site activation.",
+  "m1-workflow-title": "Workflow at a Glance",
+  "m1-s1": "Confidentiality Agreement", "m1-s1d": "CDA executed before the protocol synopsis is shared.",
+  "m1-s2": "Feasibility Questionnaire", "m1-s2d": "Site reports population, capacity and infrastructure.",
+  "m1-s3": "Site Qualification Visit", "m1-s3d": "On-site or remote review of team, facilities and processes.",
+  "m1-s4": "Selection & Rationale", "m1-s4d": "Decision documented and filed in the TMF.",
+  "carousel-label": "Document & Image Gallery",
+  "video-title": "Video Walkthrough",
+  "m1-video-note": "A concise breakdown of how feasibility data translates into a defensible site selection decision.",
+  "video-cta": "Watch Video — Feasibility Breakdown",
+  "video-hint": "Add YouTube embed URL to data-embed-src",
+  "schema-title": "Visual Schema",
+  "m1-schema-note": "Process flow of the feasibility and site selection pathway.",
+  "schema-placeholder": "Insert your diagram / image here",
+  "schema-hint-text": "PNG, SVG or WebP · Set path in data-image-src",
+  "m1-fig": "Figure 1 — Site feasibility & selection decision flow",
+  "m2-eyebrow": "Milestone 02 / 03",
+  "m2-title": "Regulatory Dossier & CTIS Submission (CTR 536/2014)",
+  "m2-overview-title": "Technical Overview",
+  "m2-p1": "Regulation (EU) No 536/2014, the Clinical Trials Regulation (CTR), harmonises the authorisation of clinical trials across the EU/EEA through a single entry point: the Clinical Trials Information System (CTIS). Applicable since 31 January 2022 and governing all clinical trials in the EU/EEA since 30 January 2025, it replaces country-by-country submissions with one electronic application sent to all Member States Concerned (MSCs), with a Reporting Member State (RMS) coordinating the assessment.",
+  "m2-p2": "The dossier is divided into two parts. <strong>Part I</strong> covers the scientific and clinical aspects common to every Member State (protocol, IB, IMPD, GMP documentation and labelling) and is assessed jointly under the RMS's coordination. <strong>Part II</strong> covers national and site-specific aspects (ICF, recruitment arrangements, site and investigator suitability, insurance, financial arrangements and GDPR compliance) and is assessed by each MSC individually.",
+  "ctis-title": "CTIS Authorization Timeline — Spain",
+  "m2-fc1-title": "Part I — Sponsor / Clinical",
+  "m2-fc1-desc": "Protocol, IB, IMPD, GMP documentation and labelling. Jointly assessed by the MSCs and led by the RMS.",
+  "m2-fc2-title": "Part II — National / Site",
+  "m2-fc2-desc": "ICF and subject information, site suitability, insurance, financial arrangements and GDPR compliance.",
+  "m2-fc3-title": "CTIS Workspace Management",
+  "m2-fc3-desc": "Dossier structure, document metadata, user roles and strict version control within the sponsor workspace.",
+  "m2-fc4-title": "RFI & Timeline Control",
+  "m2-fc4-desc": "Tracking statutory deadlines and coordinating consolidated, consistent responses with the sponsor and sites.",
+  "m2-workflow-title": "Submission Workflow",
+  "m2-s1": "Dossier Assembly", "m2-s1d": "Part I and Part II documents prepared, QC'd and version-controlled.",
+  "m2-s2": "CTIS Submission", "m2-s2d": "Application created and submitted to all MSCs through CTIS.",
+  "m2-s3": "Validation (10 d)", "m2-s3d": "RMS confirms scope and completeness of the application.",
+  "m2-s4": "Assessment (45 d)", "m2-s4d": "Coordinated Part I review and national Part II review.",
+  "m2-s5": "RFI Management", "m2-s5d": "Responses prepared and submitted within statutory deadline.",
+  "m2-s6": "Authorisation (5 d)", "m2-s6d": "Each MSC notifies the sponsor of its decision via CTIS.",
+  "m2-video-note": "A practical tour of the CTIS workspace and how Requests for Information are handled end to end.",
+  "m2-video-cta": "Watch Video — CTIS Navigation & RFI Management",
+  "m2-schema-note": "Concept map of the regulatory dossier: Part I and Part II documentation and their assessment paths.",
+  "m2-fig": "Figure 2 — CTR dossier structure: Part I and Part II",
+  "m3-eyebrow": "Milestone 03 / 03",
+  "m3-title": "Essential Documents & Green Light Generation",
+  "m3-overview-title": "Technical Overview",
+  "m3-p1": "Before a site can be activated, the study team must demonstrate that every essential document required by ICH E6 GCP and the applicable regulations is present, accurate and correctly filed. These documents allow the conduct of the trial and the quality of the resulting data to be evaluated, and they are the first material requested during audits and inspections.",
+  "m3-p2": "Quality control operates on both sides of the file structure: the sponsor or CRO maintains the eTMF, while the investigator maintains the ISF. Pre-SIV QC verifies completeness, legibility, correct versions, valid signatures and dates, and consistency between the two — for example, approved ICF versions, the delegation log against CVs and GCP certificates, laboratory normal ranges and equipment calibration records.",
+  "m3-fc1-title": "eTMF Quality Control",
+  "m3-fc1-desc": "Completeness, timeliness, legibility and version-control checks against the TMF plan and index.",
+  "m3-fc2-title": "ISF Reconciliation",
+  "m3-fc2-desc": "Alignment of site-held documents with the eTMF: ICF versions, delegation log, CVs and GCP certificates.",
+  "m3-fc3-title": "Regulatory & Contractual Readiness",
+  "m3-fc3-desc": "Trial authorisation, ethics opinion, executed contract and insurance confirmed before activation.",
+  "m3-fc4-title": "Logistics & Supplies",
+  "m3-fc4-desc": "IMP and pharmacy documentation, laboratory kits, EDC access and training prerequisites.",
+  "m3-workflow-title": "Activation Workflow",
+  "m3-s1": "Document Collection", "m3-s1d": "Essential documents gathered from the site and study team.",
+  "m3-s2": "QC Review", "m3-s2d": "Systematic eTMF and ISF checks against the TMF index.",
+  "m3-s3": "Gap Resolution", "m3-s3d": "Findings tracked in an issue log and closed with the site.",
+  "m3-s4": "Green Light", "m3-s4d": "Site activation notice issued once all criteria are met.",
+  "m3-s5": "SIV & Training", "m3-s5d": "Protocol, systems and GCP training delivered to the site team.",
+  "m3-s6": "IMP Release", "m3-s6d": "Supplies shipped and the site is ready to screen.",
+  "m3-video-note": "How the Green Light checklist and activation logistics come together before the Site Initiation Visit.",
+  "m3-video-cta": "Watch Video — Green Light Checklist & Logistics",
+  "m3-schema-note": "Visual site activation checklist: the criteria that must be met to issue the Green Light.",
+  "m3-fig": "Figure 3 — Site activation checklist (Green Light criteria)",
+  "next-m1": "Next: Site Feasibility →",
+  "back-about": "← About Me",
+  "next-m2": "Next: Regulatory Dossier →",
+  "back-m1": "← Site Feasibility",
+  "next-m3": "Next: Essential Documents →",
+  "back-m2": "← Regulatory Dossier",
+  "back-start": "Back to start ↺",
+  "ctis-s0": "No RFI",
+  "ctis-s1": "RFI in validation",
+  "ctis-s2": "RFI in assessment",
+  "ctis-s3": "RFI in both phases",
+  "leg-val": "Validation (10 d)",
+  "leg-rfi-v": "RFI — validation (+15 d)",
+  "leg-ass": "Assessment (45 d)",
+  "leg-rfi-a": "RFI — assessment (+31 d)",
+  "leg-dec": "Decision (5 d)",
+},
+es: {
+  "brand-title": "Biotecnóloga · Puesta en marcha de estudios y coordinación",
+  "nav-section": "Hitos",
+  "nav-about": "Sobre mí",
+  "nav-m1": "Factibilidad y Selección",
+  "nav-m1-sub": "Factibilidad · Calificación del centro",
+  "nav-m2": "Dossier Regulatorio y CTIS",
+  "nav-m2-sub": "Parte I / Parte II · Gestión de RFI",
+  "nav-m3": "Documentos Esenciales y Luz Verde",
+  "nav-m3-sub": "QC eTMF / ISF · Activación del centro",
+  "progress-label": "Hito",
+  "profile-snapshot": "Perfil",
+  "profile-text": "Biotecnóloga cursando el Máster en Monitorización de Ensayos Clínicos (UNIR), con seis meses de experiencia práctica en el Hospital Quirónsalud Zaragoza. Enfocada en Study Start-Up y Operaciones Clínicas.",
+  "about-eyebrow": "Biotecnóloga · Máster en Monitorización de Ensayos Clínicos",
+  "about-title": "Sobre mí",
+  "about-card-title": "Perfil Profesional",
+  "about-p1": "Soy graduada en Biotecnología y estoy cursando el Máster en Monitorización de Ensayos Clínicos en UNIR, con seis meses de experiencia práctica en investigación clínica en el Hospital Quirónsalud Zaragoza. Busco una oportunidad en investigación clínica a partir de diciembre de 2026, con especial interés en Study Start-Up y Operaciones Clínicas.",
+  "about-p2": "Durante mis prácticas he contribuido a la coordinación de 7 ensayos clínicos de Fase I–III en Hematología y Enfermedades Raras y he apoyado las actividades de puesta en marcha de 5 estudios nuevos. Esto incluye preparar y gestionar la documentación esencial del ensayo, mantener el Investigator Site File (ISF) y apoyar la preparación de la documentación de la Parte II para las solicitudes en CTIS, con la recopilación de documentos y el seguimiento de firmas. Trabajar junto a investigadores, coordinadores de estudio, técnicos de ensayos clínicos y CRAs me ha dado además experiencia práctica en visitas de monitorización, revisión de datos fuente, resolución de queries, seguimiento de AE/SAE y coordinación de procedimientos del protocolo y envíos de muestras biológicas.",
+  "photo-hint": "Añade tu foto mediante data-image-src",
+  "about-p3": "Mi formación en Biotecnología aporta práctica de laboratorio, análisis de datos y redacción científica, y una fuerte apreciación por la calidad del dato, la exactitud documental y la trazabilidad. Mi proyecto final de máster es el diseño de un protocolo completo de ensayo clínico para un estudio en psoriasis, desde la factibilidad hasta el cierre del centro. Además desarrollo proyectos propios —dashboards de ensayos clínicos y simulaciones de eCRF en Excel, y este portfolio en HTML— y exploro cómo la IA y el Machine Learning pueden apoyar la calidad del dato clínico, la detección de riesgos y la optimización de los flujos de trabajo.",
+  "fact1": "Ensayos de Fase I–III coordinados como parte del equipo del centro",
+  "fact2": "Estudios nuevos apoyados en su puesta en marcha",
+  "fact3": "Documentación CTIS: recopilación de documentos y seguimiento de firmas",
+  "gal-prev": "Diapositiva anterior",
+  "gal-next": "Diapositiva siguiente",
+  "gal-full": "Pantalla completa",
+  "footer-built": "Construido con HTML5, CSS3 y JavaScript",
+  "m1-eyebrow": "Hito 01 / 03",
+  "m1-title": "Factibilidad y Selección de Centros",
+  "m1-overview-title": "Descripción Técnica",
+  "m1-p1": "La factibilidad del centro es la evaluación estructurada y basada en datos de si un centro investigador candidato puede ejecutar un estudio conforme al protocolo a tiempo, con los objetivos establecidos y en pleno cumplimiento de las Buenas Prácticas Clínicas. Realizada antes de la selección del centro, protege los plazos y el presupuesto del promotor al filtrar los centros que probablemente no activarán, incluirán ni retendrán participantes según lo planificado.",
+  "m1-p2": "Dos pilares sustentan la evaluación. La <strong>idoneidad local</strong> establece si el centro tiene acceso real a la población objetivo: epidemiología de la indicación, volúmenes de pacientes en las unidades clínicas correspondientes, el ajuste real de los criterios de elegibilidad y los estudios competidores. El <strong>historial de reclutamiento</strong> aporta evidencia objetiva del desempeño: tasa de inclusión mensual, tasas de fallo de cribado y abandonos, tendencias en desviaciones del protocolo y el resultado de auditorías e inspecciones previas.",
+  "img-hint": "Introduce la ruta de tu JPG/PNG en data-image-src",
+  "m1-fc1-title": "Pool de Pacientes y Ajuste de Criterios",
+  "m1-fc1-desc": "Verificación de volúmenes de pacientes y el impacto real de los criterios de inclusión/exclusión en la población local.",
+  "m1-fc2-title": "Historial de Reclutamiento",
+  "m1-fc2-desc": "Velocidad de inclusión, tasa de fallo de cribado, retención e historial de desviaciones en estudios comparables.",
+  "m1-fc3-title": "Preparación Operacional",
+  "m1-fc3-desc": "Experiencia del investigador, formación en BPC, carga de trabajo del equipo, equipamiento, farmacia y capacidades de laboratorio.",
+  "m1-fc4-title": "Gobernanza y Contratación",
+  "m1-fc4-desc": "Plazos previstos del comité de ética, contrato y presupuesto que condicionan el tiempo hasta la activación del centro.",
+  "m1-workflow-title": "Flujo de Trabajo",
+  "m1-s1": "Acuerdo de Confidencialidad", "m1-s1d": "CDA firmado antes de compartir la sinopsis del protocolo.",
+  "m1-s2": "Cuestionario de Factibilidad", "m1-s2d": "El centro informa sobre población, capacidad e infraestructura.",
+  "m1-s3": "Visita de Calificación (SQV)", "m1-s3d": "Revisión in situ o remota del equipo, instalaciones y procesos.",
+  "m1-s4": "Selección y Justificación", "m1-s4d": "Decisión documentada y archivada en el TMF.",
+  "carousel-label": "Galería de Documentos e Imágenes",
+  "video-title": "Vídeo explicativo",
+  "m1-video-note": "Resumen conciso de cómo los datos de factibilidad se traducen en una decisión defensible de selección de centro.",
+  "video-cta": "Ver vídeo — Factibilidad del Centro",
+  "video-hint": "Añade la URL de embed de YouTube en data-embed-src",
+  "schema-title": "Esquema Visual",
+  "m1-schema-note": "Diagrama de flujo del proceso de factibilidad y selección del centro.",
+  "schema-placeholder": "Inserta aquí tu diagrama / imagen",
+  "schema-hint-text": "PNG, SVG o WebP · Introduce la ruta en data-image-src",
+  "m1-fig": "Figura 1 — Diagrama de factibilidad y selección del centro",
+  "m2-eyebrow": "Hito 02 / 03",
+  "m2-title": "Dossier Regulatorio y Presentación al CTIS (CTR 536/2014)",
+  "m2-overview-title": "Descripción Técnica",
+  "m2-p1": "El Reglamento (UE) N.º 536/2014, el Reglamento de Ensayos Clínicos (CTR), armoniza la autorización de ensayos clínicos en el EEE a través de un punto de entrada único: el Sistema de Información de Ensayos Clínicos (CTIS). Aplicable desde el 31 de enero de 2022 y obligatorio para todos los ensayos desde el 30 de enero de 2025, reemplaza las presentaciones nacionales individuales por una solicitud electrónica única enviada a todos los Estados Miembros Afectados (MSCs), coordinada por el Estado Miembro Informador (RMS).",
+  "m2-p2": "El dossier se divide en dos partes. La <strong>Parte I</strong> abarca los aspectos científicos y clínicos comunes a todos los Estados Miembros (protocolo, Manual del Investigador, Dossier del MPI, documentación de BPF y etiquetado) y es evaluada conjuntamente bajo la coordinación del RMS. La <strong>Parte II</strong> abarca los aspectos nacionales y específicos del centro (consentimiento informado, reclutamiento, idoneidad del investigador e instalaciones, seguro, acuerdos financieros y cumplimiento del RGPD) y es evaluada individualmente por cada MSC.",
+  "ctis-title": "Calendario de Autorización CTIS — España",
+  "m2-fc1-title": "Parte I — Promotor / Clínica",
+  "m2-fc1-desc": "Protocolo, IB, Dossier MPI, documentación BPF y etiquetado. Evaluación conjunta coordinada por el RMS.",
+  "m2-fc2-title": "Parte II — Nacional / Centro",
+  "m2-fc2-desc": "HIP/CI, idoneidad del centro e investigador, seguro, acuerdos financieros y cumplimiento del RGPD.",
+  "m2-fc3-title": "Gestión del Workspace CTIS",
+  "m2-fc3-desc": "Estructura del dossier, metadatos de documentos, roles de usuario y control estricto de versiones.",
+  "m2-fc4-title": "Control de RFI y Plazos",
+  "m2-fc4-desc": "Seguimiento de plazos legales y coordinación de respuestas consolidadas con el promotor y los centros.",
+  "m2-workflow-title": "Flujo de la Presentación",
+  "m2-s1": "Compilación del dossier", "m2-s1d": "Documentos de Parte I y II preparados, revisados y con control de versiones.",
+  "m2-s2": "Presentación CTIS", "m2-s2d": "Solicitud creada y enviada a todos los MSCs a través del CTIS.",
+  "m2-s3": "Validación (10 d)", "m2-s3d": "El RMS confirma el alcance y la integridad de la solicitud.",
+  "m2-s4": "Evaluación (45 d)", "m2-s4d": "Revisión coordinada de Parte I y revisión nacional de Parte II.",
+  "m2-s5": "Gestión de RFI", "m2-s5d": "Respuestas preparadas y enviadas dentro del plazo reglamentario.",
+  "m2-s6": "Autorización (5 d)", "m2-s6d": "Cada MSC notifica la decisión al promotor a través del CTIS.",
+  "m2-video-note": "Recorrido práctico por el workspace del CTIS y cómo se gestionan las Solicitudes de Información de extremo a extremo.",
+  "m2-video-cta": "Ver vídeo — Navegación CTIS y Gestión de RFI",
+  "m2-schema-note": "Mapa conceptual del dossier regulatorio: documentación de Parte I y Parte II y sus vías de evaluación.",
+  "m2-fig": "Figura 2 — Estructura del dossier CTR: Parte I y Parte II",
+  "m3-eyebrow": "Hito 03 / 03",
+  "m3-title": "Documentos Esenciales y Generación de Luz Verde",
+  "m3-overview-title": "Descripción Técnica",
+  "m3-p1": "Antes de poder activar un centro, el equipo del estudio debe demostrar que todos los documentos esenciales requeridos por las BPC ICH E6 y la normativa aplicable están presentes, son exactos y están correctamente archivados. Estos documentos permiten evaluar la conducción del ensayo y la calidad de los datos resultantes, y son los primeros materiales solicitados en auditorías e inspecciones.",
+  "m3-p2": "El control de calidad opera en ambos lados de la estructura documental: el promotor o CRO mantiene el eTMF, mientras que el investigador mantiene el ISF. El QC previo a la SIV verifica la integridad, legibilidad, versiones correctas, firmas y fechas válidas, y la coherencia entre ambos — por ejemplo, versiones aprobadas del CI, el registro de delegación frente a CVs y certificados BPC, rangos normales del laboratorio y registros de calibración de equipos.",
+  "m3-fc1-title": "Control de Calidad del eTMF",
+  "m3-fc1-desc": "Verificaciones de integridad, puntualidad, legibilidad y control de versiones frente al plan e índice del TMF.",
+  "m3-fc2-title": "Reconciliación del ISF",
+  "m3-fc2-desc": "Alineación de los documentos del centro con el eTMF: versiones del CI, registro de delegación, CVs y certificados BPC.",
+  "m3-fc3-title": "Preparación Regulatoria y Contractual",
+  "m3-fc3-desc": "Autorización del ensayo, dictamen ético, contrato ejecutado y seguro confirmados antes de la activación.",
+  "m3-fc4-title": "Logística y Suministros",
+  "m3-fc4-desc": "Documentación del MPI y farmacia, kits de laboratorio, acceso al EDC y requisitos de formación.",
+  "m3-workflow-title": "Flujo de Activación",
+  "m3-s1": "Recopilación de documentos", "m3-s1d": "Documentos esenciales recabados del centro y el equipo del estudio.",
+  "m3-s2": "Revisión de QC", "m3-s2d": "Verificaciones sistemáticas del eTMF e ISF frente al índice del TMF.",
+  "m3-s3": "Resolución de hallazgos", "m3-s3d": "Hallazgos registrados en un log de incidencias y cerrados con el centro.",
+  "m3-s4": "Luz Verde", "m3-s4d": "Notificación de activación del centro emitida una vez cumplidos todos los criterios.",
+  "m3-s5": "SIV y Formación", "m3-s5d": "Formación en protocolo, sistemas y BPC impartida al equipo del centro.",
+  "m3-s6": "Dispensación del MPI", "m3-s6d": "Suministros enviados y el centro está listo para cribar pacientes.",
+  "m3-video-note": "Cómo se integran la checklist de Luz Verde y la logística de activación antes de la Visita de Inicio.",
+  "m3-video-cta": "Ver vídeo — Checklist de Luz Verde y Logística",
+  "m3-schema-note": "Checklist visual de activación del centro: criterios que deben cumplirse para emitir la Luz Verde.",
+  "m3-fig": "Figura 3 — Checklist de activación del centro (criterios Luz Verde)",
+  "next-m1": "Siguiente: Factibilidad →",
+  "back-about": "← Sobre mí",
+  "next-m2": "Siguiente: Dossier Regulatorio →",
+  "back-m1": "← Factibilidad",
+  "next-m3": "Siguiente: Documentos Esenciales →",
+  "back-m2": "← Dossier Regulatorio",
+  "back-start": "Volver al inicio ↺",
+  "ctis-s0": "Sin RFI",
+  "ctis-s1": "RFI en validación",
+  "ctis-s2": "RFI en evaluación",
+  "ctis-s3": "RFI en ambas fases",
+  "leg-val": "Validación (10 d)",
+  "leg-rfi-v": "RFI — validación (+15 d)",
+  "leg-ass": "Evaluación (45 d)",
+  "leg-rfi-a": "RFI — evaluación (+31 d)",
+  "leg-dec": "Decisión (5 d)",
+}
+};
+
+const SKILLS = [
+  'ICH E6(R3) GCP','Study Start-Up','CTIS · Part II documents',
+  'ISF management','Source data review','Query resolution',
+  'AE/SAE follow-up','Sample shipping (UN3373 Cat. B)','Excel · eCRF simulation'
+];
+
+/* carousel placeholder slides — user will replace with real images */
+const CAROUSEL_SLIDES = {
+  m1: [
+    {title:'Feasibility Questionnaire',desc:'Site capacity & patient flow'},
+    {title:'SQV Report',desc:'Facilities, pharmacy, IT systems'},
+    {title:'Site Capability Matrix',desc:'Scoring grid for selection'},
+    {title:'Confidentiality Agreement',desc:'CDA signed before the synopsis is shared'},
+    {title:'Budget Feasibility',desc:'Per-patient cost breakdown'},
+    {title:'Site Selection Rationale',desc:'Archived in eTMF'},
+  ],
+  m2: [
+    {title:'Protocol v1.0',desc:'ESCAI10-PSO-IIb-2026'},
+    {title:"Investigator's Brochure",desc:'Phase I + IIa safety & PK'},
+    {title:'IMP Dossier',desc:'Quality, non-clinical, clinical'},
+    {title:'HIP/CI Document',desc:'Informed consent documentation'},
+    {title:'Data Protection Annex',desc:'Apéndice 1 — RGPD'},
+    {title:'RBM Monitoring Plan',desc:'SDV matrix, KRIs'},
+    {title:'Visit Schedule',desc:'7 visits, MSD biomarkers'},
+    {title:'CTIS Part I submission',desc:'RMS coordination'},
+  ],
+  m3: [
+    {title:'Regulatory Approval',desc:'AEMPS + CEIm letters'},
+    {title:'Signed Contracts',desc:'All centres — RD 1090/2015'},
+    {title:'Delegation Log',desc:'Staff roles & responsibilities'},
+    {title:'Lab Certification',desc:'Normal ranges + accreditation'},
+    {title:'IMP Release',desc:'QP release + chain of custody'},
+    {title:'IWRS Activation',desc:'Randomisation system live'},
+    {title:'Training Certificates',desc:'GCP + protocol training'},
+  ]
+};
+
+/* CTIS timeline data */
+const CTIS_COLORS = {val:'#0077A8',rfiV:'#D08020',ass:'#0099BE',rfiA:'#C04040',dec:'#20875A'};
+const MAX_D = 106;
+const SCENARIOS_DATA = [
+  {key:'ctis-s0', total:60, segs:[
+    {c:CTIS_COLORS.val, start:0,  days:10, lbl:'10 d'},
+    {c:CTIS_COLORS.ass, start:10, days:45, lbl:'45 d'},
+    {c:CTIS_COLORS.dec, start:55, days:5,  lbl:'5 d'},
+  ]},
+  {key:'ctis-s1', total:75, segs:[
+    {c:CTIS_COLORS.val, start:0,  days:10, lbl:'10 d'},
+    {c:CTIS_COLORS.rfiV,start:10, days:15, lbl:'+15 d'},
+    {c:CTIS_COLORS.ass, start:25, days:45, lbl:'45 d'},
+    {c:CTIS_COLORS.dec, start:70, days:5,  lbl:'5 d'},
+  ]},
+  {key:'ctis-s2', total:91, segs:[
+    {c:CTIS_COLORS.val, start:0,  days:10, lbl:'10 d'},
+    {c:CTIS_COLORS.ass, start:10, days:45, lbl:'45 d'},
+    {c:CTIS_COLORS.rfiA,start:55, days:31, lbl:'+31 d'},
+    {c:CTIS_COLORS.dec, start:86, days:5,  lbl:'5 d'},
+  ]},
+  {key:'ctis-s3', total:106, segs:[
+    {c:CTIS_COLORS.val, start:0,  days:10, lbl:'10 d'},
+    {c:CTIS_COLORS.rfiV,start:10, days:15, lbl:'+15 d'},
+    {c:CTIS_COLORS.ass, start:25, days:45, lbl:'45 d'},
+    {c:CTIS_COLORS.rfiA,start:70, days:31, lbl:'+31 d'},
+    {c:CTIS_COLORS.dec, start:101,days:5,  lbl:'5 d'},
+  ]},
+];
+const LEGEND_KEYS = [
+  {key:'leg-val', c:CTIS_COLORS.val},
+  {key:'leg-rfi-v',c:CTIS_COLORS.rfiV},
+  {key:'leg-ass', c:CTIS_COLORS.ass},
+  {key:'leg-rfi-a',c:CTIS_COLORS.rfiA},
+  {key:'leg-dec', c:CTIS_COLORS.dec},
+];
+
+/* ── STATE ── */
+let lang = 'en';
+let currentIdx = 0;
+
+const PANELS = ['panel-about','panel-1','panel-2','panel-3'];
+const TABS = ['tab-0','tab-1','tab-2','tab-3'];
+
+/* ── i18n helpers ── */
+function t(k){ return (STRINGS[lang]&&STRINGS[lang][k])||STRINGS.en[k]||k; }
+function applyI18n(){
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k=el.getAttribute('data-i18n');
+    if(el.tagName==='P'||el.tagName==='SPAN'||el.tagName==='H1'||el.tagName==='H2'||el.tagName==='H3'||el.tagName==='H4'){
+      el.innerHTML=t(k);
+    } else { el.textContent=t(k); }
+  });
+  document.querySelectorAll('[data-i18n-btn]').forEach(el=>{
+    el.textContent=t(el.getAttribute('data-i18n-btn'));
+  });
+  document.querySelectorAll('[data-i18n-aria]').forEach(el=>{
+    const v=t(el.dataset.i18nAria); el.setAttribute('aria-label',v); el.title=v;
+  });
+}
+
+/* ── Build skills ── */
+function buildSkills(){
+  const row=document.getElementById('skills-row');
+  if(!row) return;
+  row.innerHTML='';
+  SKILLS.forEach(s=>{
+    const chip=document.createElement('span');
+    chip.className='skill-chip';
+    chip.innerHTML=`<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M3 12h1M20 12h1M12 3v1M12 20v1"/></svg>${s}`;
+    row.appendChild(chip);
+  });
+}
+
+/* ── Slide gallery (one large slide at a time) ── */
+const GALLERY_PATH = 'images/'; // folder with your JPGs, named m1-01.jpg, m1-02.jpg … (or set `file` per slide)
+function buildGallery(){
+  ['m1','m2','m3'].forEach(id=>{
+    const track=document.getElementById('track-'+id);
+    if(!track) return;
+    const host=track.parentElement;
+    const slides=(CAROUSEL_SLIDES[id]||[]).map((s,i)=>({...s,file:s.file||`${id}-${String(i+1).padStart(2,'0')}.jpg`}));
+    if(!slides.length) return;
+    host.className='gallery'; host.tabIndex=0;
+    host.setAttribute('role','group'); host.setAttribute('aria-roledescription','carousel');
+    host.innerHTML=`<div class="stage">
+      <img class="stage-img" alt="">
+      <div class="stage-empty"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M3 14l5-4 4 3 3-2 6 4M8 21h8"/></svg><span></span></div>
+      <button type="button" class="g-btn g-prev" data-i18n-aria="gal-prev"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <button type="button" class="g-btn g-next" data-i18n-aria="gal-next"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+      <button type="button" class="g-full" data-i18n-aria="gal-full"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+    </div>
+    <div class="g-bar"><div class="g-cap"><strong></strong><span></span></div><div class="g-count" aria-live="polite"></div></div>
+    <div class="g-thumbs"></div>`;
+    const $=q=>host.querySelector(q);
+    const stage=$('.stage'), img=$('.stage-img'), thumbs=$('.g-thumbs');
+    let cur=0, x0=null;
+    const btns=slides.map((s,i)=>{
+      const b=document.createElement('button');
+      b.type='button'; b.className='g-thumb'; b.setAttribute('aria-label',s.title);
+      const im=new Image(); im.loading='lazy'; im.alt=''; im.src=GALLERY_PATH+s.file;
+      im.addEventListener('error',()=>im.remove());
+      b.appendChild(im); b.addEventListener('click',()=>show(i,true)); thumbs.appendChild(b);
+      return b;
+    });
+    function show(n,user){
+      cur=(n+slides.length)%slides.length;
+      const s=slides[cur];
+      img.classList.remove('in'); stage.classList.remove('empty');
+      img.alt=s.title; img.src=GALLERY_PATH+s.file;
+      $('.stage-empty span').textContent=s.title;
+      $('.g-cap strong').textContent=s.title; $('.g-cap span').textContent=s.desc;
+      $('.g-count').textContent=`${cur+1} / ${slides.length}`;
+      btns.forEach((b,i)=>b.setAttribute('aria-current',String(i===cur)));
+      if(user){ const b=btns[cur]; thumbs.scrollTo({left:b.offsetLeft-(thumbs.clientWidth-b.clientWidth)/2,behavior:'smooth'}); }
+    }
+    img.addEventListener('load',()=>img.classList.add('in'));
+    img.addEventListener('error',()=>stage.classList.add('empty'));
+    $('.g-prev').addEventListener('click',()=>show(cur-1,true));
+    $('.g-next').addEventListener('click',()=>show(cur+1,true));
+    host.addEventListener('keydown',e=>{
+      if(e.key==='ArrowRight'){ e.preventDefault(); show(cur+1,true); }
+      else if(e.key==='ArrowLeft'){ e.preventDefault(); show(cur-1,true); }
+    });
+    stage.addEventListener('pointerdown',e=>{ x0=e.clientX; });
+    stage.addEventListener('pointerup',e=>{
+      if(x0===null) return; const dx=e.clientX-x0; x0=null;
+      if(Math.abs(dx)>50) show(cur+(dx<0?1:-1),true);
+    });
+    const full=$('.g-full'), rf=host.requestFullscreen||host.webkitRequestFullscreen;
+    if(!rf) full.hidden=true;
+    full.addEventListener('click',()=>{
+      if(document.fullscreenElement||document.webkitFullscreenElement) (document.exitFullscreen||document.webkitExitFullscreen).call(document);
+      else rf.call(host);
+    });
+    show(0);
+  });
+}
+
+/* ── Build CTIS diagram ── */
+function buildCtis(){
+  const cont=document.getElementById('ctis-scenarios');
+  const leg=document.getElementById('ctis-legend');
+  if(!cont||!leg) return;
+  cont.innerHTML='';
+  SCENARIOS_DATA.forEach(sc=>{
+    const row=document.createElement('div');
+    row.className='ctis-row';
+    const lbl=document.createElement('div');
+    lbl.className='ctis-lbl';
+    lbl.textContent=t(sc.key);
+    const track=document.createElement('div');
+    track.className='ctis-track';
+    sc.segs.forEach(seg=>{
+      const div=document.createElement('div');
+      div.className='ctis-seg';
+      div.style.cssText=`left:${(seg.start/MAX_D*100).toFixed(1)}%;width:${(seg.days/MAX_D*100).toFixed(1)}%;background:${seg.c};`;
+      if(seg.days>=8) div.textContent=seg.lbl;
+      track.appendChild(div);
+    });
+    const tot=document.createElement('div');
+    tot.className='ctis-total';
+    tot.innerHTML=`${sc.total}<small> d</small>`;
+    row.appendChild(lbl); row.appendChild(track); row.appendChild(tot);
+    cont.appendChild(row);
+  });
+  leg.innerHTML='';
+  LEGEND_KEYS.forEach(item=>{
+    const d=document.createElement('div');
+    d.className='ctis-leg-item';
+    d.innerHTML=`<span class="ctis-leg-dot" style="background:${item.c}"></span><span>${t(item.key)}</span>`;
+    leg.appendChild(d);
+  });
+}
+
+/* ── Activate panel ── */
+function activate(idx, opts={}){
+  if(idx<0||idx>=PANELS.length) return;
+  currentIdx=idx;
+  TABS.forEach((tid,i)=>{
+    const tab=document.getElementById(tid);
+    if(!tab) return;
+    const on=i===idx;
+    tab.classList.toggle('active',on);
+    tab.setAttribute('aria-selected',String(on));
+    tab.tabIndex=on?0:-1;
+  });
+  PANELS.forEach((pid,i)=>{
+    const p=document.getElementById(pid);
+    if(!p) return;
+    const on=i===idx;
+    p.classList.toggle('active',on);
+    p.hidden=!on;
+  });
+  // progress bar (only milestones 1-3 count)
+  const fill=document.getElementById('progress-fill');
+  const lbl=document.getElementById('progress-step');
+  if(fill&&lbl){
+    const mi=Math.max(0,idx-1); // 0-based milestone index
+    fill.style.width=idx===0?'0%':`${(mi+1)/3*100}%`;
+    lbl.textContent=idx===0?'— / 3':`${mi+1} / 3`;
+  }
+  if(opts.scroll){
+    const main=document.getElementById('main');
+    if(window.matchMedia('(max-width:900px)').matches){
+      document.getElementById(PANELS[idx])?.scrollIntoView({behavior:'smooth',block:'start'});
+    } else { main?.scrollTo({top:0,behavior:'smooth'}); }
+  }
+  if(opts.focus) document.getElementById(PANELS[idx])?.focus({preventScroll:true});
+}
+
+/* ── Tab clicks ── */
+document.getElementById('milestone-tabs').addEventListener('click',e=>{
+  const tab=e.target.closest('[role="tab"]');
+  if(!tab) return;
+  const idx=TABS.indexOf(tab.id);
+  if(idx>=0) activate(idx,{scroll:true});
+});
+
+/* ── Keyboard nav ── */
+document.getElementById('milestone-tabs').addEventListener('keydown',e=>{
+  let next=null;
+  if(e.key==='ArrowDown'||e.key==='ArrowRight') next=(currentIdx+1)%TABS.length;
+  else if(e.key==='ArrowUp'||e.key==='ArrowLeft') next=(currentIdx-1+TABS.length)%TABS.length;
+  else if(e.key==='Home') next=0;
+  else if(e.key==='End') next=TABS.length-1;
+  if(next!==null){ e.preventDefault(); activate(next); document.getElementById(TABS[next])?.focus(); }
+});
+
+/* ── Pager buttons ── */
+document.querySelectorAll('[data-goto]').forEach(btn=>{
+  btn.addEventListener('click',()=>activate(Number(btn.dataset.goto),{scroll:true,focus:true}));
+});
+
+/* ── Lang switch ── */
+function setLang(l){
+  lang=l;
+  document.querySelectorAll('[data-lang]').forEach(btn=>{
+    const on=btn.getAttribute('data-lang')===l;
+    btn.setAttribute('aria-pressed',String(on));
+  });
+  applyI18n();
+  buildCtis();
+}
+document.querySelectorAll('[data-lang]').forEach(btn=>{
+  btn.addEventListener('click',()=>setLang(btn.getAttribute('data-lang')));
+});
+
+/* ── Video mockup ── */
+document.querySelectorAll('.video-frame').forEach(frame=>{
+  const btn=frame.querySelector('.video-player');
+  const hint=frame.querySelector('.video-hint');
+  let timer;
+  btn?.addEventListener('click',()=>{
+    const src=(frame.dataset.embedSrc||'').trim();
+    if(!src){ hint.classList.add('show'); clearTimeout(timer); timer=setTimeout(()=>hint.classList.remove('show'),3000); return; }
+    let url; try{ url=new URL(src); } catch{ return; }
+    url.searchParams.set('autoplay','1'); url.searchParams.set('rel','0');
+    const iframe=document.createElement('iframe');
+    iframe.src=url.href; iframe.title=frame.dataset.videoTitle||'Video';
+    iframe.allow='accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture';
+    iframe.allowFullscreen=true; frame.replaceChildren(iframe);
+  });
+});
+
+/* ── Schema / aside image slots ── */
+document.querySelectorAll('[data-image-src]').forEach(slot=>{
+  const src=(slot.dataset.imageSrc||'').trim();
+  if(!src) return;
+  const img=new Image(); img.alt=slot.dataset.imageAlt||'';
+  img.decoding='async'; img.hidden=true;
+  img.addEventListener('load',()=>{ img.hidden=false; slot.classList.add('has-image'); });
+  img.src=src; slot.prepend(img);
+});
+
+/* ── Photo modal ── */
+const modal=document.getElementById('photo-modal');
+const modalInner=document.getElementById('modal-inner');
+function openModal(){
+  const src=document.querySelector('[data-image-src]')?.dataset.imageSrc||'';
+  if(src){ modalInner.innerHTML=`<img src="${src}" alt="Profile photo">`; }
+  else { modalInner.innerHTML='<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:var(--font);font-size:72px;color:var(--aqua)">IV</div>'; }
+  modal.classList.add('open');
+}
+function closeModal(){ modal.classList.remove('open'); }
+['about-avatar'].forEach(id=>{
+  const el=document.getElementById(id);
+  el?.addEventListener('click',openModal);
+  el?.addEventListener('keydown',e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); openModal(); }});
+});
+modal.addEventListener('click',closeModal);
+document.addEventListener('keydown',e=>{ if(e.key==='Escape') closeModal(); });
+
+/* ── Year ── */
+document.querySelectorAll('.year-span').forEach(el=>el.textContent=new Date().getFullYear());
+
+/* ── Init ── */
+buildSkills();
+buildGallery();
+buildCtis();
+applyI18n();
+activate(0);
+
+})();
+</script>
+
+</body></html>
